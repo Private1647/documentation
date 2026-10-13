@@ -1,7 +1,7 @@
 ---
 id: smartui-cli-git-branching-strategy
 title: Branching Strategy in SmartUI SDK
-sidebar_label: Baseline Branching Strategy
+sidebar_label: Default Branching Strategy
 description: In this documentation, learn how the Git Branching Strategy is implemented for the SmartUI SDK
 keywords:
   - Visual Regression
@@ -14,13 +14,19 @@ keywords:
   - Visual Regression Run Specific Test
   - Visual Regression Testing Environment
   - How to Run Visual Regression Tests
-url: https://www.lambdatest.com/support/docs/smartui-github-app-integration/
+url: https://www.testmu.ai/support/docs/smartui-github-app-integration/
 site_name: LambdaTest
 slug: smartui-cli-git-branching-strategy/
----
+canonical: https://www.testmu.ai/support/docs/smartui-cli-git-branching-strategy/
 
+---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import NewTag from '../src/component/newTag';
+import CodeBlock from '@theme/CodeBlock';
+import {YOUR_LAMBDATEST_USERNAME, YOUR_LAMBDATEST_ACCESS_KEY} from "@site/src/component/keys";
+import BrandName, { BRAND_URL } from '@site/src/component/BrandName';
+
 
 ---
 
@@ -32,38 +38,37 @@ import TabItem from '@theme/TabItem';
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://www.lambdatest.com"
+          "item": BRAND_URL
         },{
           "@type": "ListItem",
           "position": 2,
           "name": "Support",
-          "item": "https://www.lambdatest.com/support/docs/"
+          "item": `${BRAND_URL}/support/docs/`
         },{
           "@type": "ListItem",
           "position": 3,
           "name": "WebDriverIO With Appium",
-          "item": "https://www.lambdatest.com/support/docs/smartui-upload-api-v2/"
+          "item": `${BRAND_URL}/support/docs/smartui-upload-api-v2/`
         }]
       })
     }}
 ></script>
 
-
 :::info
 This is the guide to understand our Git Branching with SmartUI projects which can detect the commit history and execute the appropriate actions for your visual regression testing.
 :::
 
-### Prerequisites for running Git with Smart UI
+### Prerequisites for running Git with SmartUI
 
-- You have an account with [Lambdatest](https://accounts.lambdatest.com).
+- You have an account with [LambdaTest](https://accounts.lambdatest.com).
 - You must have an active [subscription](https://www.lambdatest.com/pricing) plan with valid screenshots limit.
 - You must have created an Project on the SmartUI web app.
 
 :::caution Warning
-This feature is supported for tests ran through <b>CLI</b> project type ([SDK](../smartui-selenium-java-sdk/), [Static CLI](../smartui-cli/), [Storybook](../smart-ui-storybook/)) projects on the SmartUI platform. Please contact support@lambdatest.com for further information or requests.
+This feature is supported for tests ran through <b>CLI</b> project type ([SDK](../smartui-selenium-java-sdk/), [Static CLI](../smartui-cli/), [Storybook](../smart-ui-storybook/)) projects on the SmartUI platform. Please contact support@testmu.ai for further information or requests.
 :::
 
-The following steps will guide you in running your Git branching Visual Regression test on LambdaTest SmartUI platform:
+The following steps will guide you in running your Git branching Visual Regression test on <BrandName /> SmartUI platform:
 
 :::info
 **Baseline Branch**: A baseline branch build is a set of screenshots which are captured using SmartUI where all the screenshots are compared against for the non-baseline branch builds.
@@ -72,7 +77,7 @@ The following steps will guide you in running your Git branching Visual Regressi
 
 :::
 
-<img loading="lazy" src={require('../assets/images/smart-visual-testing/git-baseline-non-baseline-diff.webp').default} alt="Smart Visual Testing" width="1600" height="803" className="doc_img"/>
+<img loading="lazy" src={require('../assets/images/smart-visual-testing/git-baseline-non-baseline-diff.webp').default} alt="Smart Visual Testing" width="1600" height="803" className='doc_img'/>
 
 ### **Step 1**: Setup your Git Baseline branch in the Project Settings
 
@@ -82,7 +87,7 @@ The following are the steps to add **Baseline** branch to your `CLI projects` wi
 2. Search for **Git Settings** and add your required **Baseline** branch in the input box.
 3. Click on **Update Settings** button to update the project settings and set your **Baseline** Git branch.
 
-<img loading="lazy" src={require('../assets/images/smart-visual-testing/git-settings.webp').default} alt="Smart Visual Testing" width="1600" height="803" className="doc_img"/>
+<img loading="lazy" src={require('../assets/images/smart-visual-testing/git-settings.webp').default} alt="Smart Visual Testing" width="1600" height="803" className='doc_img'/>
 
 Now, after the successful setup of your **Baseline** branch of your project.
 
@@ -108,24 +113,24 @@ git commit -m "Your commit message"
 
 3. Execute your **SmartUI CLI** command to execute the Visual Regression tests for your files:
 
-<Tabs className="docs__val" groupId="execution_type">
+<Tabs className='docs__val' groupId='execution_type'>
 
-<TabItem value="cli" label="For Static CLI test" default>
+<TabItem value='cli' label='For Static CLI test' default>
 
 ```bash
-smartui capture urls.json --config .smartui.json                                           
+smartui capture urls.json --config .smartui.json
 ```
 
 </TabItem>
 
-<TabItem value="sdk" label="For SmartUI SDK test" default>
+<TabItem value='sdk' label='For SmartUI SDK test' default>
 
 ```bash
-npx smartui --config .smartui.json exec -- <Your execution command>                                             
+npx smartui --config .smartui.json exec -- <Your execution command>
 ```
 
 </TabItem>
-<TabItem value="static-build-or-ci" label="For Static Storybook Build">
+<TabItem value='static-build-or-ci' label='For Static Storybook Build'>
 
 ```bash
 npm run build-storybook                                           // Creates a Static Build Folder of StoryBook Stories
@@ -135,7 +140,7 @@ smartui storybook ./storybook-static --config .smartui.json       // Captures al
 </TabItem>
 </Tabs>
 
-<img loading="lazy" src={require('../assets/images/smart-visual-testing/git-basic-setup.webp').default} alt="Smart Visual Testing" width="1600" height="803" className="doc_img"/>
+<img loading="lazy" src={require('../assets/images/smart-visual-testing/git-basic-setup.webp').default} alt="Smart Visual Testing" width="1600" height="803" className='doc_img'/>
 
 ## Git Branching Workflows and Strategies
 
@@ -151,18 +156,27 @@ You can set any `branch` name as your **Baseline** branch in the SmartUI project
 
 You can also set the Baseline branch name through your terminal by setting the following environment variable which will automatically update your project settings as well once the test is run.
 
-<Tabs className="docs__val" groupId="language">
-<TabItem value="MacOS/Linux" label="MacOS/Linux" default>
+<Tabs className='docs__val' groupId='language'>
+<TabItem value='MacOS/Linux' label='MacOS/Linux' default>
 
 ```bash
 export BASELINE_BRANCH="Required baseline branch"
 ```
+
 </TabItem>
-<TabItem value="Windows" label="Windows" default>
+<TabItem value='Windows' label='Windows - CMD'>
 
 ```bash
 set BASELINE_BRANCH="Required baseline branch"
 ```
+
+</TabItem>
+<TabItem value='PowerShell' label='PowerShell'>
+
+```powershell
+$env:BASELINE_BRANCH="Required baseline branch"
+```
+
 </TabItem>
 </Tabs>
 
@@ -195,7 +209,7 @@ In this workflow, if you are working on the same branch name and want to execute
 
 And, if you have created a project and set your **Baseline** branch name to `master` then executed the following commands:
 
-```bash
+```powershell
 // Your current branch name
 $ git branch
 * <Your Current Active branch>
@@ -223,22 +237,31 @@ $ git commit -m "Second Build Changes"
 $ npx smartui --config .smartui.json exec -- <Execution command>
 ```
 
-<img loading="lazy" src={require('../assets/images/smart-visual-testing/git-working-on-same-branch.webp').default} alt="Smart Visual Testing" width="1600" height="803" className="doc_img"/>
+<img loading="lazy" src={require('../assets/images/smart-visual-testing/git-working-on-same-branch.webp').default} alt="Smart Visual Testing" width="1600" height="803" className='doc_img'/>
 
 You can streamline your workflow by setting the current branch name directly through your terminal. By configuring the following environment variable, you can automatically designate the input branch name as the branch for that build. This approach effectively overwrites the current Git branch from which you are running the test, providing a convenient method to manage new branches according to specific use cases without altering the Git configuration.
 
-<Tabs className="docs__val" groupId="language">
-<TabItem value="MacOS/Linux" label="MacOS/Linux" default>
+<Tabs className='docs__val' groupId='language'>
+<TabItem value='MacOS/Linux-1' label='MacOS/Linux' default>
 
 ```bash
 export CURRENT_BRANCH="Required branch"
 ```
+
 </TabItem>
-<TabItem value="Windows" label="Windows" default>
+<TabItem value="Windows-1" label='Windows - CMD'>
 
 ```bash
 set CURRENT_BRANCH="Required branch"
 ```
+
+</TabItem>
+<TabItem value="PowerShell-1" label='PowerShell'>
+
+```powershell
+$env:CURRENT_BRANCH="Required branch"
+```
+
 </TabItem>
 </Tabs>
 
@@ -261,15 +284,14 @@ In this case, the latest build run on the SmartUI project build history will be 
 In this case, the new build run with the `development` git branch name will be set to the current **Baseline** build for the SmartUI project.
 
 :::caution Note
-For the first build generated for the **Baseline branch build** in the SmartUI Projects will be automatically set to **SYSTEM APPROVED** status by default.  
+For the first build generated for the **Baseline branch build** in the SmartUI Projects will be automatically set to **SYSTEM APPROVED** status by default.
 :::
 
 ### Detect changes for Git commit added to **Baseline Branch**
 
-In this workflow, if I make changes in the set Baseline branch in the Smart UI project that is master and make an commit to the Git then,
+In this workflow, if I make changes in the set Baseline branch in the SmartUI project that is master and make an commit to the Git then,
 
 Execute `SmartUI CLI` commands to execute the test cases. Tests will compare the results with the latest **APPROVED** build run for **Baseline Branch** build in the SmartUI project.
-
 
 :::note
 On approval of the all the screenshots then the new build will be updated as Baseline build for the baseline branch.
@@ -310,12 +332,12 @@ $ git checkout -b develop
 $ npx smartui --config .smartui.json exec -- <Execution command>
 ```
 
-<img loading="lazy" src={require('../assets/images/smart-visual-testing/git-baseline-non-baseline.webp').default} alt="Smart Visual Testing" width="1600" height="803" className="doc_img"/>
+<img loading="lazy" src={require('../assets/images/smart-visual-testing/git-baseline-non-baseline.webp').default} alt="Smart Visual Testing" width="1600" height="803" className='doc_img'/>
 
 ### Handling Builds with Missing Screenshots
 
-When a build is executed in the same branch as the **Baseline Branch**, SmartUI will compare it against the latest approved baseline build. If some screenshots (or variants) that were present in the baseline are missing from the current build, a `Missing Screenshots` warning <img loading="lazy" src={require('../assets/images/smart-visual-testing/missing-ss/Validation.webp').default} alt="Smart Visual Testing" className="doc_img"/> will be displayed.
-<img loading="lazy" src={require('../assets/images/smart-visual-testing/missing-ss/Tooltip-missing.webp').default} alt="Smart Visual Testing" className="doc_img"/>
+When a build is executed in the same branch as the **Baseline Branch**, SmartUI will compare it against the latest approved baseline build. If some screenshots (or variants) that were present in the baseline are missing from the current build, a `Missing Screenshots` warning <img loading="lazy" src={require('../assets/images/smart-visual-testing/missing-ss/Validation.webp').default} alt="Smart Visual Testing" className='doc_img'/> will be displayed.
+<img loading="lazy" src={require('../assets/images/smart-visual-testing/missing-ss/Tooltip-missing.webp').default} alt="Smart Visual Testing" className='doc_img'/>
 
 If this build with missing screenshots shows no visual changes compared to the baseline, it will be automatically approved. However, SmartUI will mark it as an `Incomplete` build and will not set it as a new baseline.
 
@@ -327,4 +349,4 @@ For builds with missing screenshots that do contain visual changes, you can manu
 
 In this workflow, once all the `Changes Found` are approved by the `approver` for the screenshots in the **Baseline** branch's **Non-Baseline** build then the `latest` approved **Baseline Branch** build will be updated to the `Baseline`.
 
-<img loading="lazy" src={require('../assets/images/smart-visual-testing/git-auto-update-baseline-build.webp').default} alt="Smart Visual Testing" width="1600" height="803" className="doc_img"/>
+<img loading="lazy" src={require('../assets/images/smart-visual-testing/git-auto-update-baseline-build.webp').default} alt="Smart Visual Testing" width="1600" height="803" className='doc_img'/>

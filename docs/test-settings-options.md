@@ -15,13 +15,15 @@ keywords:
   - Visual Regression Testing Environment
   - How to Run Visual Regression Tests
 
-url: https://www.lambdatest.com/support/docs/test-settings-options/
+url: https://www.testmu.ai/support/docs/test-settings-options/
 site_name: LambdaTest
 slug: test-settings-options/
+canonical: https://www.testmu.ai/support/docs/test-settings-options/
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import BrandName, { BRAND_URL } from '@site/src/component/BrandName';
 
 ---
 
@@ -58,7 +60,7 @@ let capabilities = {
 
   /*  ....Your Selenium capabilities go here */
 
-  "smartUI.project": "<Your Project Name>" // Your Smart UI project name
+  "smartUI.project": "<Your Project Name>" // Your SmartUI project name
   "smartUI.options": {
     // highlight-next-line
     "largeImageThreshold": 100 // The image threshold for comparison the min of 100 and max of 1200
@@ -72,7 +74,7 @@ let capabilities = {
 
 ```json title="Add the following in your /project/lambdatest-config.json"
 "smart_ui": {
-      "project": "<Your Project Name>" // Add your Smart UI Project Name here
+      "project": "<Your Project Name>" // Add your SmartUI Project Name here
       "options": {
         // highlight-next-line
         "largeImageThreshold": 100 // The image threshold for comparison the min of 100 and max of 1200
@@ -107,7 +109,7 @@ let capabilities = {
 
   /*  ....Your Selenium capabilities go here */
 
-  "smartUI.project": "<Your Project Name>" // Your Smart UI project name
+  "smartUI.project": "<Your Project Name>" // Your SmartUI project name
   "smartUI.options": {
     // highlight-next-line
     "errorType": "movement" // To set the error identifier
@@ -121,7 +123,7 @@ let capabilities = {
 
 ```json title="Make changes in your /project/lambdatest-config.json"
 "smart_ui": {
-      "project": "<Your Project Name>" // Add your Smart UI Project Name here
+      "project": "<Your Project Name>" // Add your SmartUI Project Name here
       "options": {
         // highlight-next-line
         "errorType": "movement" // To set the error identifier
@@ -159,7 +161,7 @@ let capabilities = {
 
   /*  ....Your Selenium capabilities go here */
 
-  "smartUI.project": "<Your Project Name>" // Your Smart UI project name
+  "smartUI.project": "<Your Project Name>" // Your SmartUI project name
   "smartUI.options": {
     // highlight-next-line
     "ignore": "antialiasing" // To set the ignore identifier
@@ -173,7 +175,7 @@ let capabilities = {
 
 ```json title="Make changes in your /project/lambdatest-config.json"
 "smart_ui": {
-      "project": "<Your Project Name>" // Add your Smart UI Project Name here
+      "project": "<Your Project Name>" // Add your SmartUI Project Name here
       "options": {
         // highlight-next-line
         "ignore": "antialiasing" // To set the ignore identifier
@@ -204,7 +206,7 @@ let capabilities = {
 
   /*  ....Your Selenium capabilities go here */
 
-  "smartUI.project": "<Your Project Name>" // Your Smart UI project name
+  "smartUI.project": "<Your Project Name>" // Your SmartUI project name
   "smartUI.options": {
     // highlight-next-line
     "transparency": 0.3 // minimum = 0 and maximum = 1 supports upto one decimal such as 0.1 to 0.9
@@ -218,7 +220,7 @@ let capabilities = {
 
 ```json title="Make changes in your /project/lambdatest-config.json"
 "smart_ui": {
-      "project": "<Your Project Name>" // Add your Smart UI Project Name here
+      "project": "<Your Project Name>" // Add your SmartUI Project Name here
       "options": {
         // highlight-next-line
         "transparency": 0.3 // minimum = 0 and maximum = 1 supports upto one decimal such as 0.1 to 0.9
@@ -264,7 +266,7 @@ let capabilities = {
 
   /*  ....Your Selenium capabilities go here */
 
-  "smartUI.project": "<Your Project Name>" // Your Smart UI project name
+  "smartUI.project": "<Your Project Name>" // Your SmartUI project name
   // highlight-next-line
   "boundingBoxes" : [box1, box2] // Your bounding box configuration
 };
@@ -335,7 +337,7 @@ let capabilities = {
 
   /*  ....Your Selenium capabilities go here */
 
-  "smartUI.project": "<Your Project Name>" // Your Smart UI project name
+  "smartUI.project": "<Your Project Name>" // Your SmartUI project name
   // highlight-next-line
   "ignoredBoxes" : [box1, box2] // Your bounding box configuration
 };
@@ -397,7 +399,7 @@ let capabilities = {
 
   /*  ....Your Selenium capabilities go here */
 
-  "smartUI.project": "<Your Project Name>" // Your Smart UI project name
+  "smartUI.project": "<Your Project Name>" // Your SmartUI project name
   // highlight-next-line
   "ignoreAreasColoredWith" : color // Your bounding box configuration
 };
@@ -429,12 +431,12 @@ let capabilities = {
 <nav aria-label="breadcrumbs">
   <ul className="breadcrumbs">
     <li className="breadcrumbs__item">
-      <a className="breadcrumbs__link" target="_self" href="https://www.lambdatest.com">
+      <a className="breadcrumbs__link" target="_self" href={BRAND_URL}>
         Home
       </a>
     </li>
     <li className="breadcrumbs__item">
-      <a className="breadcrumbs__link" target="_self" href="https://www.lambdatest.com/support/docs/">
+      <a className="breadcrumbs__link" target="_self" href={`${BRAND_URL}/support/docs/`}>
         Support
       </a>
     </li>

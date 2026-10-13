@@ -5,14 +5,18 @@ hide_title: false
 sidebar_label: FailFast
 description: Learn more about how to use HyperExecute's FailFast feature.
 keywords:
-  - LambdaTest Hyperexecute
-  - LambdaTest Hyperexecute help
-  - LambdaTest Hyperexecute documentation
+  - TestMu AI Hyperexecute
+  - TestMu AI Hyperexecute help
+  - TestMu AI Hyperexecute documentation
   - FailFast Feature
-url: https://www.lambdatest.com/support/docs/hyperexecute-failfast/
+url: https://www.testmuai.com/support/docs/hyperexecute-failfast/
 site_name: LambdaTest
 slug: hyperexecute-failfast/
+canonical: https://www.testmuai.com/support/docs/hyperexecute-failfast/
 ---
+
+
+import BrandName, { BRAND_URL } from '@site/src/component/BrandName';
 
 <script type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -22,17 +26,17 @@ slug: hyperexecute-failfast/
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://www.lambdatest.com"
+          "item": BRAND_URL
         },{
           "@type": "ListItem",
           "position": 2,
           "name": "Support",
-          "item": "https://www.lambdatest.com/support/docs/"
+          "item": `${BRAND_URL}/support/docs/`
         },{
           "@type": "ListItem",
           "position": 3,
           "name": "Integrations",
-          "item": "https://www.lambdatest.com/support/docs/hyperexecute-failfast/"
+          "item": `${BRAND_URL}/support/docs/hyperexecute-failfast/`
         }]
       })
     }}
@@ -58,6 +62,21 @@ failFast:
     maxNumberOfTests: 2
 ```
 
+
+:::info
+To apply `failFast` at the **scenario** level instead of the default test level, set the `level: scenario` in the YAML configuration.
+
+```yaml
+failFast:
+  maxNumberOfTests: 2
+  level: scenario
+```
+:::
+
+> **NOTE :** You can specify `failFast` at either the test level or scenario level, depending on your requirements. Both configurations will work, but can lead to unexpected results, only one should be used at a time.
+
+***
+
 For a deeper understanding of the HyperExecute YAML and its versatile features, we invite you to explore our dedicated [HyperExecute YAML documentation](/support/docs/deep-dive-into-hyperexecute-yaml/) page. This resource-rich section provides valuable insights to empower your testing endeavors.
 
 ***
@@ -67,12 +86,12 @@ For a deeper understanding of the HyperExecute YAML and its versatile features, 
 <nav aria-label="breadcrumbs">
   <ul className="breadcrumbs">
     <li className="breadcrumbs__item">
-      <a className="breadcrumbs__link" target="_self" href="https://www.lambdatest.com">
+      <a className="breadcrumbs__link" target="_self" href={BRAND_URL}>
         Home
       </a>
     </li>
     <li className="breadcrumbs__item">
-      <a className="breadcrumbs__link" target="_self" href="https://www.lambdatest.com/support/docs/">
+      <a className="breadcrumbs__link" target="_self" href={`${BRAND_URL}/support/docs/`}>
         Support
       </a>
     </li>

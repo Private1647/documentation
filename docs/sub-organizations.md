@@ -1,20 +1,24 @@
----
+﻿---
 id: sub-organizations
 title: Sub Organizations
 hide_title: true
 sidebar_label: Sub Organizations
-description: This documentation will help you create and manage sub-organizations on LambdaTest.
+description: This documentation will help you create and manage sub-organizations on TestMu AI.
 keywords:
-- sub organizations lambdatest
+- sub organizations testmu ai
 - manage sub organizations
 - create sub organizations
-url: https://www.lambdatest.com/support/docs/sub-organizations/
+url: https://www.testmu.ai/support/docs/sub-organizations/
 site_name: LambdaTest
 slug: sub-organizations/
+canonical: https://www.testmu.ai/support/docs/sub-organizations/
 ---
 
 # Sub Organizations
 ---
+
+
+import BrandName, { BRAND_URL } from '@site/src/component/BrandName';
 
 Sub-Organization helps you segregate test data between 2 different business units. Also, you can distribute concurrency you have purchased to different sub-organizations for them to act as independent organizations with their own administrators.
 
@@ -23,7 +27,7 @@ This feature is currently in private release and can be enabled on request.
 ## Create Your Sub-Organization
 ---
 
-**Step 1:** Sign in to your LambdaTest account. Don't have an account, [register for free](https://accounts.lambdatest.com/register).
+**Step 1:** Sign in to your <BrandName /> account. Don't have an account, [register for free](https://accounts.lambdatest.com/register).
 
 <img loading="lazy" src={require('../assets/images/lambdatest-mfa/dashboard.webp').default} alt="Image" width="404" height="206"  className="doc_img img_center"/><br/>
 
@@ -89,17 +93,17 @@ To create a new **Service Account**, head to the **Service Account** tab in your
 
 Your new **Service Account** will be created. 
 
-> That's all you need to know about Sub-Organization feature. In case you have any questions please feel free to reach out to us via the <span className="doc__lt" onClick={() => window.openLTChatWidget()}>**24/7 chat support**</span> or email us over [support@lambdatest.com](mailto:support@lambdatest.com).
+> That's all you need to know about Sub-Organization feature. In case you have any questions please feel free to reach out to us via the <span className="doc__lt" onClick={() => window.openLTChatWidget()}>**24/7 chat support**</span> or email us over [support@testmu.ai](mailto:support@testmu.ai).
 
 <nav aria-label="breadcrumbs">
   <ul className="breadcrumbs">
     <li className="breadcrumbs__item">
-      <a className="breadcrumbs__link" href="https://www.lambdatest.com">
+      <a className="breadcrumbs__link" href={BRAND_URL}>
         Home
       </a>
     </li>
     <li className="breadcrumbs__item">
-      <a className="breadcrumbs__link" target="_self" href="https://www.lambdatest.com/support/docs/">
+      <a className="breadcrumbs__link" target="_self" href={`${BRAND_URL}/support/docs/`}>
         Support
       </a>
     </li>

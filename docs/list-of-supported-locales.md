@@ -1,18 +1,22 @@
 ---
 id: list-of-supported-locales
-title: Supported Locales And Languages
+title: Supported Locales And Languages - Appium
 hide_title: false
 sidebar_label: Supported Locales And Languages
-description: Checkout the list of all supported locales by LambdaTest.
+description: Checkout the list of all supported locales by TestMu AI.
 keywords:
   - Supported locales
   - Locales
   - Appium supported locales
   
-url: https://www.lambdatest.com/support/docs/list-of-supported-locales/
+url: https://www.testmuai.com/support/docs/list-of-supported-locales/
 site_name: LambdaTest
 slug: list-of-supported-locales/
+canonical: https://www.testmuai.com/support/docs/list-of-supported-locales/
 ---
+
+
+import BrandName, { BRAND_URL } from '@site/src/component/BrandName';
 
 <script type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -22,17 +26,17 @@ slug: list-of-supported-locales/
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://www.lambdatest.com"
+          "item": BRAND_URL
         },{
           "@type": "ListItem",
           "position": 2,
           "name": "Support",
-          "item": "https://www.lambdatest.com/support/docs/"
+          "item": `${BRAND_URL}/support/docs/`
         },{
           "@type": "ListItem",
           "position": 3,
           "name": "List of Supported Locales",
-          "item": "https://www.lambdatest.com/support/docs/list-of-supported-locales/"
+          "item": `${BRAND_URL}/support/docs/list-of-supported-locales/`
         }]
       })
     }}
@@ -247,33 +251,25 @@ Locale to be passed in the capability - locale: 'fr_FR' where fr is language cod
 | Mexico                 | es-MX                      |
 | South Africa           | en-ZA                      |
 
->
-That's all! In case you come across any doubts or have any questions for us, feel free to drop them at our <span className="doc__lt" onClick={() => window.openLTChatWidget()}>**24x7 Chat Support**</span> or you could also mail us directly at **[support@lambdatest.com](mailto:support@lambdatest.com)**.
 
-<nav aria-label="breadcrumbs">
-  <ul className="breadcrumbs">
-    <li className="breadcrumbs__item">
-      <a className="breadcrumbs__link" target="_self" href="https://www.lambdatest.com">
-        Home
-      </a>
-    </li>
-    <li className="breadcrumbs__item">
-      <a className="breadcrumbs__link" target="_self" href="https://www.lambdatest.com/support/docs/">
-        Support
-      </a>
-    </li>
-    <li className="breadcrumbs__item breadcrumbs__item--active">
-      <span className="breadcrumbs__link">
-       Linear App Integration
-      </span>
-    </li>
-  </ul>
-</nav>
+### Enabling Locales and Language via Hook
+To **dynamically change** the language and locale of a device during test execution use the `updateLanguageLocale` action inside `lambda_executor`.The example below demonstrates how to use the following.
+
+```python
+driver.execute_script('lambda_executor: { 
+      "action": "updateLanguageLocale", 
+      "arguments": { 
+        "language" : "<language-code>" ,
+        "locale" : "<locale-code>"
+        } 
+}')
+```
+:::info
+- **iOS**: Supported on devices running iOS 14 and above.
+- **Android**: Supported on devices running Android 11 and above.
+- Both language and locale are required parameters. If either one is missing, the hook will return an error
+:::
 
 
 
-
-
-
-
-
+> That's all! In case you come across any doubts or have any questions for us, feel free to drop them at our <span className="doc__lt" onClick={() => window.openLTChatWidget()}>**24x7 Chat Support**</span> or you could also mail us directly at **[support@testmu.ai](mailto:support@testmu.ai)**.

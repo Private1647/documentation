@@ -18,6 +18,8 @@ export default function HyperExecuteSupportedLanguageDocs() {
             {label: 'Espresso', value: 'Espresso' },
             {label: 'Maestro', value: 'Maestro' },
             {label: 'XCUI', value: 'XCUI' },
+            {label: 'Performance', value: 'Performance' },
+            {label: 'API', value: 'API' },
           ]}>
             <TabItem value="Selenium">
               <div className="lt_row">
@@ -35,6 +37,7 @@ export default function HyperExecuteSupportedLanguageDocs() {
                     <li><a href="/support/docs/webdriverio-on-hyperexecute-grid/">WebdriverIO</a></li>
                     <li><a href="/support/docs/protractor-on-hyperexecute-grid/">Protractor</a></li>
                     <li><a href="/support/docs/nightwatch-on-hyperexecute-grid/">Nightwatch</a></li>
+                    <li><a href="/support/docs/hyperexecute-bidi-testing/">BiDi</a></li>
                   </ul>
                 </div>
                 <div className="lt_col lt_framework_wrapper">
@@ -160,6 +163,34 @@ export default function HyperExecuteSupportedLanguageDocs() {
                   <img loading="lazy" src={require('../../../assets/images/getting-started/xcui.jpeg').default} alt="JavaScript" width="200" height="200" className="language-icon"/>
                   <ul className="lt_framework_list">
                     <li><a href="/support/docs/hyperexecute-xcui-testing/">XCUI</a></li>
+                  </ul>
+                </div>
+              </div>
+            </TabItem>
+
+            <TabItem value="Performance">
+              <div className="lt_row">
+                <div className="lt_col lt_framework_wrapper">
+                  <img loading="lazy" src={require('../../../assets/images/getting-started/jmeter.png').default} alt="JMeter" width="200" height="200" className="language-icon"/>
+                  <ul className="lt_framework_list">
+                    <li><a href="/support/docs/hyperexecute-run-jmeter-tests/">JMeter</a></li>
+                  </ul>
+                </div>
+                <div className="lt_col lt_framework_wrapper">
+                  <img loading="lazy" src={require('../../../assets/images/getting-started/gattling.png').default} alt="Gattling" width="200" height="200" className="language-icon"/>
+                  <ul className="lt_framework_list">
+                    <li><a href="/support/docs/hyperexecute-gattling-testing/">Gattling</a></li>
+                  </ul>
+                </div>
+              </div>
+            </TabItem>
+
+            <TabItem value="API">
+              <div className="lt_row">
+                <div className="lt_col lt_framework_wrapper">
+                  <img loading="lazy" src={require('../../../assets/images/getting-started/api.png').default} alt="API" width="200" height="200" className="language-icon"/>
+                  <ul className="lt_framework_list">
+                    <li><a href="/support/docs/hyperexecute-api-testing/">API</a></li>
                   </ul>
                 </div>
               </div>

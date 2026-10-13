@@ -5,18 +5,20 @@ hide_title: true
 sidebar_label: Audit Logs
 description: Guide to Access, Filter and Download Audit Logs
 keywords:
-  - lambdatest automation
-  - lambdatest hyperexecute
+  - testmu ai automation
+  - testmu ai hyperexecute
   - hyperexecute automation grid
   - hyperexecute online
   - online hyperexecute
   - hyperexecute automation grid online
   - hyperexecute getting started
-image: /assets/images/og-images/Getting-Started-with-Lambdatest-Automation.jpg
-url: https://www.lambdatest.com/support/docs/audit-logs/
+url: https://www.testmuai.com/support/docs/audit-logs/
 site_name: LambdaTest
 slug: audit-logs/
+canonical: https://www.testmuai.com/support/docs/audit-logs/
 ---
+import BrandName, { BRAND_URL } from '@site/src/component/BrandName';
+
 
 <script type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -26,17 +28,17 @@ slug: audit-logs/
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://www.lambdatest.com"
+          "item": BRAND_URL
         },{
           "@type": "ListItem",
           "position": 2,
           "name": "Support",
-          "item": "https://www.lambdatest.com/support/docs/"
+          "item": `${BRAND_URL}/support/docs/`
         },{
           "@type": "ListItem",
           "position": 3,
           "name": "Audit Logs",
-          "item": "https://www.lambdatest.com/support/docs/audit-logs/"
+          "item": `${BRAND_URL}/support/docs/audit-logs/`
         }]
       })
     }}
@@ -44,7 +46,7 @@ slug: audit-logs/
 
 # Audit Logs
 
-Audit logs serve as a record of every **User** and **Organization** Level activities in a LambdaTest account.
+Audit logs serve as a record of every **User** and **Organization** Level activities in a <BrandName /> account.
 
 > **Note:** Only organization administrators are able to view and manage the audit logs.
 
@@ -83,8 +85,8 @@ The following table contains the list of activities and their definition:
 |8     |user.profile.deletion-request             |User - Account Deletion Request Raised             |User requested their account deletion         |
 |9     |org.user.deleted                          |Organization - User Removed from Organization      |Admin removed a user from their organization  |
 |10    |user.password.forgot                      |User - Password Reset                              |User password reset                           |
-|11    |org.support-access.granted                |Organization - Support Access Granted              |Admin granted LambdaTest Support Access       |
-|12    |org.support-access.revoked                |Organization - Support Access Revoked              |Admin revoked LambdaTest Support Access       |
+|11    |org.support-access.granted                |Organization - Support Access Granted              |Admin granted <BrandName /> Support Access       |
+|12    |org.support-access.revoked                |Organization - Support Access Revoked              |Admin revoked <BrandName /> Support Access       |
 |13    |org.service-account.created               |Organization - Service Account Created             |Admin created a new Service Account           |
 |14    |org.service-account.deleted               |Organization - Service Account Deleted             |service-account deleted                       |
 |15    |user.profile.updated                      |User - Profile Updated                             |User updated their profile                    |
@@ -141,7 +143,7 @@ You can select the type of event for which you want to check the logs. You can a
 
 You can view the logs of the users for a particular date range as well. Select the start date and end dates from the date filter.
 
-> You can view Audit Logs for a maximum of 90 days.
+> You can view Audit Logs for a maximum of 60 days. Please contact support for higher retention period (Supported in Enterprise Plan).
 
 <img loading="lazy" src={require('../assets/images/audit-logs/4.png').default} alt="Image"  className="doc_img"/>
 
@@ -156,3 +158,22 @@ Based on the given date range, you can review the logs for each individual user 
 Click on the **Export Button** displayed in the screenshot below, and your logs will be downloaded in **.csv** format.
 
 <img loading="lazy" src={require('../assets/images/audit-logs/5.png').default} alt="Image"  className="doc_img"/>
+
+## FAQs
+
+**Q: Is comprehensive audit logging for all system and user activities supported?**
+ 
+ Yes, it provides comprehensive audit logging of all activities, ensuring full traceability across conversations, workflows, operations, test executions, and database actions. It maintains detailed audit trails with timestamps, metadata, and historical records, supporting compliance, security, and validation of AI agent capabilities.
+
+**Key capabilities include:**
+
+- Conversation history tracking, including timestamped conversations, message metadata, file upload and download activity, session tracking, and complete conversation audit trails.
+
+- Workflow state tracking with full state persistence, state change history, metadata preservation, and workflow execution audit trails.
+
+- Operation logging for all API operations, including error tracking, performance metrics logging, and operation-level audit records.
+
+- Test execution logging covering test scenario execution, test result tracking, evaluation result logging, and audit logging as a supported test category for agent validation.
+
+- Database audit trail with timestamped database operations, organization-level data isolation, user-level activity tracking, and long-term historical data preservation.
+---

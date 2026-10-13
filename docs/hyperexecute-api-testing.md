@@ -13,9 +13,10 @@ keywords:
   - troubleshooting api tests in hyperexecute
   - api testing tools hyperexecute
   - api test scripts hyperexecute
-url: https://www.lambdatest.com/support/docs/hyperexecute-api-testing/
+url: https://www.testmuai.com/support/docs/hyperexecute-api-testing/
 site_name: LambdaTest
 slug: hyperexecute-api-testing/
+canonical: https://www.testmuai.com/support/docs/hyperexecute-api-testing/
 ---
 
 import CodeBlock from '@theme/CodeBlock';
@@ -23,6 +24,8 @@ import {YOUR_LAMBDATEST_USERNAME, YOUR_LAMBDATEST_ACCESS_KEY} from "@site/src/co
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import BrandName, { BRAND_URL } from '@site/src/component/BrandName';
+
 
 <script type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -32,17 +35,17 @@ import TabItem from '@theme/TabItem';
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://www.lambdatest.com"
+          "item": BRAND_URL
         },{
           "@type": "ListItem",
           "position": 2,
           "name": "Languages and Frameworks",
-          "item": "https://www.lambdatest.com/support/docs/"
+          "item": `${BRAND_URL}/support/docs/`
         },{
           "@type": "ListItem",
           "position": 3,
           "name": "API Testing",
-          "item": "https://www.lambdatest.com/support/docs/hyperexecute-api-testing/"
+          "item": `${BRAND_URL}/support/docs/hyperexecute-api-testing/`
         }]
       })
     }}
@@ -99,7 +102,7 @@ You can use your own project to configure and test it. For demo purposes, we are
 
 :::tip Sample repo
 
-Download or Clone the code sample for the Maestro framework from the LambdaTest GitHub repository to run the tests on the HyperExecute.
+Download or Clone the code sample for the Maestro framework from the <BrandName /> GitHub repository to run the tests on the HyperExecute.
 
 <a href="https://github.com/LambdaTest/hyp-api-testing" className="github__anchor"><img loading="lazy" src={require('../assets/images/icons/github.png').default} alt="Image" className="doc_img"/> View on GitHub</a>
 
@@ -123,7 +126,7 @@ You can download the CLI for your desired platform from the below mentioned link
 
 #### Setup Environment Variable
 
-Now, you need to export your environment variables *LT_USERNAME* and *LT_ACCESS_KEY* that are available in the [LambdaTest Profile page](https://accounts.lambdatest.com/detail/profile).
+Now, you need to export your environment variables *LT_USERNAME* and *LT_ACCESS_KEY* that are available in the [<BrandName /> Profile page](https://accounts.lambdatest.com/detail/profile).
 
 Run the below mentioned commands in your terminal to setup the CLI and the environment variables.
 
@@ -154,53 +157,8 @@ set LT_ACCESS_KEY="${ YOUR_LAMBDATEST_ACCESS_KEY()}"`}
 
 ### Step 3: Configure YAML in your Test Suite
 
-```yaml
----
-version: 0.1
-globalTimeout: 90
-testSuiteTimeout: 90
-testSuiteStep: 90
-
-runson: win
-
-autosplit: true
-
-retryOnFailure: true
-maxRetries: 1
-
-concurrency: 1
-
-env:
-  CACHE_DIR: m2_cache_dir
-
-cacheKey: '{{ checksum "pom.xml" }}'
-cacheDirectories:
-  - $CACHE_DIR
-
-pre:
-  - mkdir m2_cache_dir
-  - mvn -Dmaven.repo.local=$CACHE_DIR -Dmaven.test.skip=true clean install
-  # pre step api testing
-  - mvn -Dtest=apitestingsample -Dbrowser=chrome -Dversion=latest -Dplatform=win10 -DsuiteXmlFile=testing.xml
-  - curl -v ipinfo.io
-
-post:
-  - mvn -Dtest=postapi -DsuiteXmlFile=testing.xml
-
-mergeArtifacts: true
-uploadArtefacts:
-  - name: Report
-    path:
-      - target/surefire-reports/**
-
-testDiscovery:
-  type: raw
-  mode: dynamic
-  command: grep 'class name' src/test/java/testing.xml | awk '{print$2}' | sed 's/name=//g' | sed 's/\x3e//g'
-
-testRunnerCommand: mvn `-Dtest=webtest `-Dbrowser=chrome `-Dversion=latest `-Dplatform=win10 `-DsuiteXmlFile=web.xml
-
-jobLabel: ['HYP', 'API Testing']
+```yaml reference title="hyperexecute.yaml"
+https://github.com/LambdaTest/hyp-api-testing/blob/master/hyperexecute.yaml
 ```
 
 ### Step 4: Execute your Test Suite

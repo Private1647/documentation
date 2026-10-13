@@ -1,16 +1,27 @@
 ---
 id: regular-expression-appium
-title: Regular Expression (REGEX)
+title: Regular Expression - Appium
 # hide_title: true
 sidebar_label: Regular Expression
-description: If your chosen device for testing on LambdaTest is unavailable, use REGEX to broaden the search request for alternative devices to run the test.
+description: If your chosen device for testing on TestMu AI is unavailable, use REGEX to broaden the search request for alternative devices to run the test.
 keywords:
-- regular expression lambdatest
+- regular expression testmu ai
 - regular expression app automation
-url: https://www.lambdatest.com/support/docs/regular-expression-appium/
+url: https://www.testmu.ai/support/docs/regular-expression-appium/
 site_name: LambdaTest
 slug: regular-expression-appium/
+canonical: https://www.testmu.ai/support/docs/regular-expression-appium/
 ---
+import CodeBlock from '@theme/CodeBlock';
+import {YOUR_LAMBDATEST_USERNAME, YOUR_LAMBDATEST_ACCESS_KEY} from "@site/src/component/keys";
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import RealDeviceTag from '../src/component/realDevice';
+import VirtualDeviceTag from '../src/component/virtualDevice';
+import BrandName, { BRAND_URL } from '@site/src/component/BrandName';
+
+
 
 <script type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -20,28 +31,37 @@ slug: regular-expression-appium/
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://www.lambdatest.com"
+          "item": BRAND_URL
         },{
           "@type": "ListItem",
           "position": 2,
           "name": "Support",
-          "item": "https://www.lambdatest.com/support/docs/"
+          "item": `${BRAND_URL}/support/docs/`
         },{
           "@type": "ListItem",
           "position": 3,
           "name": "App Automation: Regular Expression",
-          "item": "https://www.lambdatest.com/support/docs/regular-expression-appium/"
+          "item": `${BRAND_URL}/support/docs/regular-expression-appium/`
         }]
       })
     }}
 ></script>
-Regular Expressions (RegEx) are powerful tools for searching and manipulating strings. When running tests on LambdaTest with a specific device, there may be times when the exact device you selected isn't available. In such cases, RegEx will help you widen your search criteria to find any available device that matches your requirements.
 
-LambdaTest provides RegEx support for both **deviceName** and **platformVersion**, making it easier to find the right devices for your tests.
+<RealDeviceTag value="Real Device" /> 
+
+Regular Expressions (RegEx) are powerful tools for searching and manipulating strings. When running tests on <BrandName /> with a specific device, there may be times when the exact device you selected isn't available. In such cases, RegEx will help you widen your search criteria to find any available device that matches your requirements.
+
+
+<BrandName /> provides RegEx support for both **deviceName** and **platformVersion**, making it easier to find the right devices for your tests.
+
+:::info
+**Note:** Regular Expression support is currently available **only for App Automation**.  
+It is **not supported for Web Automation on Virtual Devices** at this time.
+:::
 
 ## Why Use RegEx?
 
-Imagine you want to run a test on an iPhone. You don't need a specific model, just any iPhone. Using **RegEx**, you can specify this requirement, and LambdaTest will allocate any available iPhone. This flexibility can significantly broaden the search and increase the chances of finding a suitable device quickly.
+Imagine you want to run a test on an iPhone. You don't need a specific model, just any iPhone. Using **RegEx**, you can specify this requirement, and <BrandName /> will allocate any available iPhone. This flexibility can significantly broaden the search and increase the chances of finding a suitable device quickly.
 
 
 ## Regex Characters for `deviceName`
@@ -66,7 +86,7 @@ Imagine you want to run a test on an iPhone. You don't need a specific model, ju
 | `^` | The `^` is used to negate a character from the search.  <br/><br/>**In the example given**:<br/>This matches os versions starting with 1 and not having immediate character = 5.<br/><br/> | `"1[^5].*"` |
 | <code> \| </code> | The <code> \|</code> is used to match any of the specified platform versions in the list. <br/><br/>**In the example given**: <br /> 1. We have added 2 regex characters <code> \| </code> and `.*` to show that using both in combination, we'll fetch any platform version that contains the string 13 or 14. <br /> 2. You'll be allocated any available platform version 13 or 14.| <code>"(1(3\|4).*)" </code> |
 
-> To run tests on **minor OS versions** while using `platformVersion` capability, please reach out at our <span className="doc\_\_lt" onClick={() => window.openLTChatWidget()}>**24x7 Chat Support**</span> or you could also mail us at [support@lambdatest.com](mailto:support@lambdatest.com).
+> To run tests on **minor OS versions** while using `platformVersion` capability, please reach out at our <span className="doc\_\_lt" onClick={() => window.openLTChatWidget()}>**24x7 Chat Support**</span> or you could also mail us at [support@testmu.ai](mailto:support@testmu.ai).
 
 :::tip
 You can pass both `deviceName` and `platformVersion` regex patterns together or use any one of them as per your requirements. This flexibility allows you to match specific devices, versions, or combinations based on your needs.
@@ -75,12 +95,12 @@ You can pass both `deviceName` and `platformVersion` regex patterns together or 
 <nav aria-label="breadcrumbs">
   <ul className="breadcrumbs">
     <li className="breadcrumbs__item">
-      <a className="breadcrumbs__link" target="_self" href="https://www.lambdatest.com">
+      <a className="breadcrumbs__link" target="_self" href={BRAND_URL}>
         Home
       </a>
     </li>
     <li className="breadcrumbs__item">
-      <a className="breadcrumbs__link" target="_self" href="https://www.lambdatest.com/support/docs/">
+      <a className="breadcrumbs__link" target="_self" href={`${BRAND_URL}/support/docs/`}>
         Support
       </a>
     </li>

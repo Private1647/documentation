@@ -10,10 +10,14 @@ keywords:
     - products
     - cypress integration
     - cypress integration with hyperexecute
-url: https://www.lambdatest.com/support/docs/cypress-integration-with-hyperexecute/
+url: https://www.testmuai.com/support/docs/cypress-integration-with-hyperexecute/
 site_name: LambdaTest
 slug: cypress-integration-with-hyperexecute/
+canonical: https://www.testmuai.com/support/docs/cypress-integration-with-hyperexecute/
 ---
+
+
+import BrandName, { BRAND_URL } from '@site/src/component/BrandName';
 
 <script type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -23,17 +27,17 @@ slug: cypress-integration-with-hyperexecute/
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://www.lambdatest.com"
+          "item": BRAND_URL
         },{
           "@type": "ListItem",
           "position": 2,
           "name": "Support",
-          "item": "https://www.lambdatest.com/support/docs/"
+          "item": `${BRAND_URL}/support/docs/`
         },{
           "@type": "ListItem",
           "position": 3,
           "name": "Cypress Integration with HyperExecute",
-          "item": "https://www.lambdatest.com/support/docs/cypress-integration-with-hyperexecute/"
+          "item": `${BRAND_URL}/support/docs/cypress-integration-with-hyperexecute/`
         }]
       })
     }}
@@ -66,7 +70,7 @@ Currently HyperExecute support these Operating Systems:
 
 ### Intelligently Orchestrate Your Tests
 
-Cypress excels in parallel testing, but managing large test suites within complex CI pipelines can be challenging. HyperExecute's [**AI-powered orchestration**](/support/docs/hyperexecute-test-splitting-and-multiplexing/) intelligently distributes tests across available resources, optimizing execution speed and ensuring CI/CD stability.
+Cypress excels in parallel testing, but managing large test suites within complex CI pipelines can be challenging. HyperExecute's [**AI Native orchestration**](/support/docs/hyperexecute-test-splitting-and-multiplexing/) intelligently distributes tests across available resources, optimizing execution speed and ensuring CI/CD stability.
 
 ### Comprehensive Artifacts of Your Job
 

@@ -5,8 +5,8 @@ hide_title: false
 sidebar_label: Test Automation with CI/CD
 description: Automate test run execution on KaneAI with CI/CD tools like GitHub Actions and Jenkins. Follow our step-by-step guide for seamless integration.
 keywords:
-  - lambdatest automation
-  - lambdatest kaneai
+  - testmu ai automation
+  - testmu ai kaneai
   - kaneai guided walkthrough
   - kane ai test run
   - hyperexecute
@@ -17,10 +17,13 @@ keywords:
   - github actions
   - api
   - postman
-url: https://www.lambdatest.com/support/docs/kaneai-ci-cd-automation
+url: https://www.testmuai.com/support/docs/kaneai-ci-cd-automation/
 site_name: LambdaTest
 slug: kaneai-ci-cd-automation/
+canonical: https://www.testmuai.com/support/docs/kaneai-ci-cd-automation/
 ---
+import BrandName, { BRAND_URL } from '@site/src/component/BrandName';
+
 
 <script type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -30,17 +33,17 @@ slug: kaneai-ci-cd-automation/
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://www.lambdatest.com"
+          "item": BRAND_URL
         },{
           "@type": "ListItem",
           "position": 2,
           "name": "Support",
-          "item": "https://www.lambdatest.com/support/docs/"
+          "item": `${BRAND_URL}/support/docs/`
         },{
           "@type": "ListItem",
           "position": 3,
           "name": "KaneAI CI/CD Automation",
-          "item": "https://www.lambdatest.com/support/docs/kaneai-ci-cd-automation"
+          "item": `${BRAND_URL}/support/docs/kaneai-ci-cd-automation`
         }]
       })
     }}
@@ -50,7 +53,7 @@ This guide provides a detailed walkthrough for automating the execution of test 
 ## Prerequisites
 - Access to Test Manager.
 - A project with KaneAI-generated test cases.
-- Credentials for LambdaTest platform.
+- Credentials for <BrandName /> platform.
 
 ## Step-by-Step Guide
 ### Step 1: Navigate to the Test Manager
@@ -68,6 +71,28 @@ Open the test run to view its URL. Copy the Test Run ID from the URL. This ID wi
 A list of test instances with various configurations will be displayed for each test run.
 :::
 
+
+### Step 3: Configure the API Call
+Replace `<TestRunID>` with the actual ID from the URL and set additional optional parameters:
+
+- **concurrency**: Select the concurrency you want to set for this test run. Defaults to 1 if not specified.
+- **title**: Assign a unique job title; a random one will be generated if omitted.
+- **region**: Choose a region for web tests such as _eastus_ or _centralindia_ to select the region from where the VM is allocated.
+- **mobile_region**: Choose a region for mobile app tests such as _us_,_ap_ or _eu_ to select the region from where the device is allocated.
+- **tunnel**: Add the parameter and tunnel name if you want to run using <BrandName /> Tunnel for private applications. See more details for tunnel [here](/support/docs/kane-ai-geolocation-tunnel-proxy/#tunnel-support).
+- **dedicated_proxy**: Add the region of the dedicated proxy such as _us_ or _eu_, #Optional, either tunnel or dedicated proxy or geolocation can be used in a single API call.
+- **geolocation**: Add the resgion of the geolocation that you want to run your tests from. You can find the list of support geolocations [here](/support/docs/selenium-geolocation-capabilities/).
+- **environment_id**: Define the environment on which you want to run the test run if required.
+- **retry_on_failure**: Define whether to retry if the [testRunnerCommand](/support/docs/deep-dive-into-hyperexecute-yaml/#testrunnercommand) execution fails. If "retry_on_failure" is false, the default max retries will still be 1. You can find more details [here]( https://www.lambdatest.com/support/docs/deep-dive-into-hyperexecute-yaml/#retryonfailure).
+- **max_retries**: Define the number of maximum retries you want (Max value 5). Default retries 1. You can find more details [here](/support/docs/deep-dive-into-hyperexecute-yaml/#maxretries). 
+- **timezone**: Define the timezone you want to choose for test run in UTC+01:00 format.
+- **app_profiling**: Add true if you want to track app profiling metrics in your test. You can find more details [here](/support/docs/appium-app-performance-analytics/).
+- **performance**: Add true if you want generate Lighthouse report for your web tests. Supported on limited OS browser combinations. Additionally, Setting this as true could potentially slow down the execution time. You can find more details [here](/support/docs/view-lighthouse-performance-metrics/).
+- **android_app_id**: Specify an Android app ID to override the existing app in the configuration of the Test instances.
+- **ios_app_id**: Specify an iOS app ID to override the existing app in the configuration of the Test instances.
+- **accessibility**: Set as true if you want to run accessibility test on all your tests in the test run. Setting this as true could potentially slow down the execution time.
+- **replaced_url :** To be used to dynamically replace any pattern URL in test cases with the replacement URL for entire test run.
+
 #### Example API Call:
 
 ```yaml
@@ -76,12 +101,45 @@ curl --location 'https://test-manager-api.lambdatest.com/api/atm/v1/hyperexecute
 --header 'Authorization: Basic <Base64Auth>' \
 --data '{
     "test_run_id": "YOUR_TEST_RUN_ID", #enter test run id
-    "concurrency": 1, # Optional, Default 1
+    "concurrency": 1, # Optional, default 1
     "title": "UNIQUE_BUILD_NAME", #Optional
-    "region": "YOUR_DESIRED_REGION" #eastus, centralindia
+    "console_log": false, #Optional for web tests, options - false, error, warn, info, true
+    "network_logs": false, #Optional to capture network calls during the test
+    "network_full_har": false, #Optional, Only for web, to capture complete network requests & response during the test
+    "region": "YOUR_DESIRED_REGION", #Optional for web tests, options - eastus, centralindia
+    "mobile_region": "YOUR_DESIRED_REGION", #Optional for mobile tests, options - us,eu,ap
+    "tunnel": "tunnel-name", #Optional, either tunnel or dedicated proxy or geolocation can be used
+    "dedicated_proxy": "region", #Optional, either tunnel or dedicated proxy or geolocation can be used
+    "geolocation": "region", #Optional, either tunnel or dedicated proxy or geolocation can be used
+    "environment_id": 0, #Optional, default null, to define the environment for test run
+    "retry_on_failure": true, #Optional, default true, to define if retry is needed in case of failure
+    "max_retries": 1, #Optional, default 1, to define the number of retries needed if retry_on_failure is enabled
+    "timezone": {"region":"Indianapolis"}, #Optional, Only for web, to define the timezone using which the test runs should run
+    "app_profiling": false, #Optional for performance metrics for native mobile apps
+    "performance": false, #Optional for lighthouse report for web tests
+    "android_app_id": "lt://<YOUR_ANDROID_APP_ID>", #optional 
+    "ios_app_id": "lt://<YOUR_iOS_APP_ID>", #optional 
+    "accessibility": false, #Optional only for web tests
+    "network_throttle": {
+        "label": "No Throttling",
+        "value": "default",
+        "download_speed": 0,
+        "upload_speed": 0,
+        "latency": 0,
+        "honor_network": true
+    }, #Optional, only for mobile tests, to define if sessions needs to be enabled with network throttling enabled
+    "replaced_url": [
+      {
+          "pattern_url": "TEST_URL_1",
+          "replacement_url": "REPLACED_TEST_URL_1"
+      },
+      {
+          "pattern_url": "TEST_URL_2",
+          "replacement_url": "REPLACED_TEST_URL_2"
+      }
+    ] #Optional to be used to dynamically replace any pattern URL in test cases with the replacement URL
 }'
 ```
-
 
 #### Sample API Response:
 
@@ -97,18 +155,9 @@ The API response contains the job ID for both jobs created for desktop web tests
 }
 ```
 
-### Step 3: Configure the API Call
-Replace `<TestRunID>` with the actual ID from the URL and set additional optional parameters:
-
-- **Concurrency :** Defaults to 1 if not specified.
-- **Title :** Assign a unique job title; a random one will be generated if omitted.
-- **Region :** Choose a region such as eastus or centralindia.
-
-Confirm that the job title is unique to avoid conflicts. Select a region if you require a specific allocation for your devices.
-
 
 ### Step 4: Authenticate and Trigger the Job
-- Provide your LambdaTest username and access key for Basic Authentication.
+- Provide your <BrandName /> username and access key for Basic Authentication.
 - Submit the API call to trigger the job. The process will start within seconds.
 
 > **Important :** Keep your credentials secure to maintain platform integrity.

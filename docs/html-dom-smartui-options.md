@@ -15,13 +15,16 @@ keywords:
   - Visual Regression Testing Environment
   - How to Run Visual Regression Tests
 
-url: https://www.lambdatest.com/support/docs/html-dom-smartui-options/
+url: https://www.testmuai.com/support/docs/html-dom-smartui-options/
 slug: html-dom-smartui-options/
+canonical: https://www.testmuai.com/support/docs/html-dom-smartui-options/
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import NewTag from '../src/component/newTag';
+import BrandName, { BRAND_URL } from '@site/src/component/BrandName';
+
 
 ---
 
@@ -32,24 +35,24 @@ import NewTag from '../src/component/newTag';
         "itemListElement": [{
           "@type": "ListItem",
           "position": 1,
-          "name": "LambdaTest",
-          "item": "https://www.lambdatest.com"
+          "name": "TestMu AI",
+          "item": BRAND_URL
         },{
           "@type": "ListItem",
           "position": 2,
           "name": "Support",
-          "item": "https://www.lambdatest.com/support/docs/"
+          "item": `${BRAND_URL}/support/docs/`
         },{
           "@type": "ListItem",
           "position": 3,
           "name": "Smart Visual Testing",
-          "item": "https://www.lambdatest.com/support/docs/smart-ui-cypress/"
+          "item": `${BRAND_URL}/support/docs/smart-ui-cypress/`
         }]
       })
     }}
 ></script>
 <img loading="lazy" src={require('../assets/images/smart-visual-testing/Ignored-DOM-Sample.webp').default} alt="cmd" width="768" height="373" className="doc_img"/>
-Using the LambdaTest platform, perform regression testing in just one click and explore various possible solutions for grouping your screenshots into different builds and map as per your testing suite needs.
+Using the <BrandName /> platform, perform regression testing in just one click and explore various possible solutions for grouping your screenshots into different builds and map as per your testing suite needs.
 
 In case if you have any dynamic elements that are not in the same position across test runs, you can ignore / select a specific area to be removed from the comparison.
 
@@ -68,7 +71,7 @@ The following are the different options which are currently supported:
 <Tabs className="docs__val" groupId="framework">
 <TabItem value="IgnoreID" label="Ignore ID" default>
 
-```js title="This is a sample for your webhook configuration for Javascript to ignore by ID"
+```js title="This is a sample for your webhook configuration for JavaScript to ignore by ID"
 let config = {
   screenshotName: "Ignore-ID",
   fullPage: false, //You can make this property as true in case of Chrome browser
@@ -82,7 +85,7 @@ await driver.executeScript("smartui.takeScreenshot", config);
 </TabItem>
 <TabItem value="IgoreClass" label="Ignore Class">
 
-```js title="This is a sample for your webhook configuration for Javascript to ignore by Class"
+```js title="This is a sample for your webhook configuration for JavaScript to ignore by Class"
 let config = {
   screenshotName: "Ignore-Class",
   fullPage: false, //You can make this property as true in case of Chrome browser
@@ -96,7 +99,7 @@ await driver.executeScript("smartui.takeScreenshot", config);
 </TabItem>
 <TabItem value="IgnoreXPath" label="Ignore XPath">
 
-```js title="This is a sample for your webhook configuration for Javascript to ignore by XPath"
+```js title="This is a sample for your webhook configuration for JavaScript to ignore by XPath"
 let config = {
   screenshotName: "Ignore-XPath",
   fullPage: false, //You can make this property as true in case of Chrome browser
@@ -111,7 +114,7 @@ await driver.executeScript("smartui.takeScreenshot", config);
 
 <TabItem value="IgnoreSelector" label="Ignore CSS Selector">
 
-```js title="This is a sample for your webhook configuration for Javascript to ignore by CSS Selector"
+```js title="This is a sample for your webhook configuration for JavaScript to ignore by CSS Selector"
 let config = {
   screenshotName: "Ignore-cssSelector",
   fullPage: false, //You can make this property as true in case of Chrome browser
@@ -128,7 +131,7 @@ await driver.executeScript("smartui.takeScreenshot", config);
 <Tabs className="docs__val" groupId="framework">
 <TabItem value="SelectID" label="Select ID" default>
 
-```js title="This is a sample for your webhook configuration for Javascript to select by ID."
+```js title="This is a sample for your webhook configuration for JavaScript to select by ID."
 let config = {
   screenshotName: "Select-ID",
   fullPage: false, //You can make this property as true in case of Chrome browser
@@ -142,7 +145,7 @@ await driver.executeScript("smartui.takeScreenshot", config);
 </TabItem>
 <TabItem value="SelectClass" label="Select Class">
 
-```js title="This is a sample for your webhook configuration for Javascript to select by Class"
+```js title="This is a sample for your webhook configuration for JavaScript to select by Class"
 let config = {
   screenshotName: "Select-Class",
   fullPage: false, //You can make this property as true in case of Chrome browser
@@ -156,7 +159,7 @@ await driver.executeScript("smartui.takeScreenshot", config);
 </TabItem>
 <TabItem value="SelectXPath" label="Select XPath">
 
-```js title="This is a sample for your webhook configuration for Javascript to select by XPath"
+```js title="This is a sample for your webhook configuration for JavaScript to select by XPath"
 let config = {
   screenshotName: "Select-XPath",
   fullPage: false, //You can make this property as true in case of Chrome browser
@@ -171,7 +174,7 @@ await driver.executeScript("smartui.takeScreenshot", config);
 
 <TabItem value="SelectSelector" label="Select CSS Selector">
 
-```js title="This is a sample for your webhook configuration for Javascript to select by CSS Selector"
+```js title="This is a sample for your webhook configuration for JavaScript to select by CSS Selector"
 let config = {
   screenshotName: "Select-cssSelector",
   fullPage: false, //You can make this property as true in case of Chrome browser
@@ -361,18 +364,18 @@ await page.evaluate((_) => {},
 <nav aria-label="breadcrumbs">
   <ul className="breadcrumbs">
     <li className="breadcrumbs__item">
-      <a className="breadcrumbs__link" target="_self" href="https://www.lambdatest.com">
+      <a className="breadcrumbs__link" target="_self" href={BRAND_URL}>
         Home
       </a>
     </li>
     <li className="breadcrumbs__item">
-      <a className="breadcrumbs__link" target="_self" href="https://www.lambdatest.com/support/docs/">
+      <a className="breadcrumbs__link" target="_self" href={`${BRAND_URL}/support/docs/`}>
         Support
       </a>
     </li>
     <li className="breadcrumbs__item breadcrumbs__item--active">
       <span className="breadcrumbs__link">
-     Smart UI with Cypress  
+     SmartUI with Cypress  
      </span>
     </li>
   </ul>

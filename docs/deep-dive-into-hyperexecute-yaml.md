@@ -5,17 +5,19 @@ hide_title: false
 sidebar_label: Deep Dive into HyperExecute YAML
 description: This document delivers detailed elucidations for each and every YAML flags, offering an in-depth understanding of each configuration parameter
 keywords:
-  - LambdaTest Hyperexecute
-  - LambdaTest Hyperexecute help
-  - LambdaTest Hyperexecute documentation
-url: https://www.lambdatest.com/support/docs/deep-dive-into-hyperexecute-yaml/
-site_name: LambdaTest Deep dive into hyperexecute yaml
+  - TestMu AI Hyperexecute
+  - TestMu AI Hyperexecute help
+  - TestMu AI Hyperexecute documentation
+url: https://www.testmuai.com/support/docs/deep-dive-into-hyperexecute-yaml/
+site_name: TestMu AI Deep dive into hyperexecute yaml
 slug: deep-dive-into-hyperexecute-yaml/
+canonical: https://www.testmuai.com/support/docs/deep-dive-into-hyperexecute-yaml/
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import NewTag from '../src/component/newTag';
+import BrandName, { BRAND_URL } from '@site/src/component/BrandName';
 
 <script type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -25,17 +27,17 @@ import NewTag from '../src/component/newTag';
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://www.lambdatest.com"
+          "item": BRAND_URL
         },{
           "@type": "ListItem",
           "position": 2,
           "name": "Support",
-          "item": "https://www.lambdatest.com/support/docs/"
+          "item": `${BRAND_URL}/support/docs/`
         },{
           "@type": "ListItem",
           "position": 3,
           "name": "Deep Dive into HyperExecute YAML",
-          "item": "https://www.lambdatest.com/support/docs/deep-dive-into-hyperexecute-yaml/"
+          "item": `${BRAND_URL}/support/docs/deep-dive-into-hyperexecute-yaml/`
         }]
       })
     }}
@@ -72,13 +74,15 @@ matrix:
 ***
 
 ### `pre`
-All actions you need to perform before test execution, such as installing dependencies. You’ll ideally want to use this parameter to "pre" run simple commands like `npm install`, `yarn install`, `mvn install` etc
+All actions you need to perform before each test execution, such as installing dependencies. You’ll ideally want to use this parameter to "pre" run simple commands like `npm install`, `yarn install`, `mvn install` etc
 
 ```yaml
 pre:
   - npm install
   - mvn install 
 ```
+
+>📘 Refer to [globalPre](/support/docs/deep-dive-into-hyperexecute-yaml/#globalpre) command to perform a common global setup for all your tasks, such as installing dependencies or configuring environments.
 
 ***
 ## AutoSplit Mode Parameters
@@ -178,7 +182,7 @@ mode: dynamic #or -->
 
 The `remote` discovery mode addresses the limitations of `local` modes. Instead of running test discovery on your local machine (local), this mode centralizes the process by using a dedicated remote Virtual Machines. 
 
-This setup helps to ease the discovery process and makes it more efficient, especially for complex test setups. Additionally, it fully supports [matrix-based testing](https://www.lambdatest.com/support/docs/hyperexecute-matrix-multiplexing-strategy/), which allows you to discover and manage tests across different configurations more effectively.
+This setup helps to ease the discovery process and makes it more efficient, especially for complex test setups. Additionally, it fully supports [matrix-based testing](/support/docs/hyperexecute-matrix-multiplexing-strategy/), which allows you to discover and manage tests across different configurations more effectively.
 
 > **NOTE :** [`type`](/support/docs/deep-dive-into-hyperexecute-yaml/#type) is not required with remote discovery.
 
@@ -233,7 +237,7 @@ matrix:
 ***
 
 ### `exclusionMatrix`
-The [exclusion matrix](https://www.lambdatest.com/support/docs/hyperexecute-matrix-multiplexing-strategy/#exclusion-in-matrix-strategy) allows you to omit specific combinations of parameters from being tested. For instance, if Safari on Windows is not a valid combination, you can exclude it using the exclusionMatrix parameter, ensuring that invalid or irrelevant test combinations are skipped.
+The [exclusion matrix](/support/docs/hyperexecute-matrix-multiplexing-strategy/#exclusion-in-matrix-strategy) allows you to omit specific combinations of parameters from being tested. For instance, if Safari on Windows is not a valid combination, you can exclude it using the exclusionMatrix parameter, ensuring that invalid or irrelevant test combinations are skipped.
 
 ```yaml
 #runson defines the OS of your test execution node.
@@ -292,7 +296,7 @@ testSuites: - mvn test -Dtest=$files
 `parallelism` defines the number of virtual machines [('tasks')](/support/docs/hyperexecute-status/#2-task-level-status) to be spawned in the case of hybrid mode. If you are not defining the parallelism, then you must define operating system-specific parallelism (win, mac, and  Linux). If both are defined, then preference will be given to OS-based parallelism.
 
 ```yaml
-runson: {matrix.os}
+runson: ${matrix.os}
 parallelism: 2
 
 matrix:
@@ -457,13 +461,26 @@ runtime:
 ***
 
 ### `retryOnFailure`
-This allows you to configure automatic retries for failed test scenarios. When set to true (`retryOnFailure: true`), tests will be retried based on the [`maxRetries`](/support/docs/deep-dive-into-hyperexecute-yaml/#maxretries) value specified. The default setting is **false**.
-
-This feature eliminates the need to rerun the entire job to verify if a test scenario is genuinely failing or encountering an intermittent issue. By enabling `retryOnFailure`, you can promptly retry tests upon failure, helping determine if the test consistently fails or passes in subsequent attempts."
+The `retryOnFailure` enables automatic retries for failed test scenarios only when the [testRunnerCommand](/support/docs/deep-dive-into-hyperexecute-yaml/#testrunnercommand) itself fails. When set to `true`, the system will retry failed commands based on the [`maxRetries`](/support/docs/deep-dive-into-hyperexecute-yaml/#maxretries) value defined. The default setting is `false`.
 
 ```yaml
 retryOnFailure: true
 ```
+
+#### 🔍 Important Behavior Notes:
+- Retries are triggered only if the test command fails.
+- Retries are not triggered if the command exits successfully but the test results are marked as failed by the user.
+
+#### ✅ Use Case:
+This feature helps avoid re-running the entire job to determine if a test failure is due to a genuine issue or a transient problem (e.g., flaky tests, network hiccups). By enabling `retryOnFailure`, only the failing command is retried, allowing for quicker feedback and more efficient test execution.
+
+:::tip
+If you are using Maven, ensure that the `testFailureIgnore` flag in your `pom.xml` is set to `false`. When `testFailureIgnore` is set to `true`, Maven treats test failures as ignored, causing HyperExecute’s retry mechanism to not trigger, even if `retryOnFailure` is enabled.
+
+```java
+<testFailureIgnore>false</testFailureIgnore>
+```
+:::
 
 ***
 
@@ -482,13 +499,15 @@ maxRetries: 2
 ***
 
 ### `post`
-This parameter is used for executing actions after all your tests are executed, such as printing an output file or uploading a report via a curl API request. It's ideal for performing post-run tasks.
+This parameter is used for executing actions after every test execution, such as printing an output file or uploading a report via a curl API request. It's ideal for performing post-run tasks.
 
 ```yaml
 post:
   - echo <some-dir>/output/output.log
   - curl https://www.example.com
 ```
+
+>📘 Refer to [globalPost](/support/docs/deep-dive-into-hyperexecute-yaml/#globalpost) command to perform a common global setup for all your tasks, such as clean up tasks and or killing the environments.
 
 ***
 
@@ -513,15 +532,10 @@ partialReports:
   - location: reports/json
     type: json
     frameworkName: extent-native
-    email:
-        to:
-          - johndoe@example.com
+
   - location: target/surefire-reports
     type: html
     frameworkName: testng
-    email:
-        to:
-          - johndoe@example.com
 ```
 :::
 
@@ -533,6 +547,27 @@ framework:
   defaultReports: false
 ```
 :::
+
+#### Regex Support for Dynamic Report Paths
+You can now use **glob-style wildcards `(**)`** in the location field of `partialReports` to dynamically match nested folders and custom report paths. This is especially useful when your test reports are generated inside directories that include date stamps, environment names, or other runtime variables.
+
+Example:
+```yaml title="hyperexecute.yaml"
+partialReports:
+  location: reports/**/cucumber/
+  # location: target/abc/**/pqr/**/cucumber-reports
+  frameworkName: cucumber
+  type: json
+```
+
+Ensure that your Testrunner.java file should have the complete path from where partial reports will be added. Example:
+
+```java title="Testrunner.java"
+plugin = {
+    "json:target/abc/mno/pqr/xyz/cucumber-reports/CucumberTestReport.json",
+    "json:target/abc/its/pqr/abc/cucumber-reports/CucumberTestReport.json"
+}
+```
 
 :::tip
 - 📕 Take a closer look at the [HyperExecute Reports](/support/docs/hyperexecute-reports/)
@@ -563,7 +598,7 @@ errorCategorizedReport:
   enabled: true
 ```
 
-> Refer to the [Error Categorized Report documentation](https://www.lambdatest.com/support/docs/error-categorization-report/) for detailed instructions on generating this RCA report.
+> Refer to the [Error Categorized Report documentation](/support/docs/error-categorization-report/) for detailed instructions on generating this RCA report.
 
 ***
 
@@ -617,12 +652,121 @@ The uploadArtefact flag is not currently supported for tests running with the **
 
 ***
 
+### `globalPre`
+The `globalPre` flag allows you to define a pre-execution step that runs once before any of your tasks starts. This flag ensures that all necessary setup tasks, such as installing dependencies, configuring environments, or initializing resources, are completed before test execution begins.
+
+#### Functionality
+- Runs before any test execution starts, ensuring the environment is properly configured.
+- Executes on a separate machine (VM) or the local machine, based on the [test discovery mode](/support/docs/deep-dive-into-hyperexecute-yaml/#mode) selected.
+- Useful for setup tasks, such as fetching credentials, initializing databases, or downloading required files.
+
+#### Limitations
+- This feature is supported in YAML version 0.1 and 0.2 only.
+- `remote` mode is not supported for **XCUI** and **Espresso** framework jobs. Default mode for these frameworks is `local`.
+
+```yaml title="hyperexecute.yaml"
+globalPre:
+  mode: remote #local or remote
+  commands:
+    - "echo 'Setting up environment'"
+    - "apt-get update && apt-get install -y curl"
+    - "curl -X POST https://api.example.com/init"
+  runson: win
+  cache: true
+```
+<!-- 
+:::info
+You can also use `beforeAll` as an alias for the `globalPre` command:
+
+```yaml
+beforeAll:
+  commands:
+    - "apt-get update && apt-get install -y curl"
+  mode: remote
+  runson: win
+  cache: true
+```
+::: -->
+
+#### Parameters
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| mode | string | Defines where the pre-step commands will be executed. <br /> Options: [local or remote](/support/docs/deep-dive-into-hyperexecute-yaml/#mode). Default `mode` is `remote`.|
+| commands | list | List of shell commands to execute before test execution begins. |
+| runson | string | It specifies the operating system on which all the task would run in case of `remote mode`. By default, it is set to `linux`. |
+| cache | boolean | It is used to cache the payload after all commands have executed. It is useful in cases like: <br /> &nbsp;&nbsp;&nbsp; - If you want to made some modification in the payload at runtime by executing some set of commands. <br /> &nbsp;&nbsp;&nbsp; - If the payload is fetched from git source. By caching the payload, git rate limiting can be avoided as the payload will only be fetched once per job with `cache: true`. |
+
+#### Difference between `globalPre` and `pre` flags
+| Scenario | globalPre | pre |
+|----------|-----------|-----|
+|Purpose | Global setup (e.g., install dependencies, initialize environment) | Task-specific setup (e.g., prepare test data) |
+|Execution Frequency | Executes once per entire test execution | Executes once per task |
+|Execution Location | Separate VM or local machine | Inside the task environment |
+|Example Usage | `apt-get update`, `docker pull` |	`export ENV=staging` |
+
+***
+
+### `globalPost`
+The `globalPost` flag defines a post-execution step that runs once after all tasks have completed. This step ensures that cleanup tasks, such as removing temporary files, logging results, or notifying external systems, are performed after test execution.
+
+#### Functionality
+- Runs after all test execution is completed, ensuring final cleanup and reporting.
+- Executes on a separate machine (VM) or the local machine, based on the mode selected.
+- Useful for cleanup tasks, such as deleting test artifacts, summarizing reports, or deallocating cloud resources.
+
+#### Limitations
+- This feature is supported in YAML version 0.1 and 0.2 only.
+- `remote` mode is not supported for **XCUI** and **Espresso** framework jobs. Default mode for these frameworks is `local`.
+
+```yaml title="hyperexecute.yaml"
+globalPost:
+  mode: remote #local or remote
+  commands:
+    - "echo 'Cleaning up test environment'"
+    - "rm -rf /tmp/test-results"
+    - "curl -X POST https://api.example.com/cleanup"
+  runson: linux
+```
+
+<!-- :::info
+You can also use `afterAll` as an alias for the `globalPost` command:
+
+```yaml
+afterAll:
+  commands:
+    - "curl -X POST https://api.example.com/cleanup"
+  mode: local
+  runson: linux
+```
+::: -->
+
+#### Parameters
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| mode | string | Defines where the post-step commands will be executed. <br /> Options: [local or remote](/support/docs/deep-dive-into-hyperexecute-yaml/#mode). Default `mode` is `remote`. |
+| commands | list | List of shell commands to execute after test execution completes. |
+| runson | string | It specifies the operating system on which all the task would run in case of `remote mode`. By default, it is set to `linux`. |
+
+#### Difference between `globalPost` and `post` flags
+| Scenario | globalPost |	post |
+|----------|------------|------|
+|Purpose | Global cleanup (e.g., remove logs, finalize reports) | Task-specific cleanup (e.g., delete temporary files) |
+|Execution Frequency | Executes once after all tasks complete | Executes once per task |
+|Execution Location | Separate VM or local machine | Inside the task environment |
+|Example Usage | `rm -rf /logs`, `curl -X POST …` |	`rm -rf temp/*` |
+
+***
+
 ### `captureScreenRecordingForScenarios`
 If this key is set to true, it will record whole scenario execution, and then video is accessible from your HyperExecute dashboard.
 This can be majorly used for non selenium based tests to have the recorded video of the whole scenario.
 ```yaml
 captureScreenRecordingForScenarios: true
 ```
+
+:::warning info
+To avoid test failures, ensure the `video` capability is `false` before enabling the `captureScreenRecordingForScenarios` flag in your YAML file. If both `video` capability and `captureScreenRecordingForScenarios` flag is set to `true` simultaneously, the tests will fail. To prevent this conflict, always pass the capability `video: false` in your tests.
+:::
 
 ***
 
@@ -637,9 +781,10 @@ skipArtifactStageIfNoTest: true
 
 ### `globalTimeout` 
 
-The `globalTimeout` value determines the maximum duration (in minutes) of a Job . It can be set between 1 and 150 minutes, and has a default value of 90 minutes. 
+The `globalTimeout` value determines the maximum duration (in minutes) of a Task(VM) . It can be set between 1 and 150 minutes, and has a default value of 90 minutes. 
 
-For example, if you set the `globalTimeout` to 120 minutes, a Job  that exceed this duration will be automatically terminated. If you’re expecting that running all your test-cases despite parallelism is going to take more than 90 mins, set it to an appropriate value, for example, 120. If you have tests that run for longer than the maximum limit of 150 minutes, you need to get in touch with our support team.
+For example, if you set the `globalTimeout` to 120 minutes, a Task(VM) that exceed this duration will be automatically terminated. If you’re expecting that running all your test-cases despite parallelism is going to take more than 90 mins, set it to an appropriate value, for example, 120. If you have tests that run for longer than the maximum limit of 150 minutes, you need to get in touch with our support team.
+
 ```yaml
 globalTimeout: 90   
 ```
@@ -654,6 +799,18 @@ failFast:
   maxNumberOfTests: 2
 ```
 In case retryOnFailure flag is enabled in yaml, then there will be multiple retries for a failed test. In that case, only the failure of last retry will be considered to increment the test failure count.
+
+:::info
+To apply `failFast` at the **scenario** level instead of the default test level, set the `level: scenario` in the YAML configuration.
+
+```yaml
+failFast:
+  maxNumberOfTests: 2
+  level: scenario
+```
+:::
+
+> **NOTE :** You can specify `failFast` at either the test level or scenario level, depending on your requirements. Both configurations will work, but can lead to unexpected results, only one should be used at a time.
 
 ***
 
@@ -793,7 +950,7 @@ alwaysRunPostSteps: true
 
 ### `project`
 
-This flag is used to set the Name of your Projects which would later allow you to see all jobs of that Project at one place.
+This flag is used to set the Name of your Projects which would later allow you to see all jobs of that Project at one place. To know more about Projects [click here](/support/docs/hyperexecute-projects).
 
 ```yaml
 project:
@@ -982,6 +1139,8 @@ Additional options include:
 - **Network**: This is  a boolean parameter which when set to true enables network proxy logs for the test.
 - **GeoLocation**: This parameter is used to pass the test traffic through a specific geolocation. Value to be passed here is geolocation code
 - **FullHar**: This flag generates the HAR logs that offer a comprehensive view of your application's network activity during testing.
+- **reporterConfigFile**: If your Cypress project does not have a custom reporter configured, `reporterConfigFile` will automatically enable command logs using the mochawesome reporter by default.
+- **ProjectName**: You can define your project name to autocreate your project in the HyperExecute dashboard.
 
 ```yaml
 cypressOps:
@@ -991,6 +1150,8 @@ cypressOps:
   Network: true
   FullHar: true
   geoLocation: IN
+  reporterConfigFile: "reporter_config.json",
+  ProjectName: "Cypress_Project"
 ```
 
 ***
@@ -1245,6 +1406,8 @@ if your test loads jquery static library multiple times and for some reason it i
 ***
 
 ### `afterAll`
+> This flag is deprecated, instead use [`globalPost`](/support/docs/deep-dive-into-hyperexecute-yaml/#globalpost)
+
 It is used to run commands after the job has finished. Currently only local directive is allowed, means that all the commands would be run on the same host on which HyperExecute CLI was run. Running commands in `afterAll` on HyperExecute VMs(remote commands) is not yet supported. Users will have access to all the artifacts when these commands would be run.
 ```yaml
 afterAll:
@@ -1257,8 +1420,11 @@ For instance you want to further process the artifacts and create a custom PDF. 
 - Want to run some commands after the job is finished.
 - Want to run these commands from the same host from which hyperexecute-cli is run.
 
-<!-- ***
+***
+
 ## `beforeAll`
+> This flag is deprecated, instead use [`globalPre`](/support/docs/deep-dive-into-hyperexecute-yaml/#globalpre)
+
 BeforeAll is used for running pre operations like discovery and payload_update. It can be executed either on local system or on hyperexecute beforeAll VM. 
 ```yaml
 beforeAll:
@@ -1268,7 +1434,18 @@ beforeAll:
     commands:
 pip install -r requirements.txt 
 ```
-We can choose to run on local/remote(on HYP Vms) from the location command. Type can be either discovery/update_payload (type of operation to be performed) and commands will have all the commands that needs to be run for that operation. -->
+We can choose to run on local/remote(on HYP Vms) from the location command. Type can be either discovery/update_payload (type of operation to be performed) and commands will have all the commands that needs to be run for that operation.
+
+***
+
+### `afterEachScenario`
+The `afterEachScenario` flag is used to define tasks that should be executed after each test scenario. This can be particularly useful for cleanup activities, such as clearing cookies, resetting databases, or capturing logs, ensuring that each test scenario starts with a clean state. This flag allows you to specify a list of commands or scripts that will run sequentially after the completion of each scenario. This ensures that any necessary teardown steps are consistently applied, maintaining the integrity and isolation of your test scenarios.
+
+```yaml
+afterEachScenario:
+  - echo "Running a script"
+  - pwsh run.test
+```
 
 ***
 
@@ -1436,7 +1613,7 @@ background:
   - mysql-server
 ```
 
-> To learn more about it, refer to the [Background Service](https://www.lambdatest.com/support/docs/hyperexecute-background-services/) page.
+> To learn more about it, refer to the [Background Service](/support/docs/hyperexecute-background-services/) page.
 
 ***
 
@@ -1455,7 +1632,7 @@ preDirectives:
   - echo ${framework}
 ```
 
-> You can also use the vars method using the [CLI](https://www.lambdatest.com/support/docs/hyperexecute-cli-run-tests-on-hyperexecute-grid/#--vars).
+> You can also use the vars method using the [CLI](/support/docs/hyperexecute-cli-run-tests-on-hyperexecute-grid/#--vars).
 
 ***
 
@@ -1550,25 +1727,21 @@ framework:
     - "-Dplatname=win"
 ```
 
+### `syncStart`
+By default, parallel tasks in autosplit or matrix mode begin execution as soon as the VM is allocated. However, in certain situations (e.g., benchmarking or comparative analysis), you may want all VMs to start tasks at the same time.
+
+To support this, HyperExecute provides the `syncStart` directive in the job YAML.
+
+```yaml
+execution:
+  syncStart: true
+```
+
+- When `syncStart` is enabled, the job ensures that all VMs are allocated and ready before starting scenario execution i.e. tests.
+- The system waits for up to 15 minutes for all required VMs to become available.
+  - If all VMs are allocated within this window → tasks start together.
+  - If some VMs are still pending after 15 minutes → the job proceeds with the allocated VMs.
+
+> This feature is supported only in [`autosplit`](/support/docs/deep-dive-into-hyperexecute-yaml/#autosplit) and [`matrix`](/support/docs/deep-dive-into-hyperexecute-yaml/#matrix) mode and not in hybrid mode
+
 <!-- GENERAL ENDED-->
-
-
-<nav aria-label="breadcrumbs">
-  <ul className="breadcrumbs">
-    <li className="breadcrumbs__item">
-      <a className="breadcrumbs__link" target="_self" href="https://www.lambdatest.com">
-        Home
-      </a>
-    </li>
-    <li className="breadcrumbs__item">
-      <a className="breadcrumbs__link" target="_self" href="https://www.lambdatest.com/support/docs/">
-        Support
-      </a>
-    </li>
-    <li className="breadcrumbs__item breadcrumbs__item--active">
-      <span className="breadcrumbs__link">
-      Deep Dive into HyperExecute YAML
-      </span>
-    </li>
-  </ul>
-</nav>

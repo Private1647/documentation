@@ -1,11 +1,11 @@
 ---
 id: hyperexecute-smart-ui-testing-using-selenium
-title: Smart UI Tests in HyperExecute using Selenium
+title: SmartUI Tests in HyperExecute using Selenium
 hide_title: false
 sidebar_label: Selenium
 description: Accelerate bug identification with HyperExecute's intelligent UI testing via Selenium. Conduct Visual UI Regression Testing for flawless application deployment.
 keywords:
-  - smart ui testing in lambdatest
+  - smart ui testing in testmu ai
   - smart ui testing in hyperexecute
   - visual  ui testing,image to image comparison
   - free cross browser testing tool
@@ -16,13 +16,18 @@ keywords:
   - test on samsung a7 online
   - test on mac 10.11 el capitan online
   - apple mac el capitan virtual machine
-url: https://www.lambdatest.com/support/docs/hyperexecute-smart-ui-testing-using-selenium/
+url: https://www.testmuai.com/support/docs/hyperexecute-smart-ui-testing-using-selenium/
 site_name: LambdaTest
 slug: hyperexecute-smart-ui-testing-using-selenium/
----
+canonical: https://www.testmuai.com/support/docs/hyperexecute-smart-ui-testing-using-selenium/
 
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import NewTag from '../src/component/newTag';
 import CodeBlock from '@theme/CodeBlock';
 import {YOUR_LAMBDATEST_USERNAME, YOUR_LAMBDATEST_ACCESS_KEY} from "@site/src/component/keys";
+import BrandName, { BRAND_URL } from '@site/src/component/BrandName';
 
 <script type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -31,38 +36,38 @@ import {YOUR_LAMBDATEST_USERNAME, YOUR_LAMBDATEST_ACCESS_KEY} from "@site/src/co
         "itemListElement": [{
           "@type": "ListItem",
           "position": 1,
-          "name": "LambdaTest",
-          "item": "https://www.lambdatest.com"
+          "name": "TestMu AI",
+          "item": BRAND_URL
         },{
           "@type": "ListItem",
           "position": 2,
           "name": "Support",
-          "item": "https://www.lambdatest.com/support/docs/"
+          "item": `${BRAND_URL}/support/docs/`
         },{
           "@type": "ListItem",
           "position": 3,
-          "name": "Smart UI Testing",
-          "item": "https://www.lambdatest.com/support/docs/hyperexecute-smart-ui-testing-using-selenium/"
+          "name": "SmartUI Testing",
+          "item": `${BRAND_URL}/support/docs/hyperexecute-smart-ui-testing-using-selenium/`
         }]
       })
     }}
 ></script>
-This documentation will guide you step-by-step to execute the Smart UI tests on the HyperExecute platform using Selenium
+This documentation will guide you step-by-step to execute the SmartUI tests on the HyperExecute platform using Selenium
 
 ## Prerequisites
 
-- Your lambdatest [Username and Access key](/support/docs/hyperexecute-how-to-get-my-username-and-access-key/)
+- Your TestMu AI [Username and Access key](/support/docs/hyperexecute-how-to-get-my-username-and-access-key/)
 - [HyperExecute CLI](/support/docs/hyperexecute-cli-run-tests-on-hyperexecute-grid/) in order to initiate a test execution Job .
 - Setup the [Environment Variable](/support/docs/hyperexecute-environment-variable-setup/)
 - [HyperExecute YAML](/support/docs/hyperexecute-yaml-version0.2/) file which contains all the necessary instructions.
-- To run Smart UI tests, you need to have a **Baseline Image** and a **Comparison** image. A baseline image is the reference image with which you want to compare. You can either upload this image from your computer or take a screenshot from your browser.
+- To run SmartUI tests, you need to have a **Baseline Image** and a **Comparison** image. A baseline image is the reference image with which you want to compare. You can either upload this image from your computer or take a screenshot from your browser.
 
 ## Step 1: Configure Your Test Suite
 
 You can use your own project to configure and test it. For demo purposes, we are using the sample repository.
 
 :::tip Sample repo
-Download or Clone the code sample for the TestNG from the LambdaTest GitHub repository to run the tests on the HyperExecute.
+Download or Clone the code sample for the TestNG from the <BrandName /> GitHub repository to run the tests on the HyperExecute.
 
 <a href="https://github.com/LambdaTest/cucumber-testNG-smartui-hyperexecute-sample" className="github__anchor"><img loading="lazy" src={require('../assets/images/icons/github.png').default} alt="Image" className="doc_img"/> View on GitHub</a>
 :::
@@ -91,7 +96,7 @@ capability.setCapability("console", true);
 capability.setCapability("visual", true);
 capability.setCapability("smartUI.project", "HyperExecute-smartUI-project");
 ```
-> You can also use **dev** and **beta** browser versions. To generate capabilities for your test requirements, you can use our inbuilt 🔗 [Capabilities Generator Tool](https://www.lambdatest.com/capabilities-generator/).
+> You can also use **dev** and **beta** browser versions. To generate capabilities for your test requirements, you can use our inbuilt 🔗 <a href={`${BRAND_URL}/capabilities-generator/`}>Capabilities Generator Tool</a>.
 
 ## Step 2: Setup the CLI in your Test Suite
 
@@ -111,12 +116,10 @@ You can download the CLI for your desired platform from the below mentioned link
 
 ### Setup Environment Variable
 
-Now, you need to export your environment variables *LT_USERNAME* and *LT_ACCESS_KEY* that are available in the [LambdaTest Profile page](https://accounts.lambdatest.com/detail/profile).
+Now, you need to export your environment variables *LT_USERNAME* and *LT_ACCESS_KEY* that are available in the [<BrandName /> Profile page](https://accounts.lambdatest.com/detail/profile).
 
 Run the below mentioned commands in your terminal to setup the CLI and the environment variables.
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
 <Tabs className="docs__val">
 
@@ -247,7 +250,7 @@ Here you can see the difference.
 <Tabs className="docs__val" groupId="framework">
 <TabItem value="IgnoreID" label="Ignore ID" default>
 
-```js title="This is a sample for your webhook configuration for Javascript to ignore by ID"
+```js title="This is a sample for your webhook configuration for JavaScript to ignore by ID"
 let config = {
   screenshotName: "Ignore-ID",
   fullPage: false, //You can make this property as true in case of Chrome browser
@@ -261,7 +264,7 @@ await driver.executeScript("smartui.takeScreenshot", config);
 </TabItem>
 <TabItem value="IgoreClass" label="Ignore Class">
 
-```js title="This is a sample for your webhook configuration for Javascript to ignore by Class"
+```js title="This is a sample for your webhook configuration for JavaScript to ignore by Class"
 let config = {
   screenshotName: "Ignore-Class",
   fullPage: false, //You can make this property as true in case of Chrome browser
@@ -275,7 +278,7 @@ await driver.executeScript("smartui.takeScreenshot", config);
 </TabItem>
 <TabItem value="IgnoreXPath" label="Ignore XPath">
 
-```js title="This is a sample for your webhook configuration for Javascript to ignore by XPath"
+```js title="This is a sample for your webhook configuration for JavaScript to ignore by XPath"
 let config = {
   screenshotName: "Ignore-XPath",
   fullPage: false, //You can make this property as true in case of Chrome browser
@@ -290,7 +293,7 @@ await driver.executeScript("smartui.takeScreenshot", config);
 
 <TabItem value="IgnoreSelector" label="Ignore CSS Selector">
 
-```js title="This is a sample for your webhook configuration for Javascript to ignore by CSS Selector"
+```js title="This is a sample for your webhook configuration for JavaScript to ignore by CSS Selector"
 let config = {
   screenshotName: "Ignore-cssSelector",
   fullPage: false, //You can make this property as true in case of Chrome browser
@@ -307,7 +310,7 @@ await driver.executeScript("smartui.takeScreenshot", config);
 <Tabs className="docs__val" groupId="framework">
 <TabItem value="SelectID" label="Select ID" default>
 
-```js title="This is a sample for your webhook configuration for Javascript to select by ID."
+```js title="This is a sample for your webhook configuration for JavaScript to select by ID."
 let config = {
   screenshotName: "Select-ID",
   fullPage: false, //You can make this property as true in case of Chrome browser
@@ -321,7 +324,7 @@ await driver.executeScript("smartui.takeScreenshot", config);
 </TabItem>
 <TabItem value="SelectClass" label="Select Class">
 
-```js title="This is a sample for your webhook configuration for Javascript to select by Class"
+```js title="This is a sample for your webhook configuration for JavaScript to select by Class"
 let config = {
   screenshotName: "Select-Class",
   fullPage: false, //You can make this property as true in case of Chrome browser
@@ -335,7 +338,7 @@ await driver.executeScript("smartui.takeScreenshot", config);
 </TabItem>
 <TabItem value="SelectXPath" label="Select XPath">
 
-```js title="This is a sample for your webhook configuration for Javascript to select by XPath"
+```js title="This is a sample for your webhook configuration for JavaScript to select by XPath"
 let config = {
   screenshotName: "Select-XPath",
   fullPage: false, //You can make this property as true in case of Chrome browser
@@ -350,7 +353,7 @@ await driver.executeScript("smartui.takeScreenshot", config);
 
 <TabItem value="SelectSelector" label="Select CSS Selector">
 
-```js title="This is a sample for your webhook configuration for Javascript to select by CSS Selector"
+```js title="This is a sample for your webhook configuration for JavaScript to select by CSS Selector"
 let config = {
   screenshotName: "Select-cssSelector",
   fullPage: false, //You can make this property as true in case of Chrome browser
@@ -364,4 +367,4 @@ await driver.executeScript("smartui.takeScreenshot", config);
 
 </Tabs>
 
-> **NOTE :** Please contact [Customer Support](mailto:support@lambdatest.com) team to enable the **ignoreDOM** feature.
+> **NOTE :** Please contact [Customer Support](mailto:support@testmu.ai) team to enable the **ignoreDOM** feature.

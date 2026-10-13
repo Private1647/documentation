@@ -1,8 +1,8 @@
 ---
 id: smartui-playwright-sdk
-title: Integrate SmartUI SDK with Playwright Tests
-sidebar_label: Javascript
-description: In this documentation, learn how integrate your Playwright automated tests with LambdaTest's SmartUI.
+title: Integrate SmartUI SDK with Playwright-JavaScript
+sidebar_label: JavaScript
+description: In this documentation, learn how integrate your Playwright automated tests with TestMu AI's SmartUI.
 keywords:
   - Visual Regression
   - Visual Regression Testing Guide
@@ -15,15 +15,18 @@ keywords:
   - Visual Regression Testing Environment
   - How to Run Visual Regression Tests
 
-url: https://www.lambdatest.com/support/docs/smartui-playwright-sdk/
+url: https://www.testmu.ai/support/docs/smartui-playwright-sdk/
 slug: smartui-playwright-sdk/
----
+canonical: https://www.testmu.ai/support/docs/smartui-playwright-sdk/
 
+---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import NewTag from '../src/component/newTag';
+import CodeBlock from '@theme/CodeBlock';
+import {YOUR_LAMBDATEST_USERNAME, YOUR_LAMBDATEST_ACCESS_KEY} from "@site/src/component/keys";
+import BrandName, { BRAND_URL } from '@site/src/component/BrandName';
 
----
 
 <script type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -32,33 +35,33 @@ import NewTag from '../src/component/newTag';
         "itemListElement": [{
           "@type": "ListItem",
           "position": 1,
-          "name": "LambdaTest",
-          "item": "https://www.lambdatest.com"
+          "name": "TestMu AI",
+          "item": BRAND_URL
         },{
           "@type": "ListItem",
           "position": 2,
           "name": "Support",
-          "item": "https://www.lambdatest.com/support/docs/"
+          "item": `${BRAND_URL}/support/docs/`
         },{
           "@type": "ListItem",
           "position": 3,
           "name": "Smart Visual Testing",
-          "item": "https://www.lambdatest.com/support/docs/smart-ui-cypress/"
+          "item": `${BRAND_URL}/support/docs/smartui-playwright-sdk/`
         }]
       })
     }}
 ></script>
 
-Welcome to the world of simplified visual testing with the SmartUI SDK. 
+Welcome to the world of simplified visual testing with the SmartUI SDK.
 
 Integrating seamlessly into your existing Playwright testing suite, SmartUI SDK revolutionizes the way you approach visual regression testing. Our robust solution empowers you to effortlessly capture, compare, and analyze screenshots across a multitude of browsers and resolutions, ensuring comprehensive coverage and accuracy in your visual testing endeavors.
 
 ## Prerequisites
 
 - Basic understanding of Command Line Interface and Playwright is required.
-- Login to [LambdaTest SmartUI](https://smartui.lambdatest.com/) with your credentials.
+- Login to [<BrandName /> SmartUI](https://smartui.lambdatest.com/) with your credentials.
 
-The following steps will guide you in running your first Visual Regression test on LambdaTest platform using SmartUI Playwright SDK integration.
+The following steps will guide you in running your first Visual Regression test on <BrandName /> platform using SmartUI Playwright SDK integration.
 
 ## Create a SmartUI Project
 
@@ -74,7 +77,7 @@ The first step is to create a project with the application in which we will comb
 
 Once you have created a SmartUI Project, you can generate screenshots by running automation scripts. Follow the below steps to successfully generate screenshots
 
-### **Step 1:** Create/Update your test
+### Step 1: Create/Update your test
 
 You can clone the sample repository to run `LambdaTest` automation tests with `SmartUI` and use the `plawrightCloud.js` file present in the `sdk` folder.
 
@@ -82,45 +85,49 @@ You can clone the sample repository to run `LambdaTest` automation tests with `S
 git clone https://github.com/LambdaTest/smartui-playwright-sample
 cd smartui-playwright-sample/sdk
 ```
-### **Step 2**: Install the Dependencies
+### Step 2: Install the Dependencies
 
-Install required NPM modules for `LambdaTest Smart UI Playwright SDK` in your **Frontend** project.
+Install required NPM modules for `TestMu AI SmartUI Playwright SDK` in your **Frontend** project.
 
 ```bash
-npm i @lambdatest/smartui-cli @lambdatest/playwright-driver playwright
+npm install @lambdatest/smartui-cli @lambdatest/playwright-driver playwright
 ```
 
-### **Step 3:** Configure your Project Token
+:::note
+If you face any problems executing tests with SmartUI-CLI `versions >= v4.x.x`, upgrade your Node.js version to `v20.3` or above.
+:::
 
-Setup your project token show in the **SmartUI** app after, creating your project.
+### Step 3: Configure your Project Token
 
-<Tabs className="docs__val" groupId="language">
-<TabItem value="MacOS/Linux" label="MacOS/Linux" default>
+Setup your project token shown in the **SmartUI** app after creating your project.
 
-```bash
-export PROJECT_TOKEN="123456#1234abcd-****-****-****-************"
-```
-
-</TabItem>
-<TabItem value="Windows" label="Windows - CMD">
+<Tabs className='docs__val' groupId='language'>
+<TabItem value='MacOS/Linux' label='MacOS/Linux' default>
 
 ```bash
-set PROJECT_TOKEN="123456#1234abcd-****-****-****-************"
+export PROJECT_TOKEN=123456#1234abcd-****-****-****-************"
 ```
 
 </TabItem>
-<TabItem value="Powershell" label="Windows-PS">
+<TabItem value='Windows' label='Windows - CMD'>
 
 ```bash
-$Env:PROJECT_TOKEN="123456#1234abcd-****-****-****-************"
+set PROJECT_TOKEN=123456#1234abcd-****-****-****-************"
 ```
+
+</TabItem>
+<TabItem value='PowerShell' label='PowerShell'>
+
+```powershell
+$env:PROJECT_TOKEN=123456#1234abcd-****-****-****-************"
+```
+
 </TabItem>
 </Tabs>
 
-<img loading="lazy" src={require('../assets/images/smart-visual-testing/project-token-primer.webp').default} alt="cmd" width="768" height="373" className="doc_img"/>
+<img loading="lazy" src={require('../assets/images/smart-visual-testing/project-token-primer.webp').default} alt="cmd" width="768" height="373" className='doc_img'/>
 
-
-### **Step 4:** Create and Configure SmartUI Config
+### Step 4: Create and Configure SmartUI Config
 
 You can now configure your project configurations on using various available options to run your tests with the SmartUI integration. To generate the configuration file, please execute the following command:
 
@@ -171,10 +178,9 @@ Once, the configuration file will be created, you will be seeing the default con
 - For more information about SmartUI config global options, please refer to this [documentation](/docs/smartui-sdk-config-options/#3-global-options-optional).
 :::
 
-### **Step 5:** Adding SmartUI function to take screenshot
+### Step 5: Adding SmartUI function to take screenshot
 
-- You can incorporate SmartUI into your custom `Playwright` automation test (any platform) script by adding the `smartuiSnapshot` function in the required segment of Playwright script of which we would like to take the screenshot, as shown below: 
-  
+- You can incorporate SmartUI into your custom `Playwright` automation test (any platform) script by adding the `smartuiSnapshot` function in the required segment of Playwright script of which we would like to take the screenshot, as shown below:
 
 ```js
 const { chromium } = require("playwright");
@@ -192,7 +198,7 @@ const smartuiSnapshot = require("@lambdatest/playwright-driver");
   await page.goto("https://www.lambdatest.com");
 
   // Use smartuiSnapshot to take a visual snapshot locally
-  await smartuiSnapshot.smartuiSnapshot(page, "Lambdatest");
+  await smartuiSnapshot.smartuiSnapshot(page, "LambdaTest");
 
   // Close the browser
   await browser.close();
@@ -200,7 +206,7 @@ const smartuiSnapshot = require("@lambdatest/playwright-driver");
 
 ```
 
-### **Step 6:** Execute the Tests on SmartUI Cloud
+### Step 6: Execute the Tests on SmartUI Cloud
 
 Execute `visual regression tests` on SmartUI using the following commands
 
@@ -208,7 +214,7 @@ Execute `visual regression tests` on SmartUI using the following commands
 npx smartui exec node playwrightCloud.js --config .smartui.json
 ```
 
-:::note 
+:::note
 You may use the `npx smartui --help` command in case you are facing issues during the execution of SmartUI commands in the CLI.
 :::
 
@@ -216,10 +222,9 @@ You may use the `npx smartui --help` command in case you are facing issues durin
 
 You have successfully integrated SmartUI SDK with your Playwright tests. Visit your SmartUI project to view builds and compare snapshots between different test runs.
 
-You can see the Smart UI dashboard to view the results. This will help you identify the Mismatches from the existing `Baseline` build and do the required visual testing.
+You can see the SmartUI dashboard to view the results. This will help you identify the Mismatches from the existing `Baseline` build and do the required visual testing.
 
-
-<img loading="lazy" src={require('../assets/images/smart-visual-testing/smartui-sdk-results-primer.webp').default} alt="cmd" width="768" height="373" className="doc_img"/>
+<img loading="lazy" src={require('../assets/images/smart-visual-testing/smartui-sdk-results-primer.webp').default} alt="cmd" width="768" height="373" className='doc_img'/>
 
 ## Arguments supported in the `smartUISnapshot` function
 
@@ -231,16 +236,14 @@ The following are the different options which are currently supported:
 | `"Screenshot Name"` (string)    | Specify a name for the screenshot in your tests to match the same screenshot with the name from your baseline. |
 | `options` (object)    | Specify one or a combination of selectors in the `ignoreDOM` or `selectDOM` objects. These selectors can be based on `HTML DOM IDs, CSS classes, CSS selectors, or XPaths` used by your webpage. They define elements that should be excluded from or included in the visual comparison.|
 
-
-## Handling Dynamic Data in SmartUI SDK  **<NewTag value='New' color='#000' bgColor='#ffec02' />** 
+## Handling Dynamic Data in SmartUI SDK  **<NewTag value='New' color='#000' bgColor='#ffec02' />**
 
 When conducting visual tests, you may encounter scenarios where certain elements within your application change between test runs. These changes  might introduce inconsistencies in your test results.You can ignore / select specific element(s) to be removed from the comparison by parsing the options in the `smartuiSnapshot` function in the following way
 
+<Tabs className='docs__val' groupId='framework'>
+<TabItem value='IgnoreID' label='Ignore ID' default>
 
-<Tabs className="docs__val" groupId="framework">
-<TabItem value="IgnoreID" label="Ignore ID" default>
-
-```js title="This is a sample for your configuration for Playwright to ignore by ID"
+```js title="This is a sample for your configuration for Playwright to ignore by" ID"
 let options = {
             ignoreDOM: {
                 id: ["ID-1", "ID-2"],
@@ -251,9 +254,9 @@ let options = {
 ```
 
 </TabItem>
-<TabItem value="IgoreClass" label="Ignore Class">
+<TabItem value='IgoreClass' label='Ignore Class'>
 
-```js title="This is a sample for your configuration for Playwright to ignore by Class"
+```js title="This is a sample for your configuration for Playwright to ignore by" Class"
 let options = {
             ignoreDOM: {
                 class: ["Class-1", "Class-2"],
@@ -264,9 +267,9 @@ let options = {
 ```
 
 </TabItem>
-<TabItem value="IgnoreXPath" label="Ignore XPath">
+<TabItem value='IgnoreXPath' label='Ignore XPath'>
 
-```js title="This is a sample for your configuration for Playwright to ignore by XPath"
+```js title="This is a sample for your configuration for Playwright to ignore by" XPath"
 let options = {
             ignoreDOM: {
                 xpath: ["Xpath-1", "Xpath-2"],
@@ -278,9 +281,9 @@ let options = {
 
 </TabItem>
 
-<TabItem value="IgnoreSelector" label="Ignore CSS Selector">
+<TabItem value='IgnoreSelector' label='Ignore CSS Selector'>
 
-```js title="This is a sample for your configuration for Playwright to ignore by CSS Selector"
+```js title="This is a sample for your configuration for Playwright to ignore by CSS" Selector"
 let options = {
             ignoreDOM: {
                 cssSelector: ["CSS-Selector-1", "CSS-Selector-2"],
@@ -293,10 +296,10 @@ let options = {
 
 </Tabs>
 
-<Tabs className="docs__val" groupId="framework">
-<TabItem value="SelectID" label="Select ID" default>
+<Tabs className='docs__val' groupId='framework'>
+<TabItem value='SelectID' label='Select ID' default>
 
-```js title="This is a sample for your configuration for Playwright to select by ID."
+```js title="This is a sample for your configuration for Playwright to select by" ID."
 let options = {
             selectDOM: {
                 id: ["ID-1", "ID-2"],
@@ -307,9 +310,9 @@ let options = {
 ```
 
 </TabItem>
-<TabItem value="SelectClass" label="Select Class">
+<TabItem value='SelectClass' label='Select Class'>
 
-```js title="This is a sample for your configuration for Playwright to select by Class"
+```js title="This is a sample for your configuration for Playwright to select by" Class"
 let options = {
             selectDOM: {
                 class: ["Class-1", "Class-2"],
@@ -320,9 +323,9 @@ let options = {
 ```
 
 </TabItem>
-<TabItem value="SelectXPath" label="Select XPath">
+<TabItem value='SelectXPath' label='Select XPath'>
 
-```js title="This is a sample for your configuration for Playwright to select by XPath"
+```js title="This is a sample for your configuration for Playwright to select by" XPath"
 let options = {
             selectDOM: {
                 xpath: ["Xpath-1", "Xpath-2"],
@@ -334,9 +337,9 @@ let options = {
 
 </TabItem>
 
-<TabItem value="SelectSelector" label="Select CSS Selector">
+<TabItem value='SelectSelector' label='Select CSS Selector'>
 
-```js title="This is a sample for your webhook configuration for Playwright to select by CSS Selector"
+```js title="This is a sample for your webhook configuration for Playwright to select by CSS" Selector"
 let options = {
             selectDOM: {
                 cssSelector: ["CSS-Selector-1", "CSS-Selector-2"],
@@ -353,11 +356,10 @@ let options = {
 
 You can capture screenshots of targeted elements by leveraging various locator mechanisms such as XPath, CSS ID, class, and selectors. This precision-driven approach ensures accurate and specific visual regression testing for your web application's components.
 
+<Tabs className='docs__val' groupId='framework'>
+<TabItem value='ElementID' label='Capture Element by ID' default>
 
-<Tabs className="docs__val" groupId="framework">
-<TabItem value="ElementID" label="Capture Element by ID" default>
-
-```js title="This is a sample for your configuration for Playwright to capture an element by ID."
+```js title="This is a sample for your configuration for Playwright to capture an element by" ID."
 let options = {
       element: {
           id: 'Required ID',
@@ -368,9 +370,9 @@ let options = {
 ```
 
 </TabItem>
-<TabItem value="ElementClass" label="Capture Element by Class">
+<TabItem value='ElementClass' label='Capture Element by Class'>
 
-```js title="This is a sample for your configuration for Playwright to capture an element by Class"
+```js title="This is a sample for your configuration for Playwright to capture an element by" Class"
 let options = {
       element: {
           class: 'Required Class',
@@ -381,9 +383,9 @@ let options = {
 ```
 
 </TabItem>
-<TabItem value="ElementXPath" label="Capture Element by XPath">
+<TabItem value='ElementXPath' label='Capture Element by XPath'>
 
-```js title="This is a sample for your configuration for Playwright to capture an element by XPath"
+```js title="This is a sample for your configuration for Playwright to capture an element by" XPath"
 let options = {
       element: {
           xpath: 'Required Xpath',
@@ -395,9 +397,9 @@ let options = {
 
 </TabItem>
 
-<TabItem value="ElementSelector" label="Capture Element by Selector">
+<TabItem value='ElementSelector' label='Capture Element by Selector'>
 
-```js title="This is a sample for your webhook configuration for Playwright to capture an element by CSS Selector"
+```js title="This is a sample for your webhook configuration for Playwright to capture an element by CSS" Selector"
 let options = {
       element: {
           cssSelector: 'Required CSS Selector',
@@ -462,24 +464,239 @@ const smartuiSnapshot = require('@lambdatest/playwright-driver');
 })();
 ```
 
+## Best Practices
 
-For additional information about SmartUI APIs please explore the documentation [here](https://www.lambdatest.com/support/api-doc/)
+<Tabs className='docs__val' groupId='best-practices'>
+<TabItem value='screenshot-naming' label='Screenshot Naming' default>
 
+**Screenshot Naming**
 
-<nav aria-label="breadcrumbs">
-  <ul className="breadcrumbs">
-    <li className="breadcrumbs__item">
-      <a className="breadcrumbs__link" target="_self" href="https://www.lambdatest.com">
-        Home
-      </a>
-    </li>
-    <li className="breadcrumbs__item">
-      <a className="breadcrumbs__link" target="_self" href="https://www.lambdatest.com/support/docs/">
-        Support
-      </a>
-    </li>
-    <li className="breadcrumbs__item breadcrumbs__item--active">
-      <span className="breadcrumbs__link"> Smart UI with Cypress  </span>
-    </li>
-  </ul>
-</nav>
+- Use descriptive, consistent names for screenshots
+- Include page/component name in screenshot names
+- Avoid special characters that might cause issues
+- Use consistent naming conventions across your test suite
+
+**Example:**
+```javascript
+await smartuiSnapshot.smartuiSnapshot(page, HomePage-Header");
+await smartuiSnapshot.smartuiSnapshot(page, "ProductPage-MainContent");
+```
+
+</TabItem>
+
+<TabItem value='page-load' label='Wait for Page Load'>
+
+**Wait for Page Load**
+
+- Always wait for pages to fully load before taking screenshots
+- Use Playwright's built-in wait methods for dynamic content
+- Consider using `waitForTimeout` in configuration for lazy-loaded content
+
+**Example:**
+```javascript
+await page.goto('https://example.com');
+await page.waitForSelector('#main-content', { state: 'visible' });
+await smartuiSnapshot.smartuiSnapshot(page, Page Loaded");
+```
+
+</TabItem>
+
+<TabItem value='dynamic-content' label='Handle Dynamic Content'>
+
+**Handle Dynamic Content**
+
+- Use `ignoreDOM` for elements that change between runs
+- Use `selectDOM` when you only need to compare specific areas
+- Document why elements are ignored for future reference
+
+</TabItem>
+
+<TabItem value='configuration' label='Configuration Management'>
+
+**Configuration Management**
+
+- Keep `.smartui.json` in version control
+- Use environment variables for sensitive data
+- Document custom configuration choices
+
+</TabItem>
+
+<TabItem value='test-organization' label='Test Organization'>
+
+**Test Organization**
+
+- Group related screenshots in the same build
+- Use meaningful build names
+- Run tests in consistent environments
+
+</TabItem>
+</Tabs>
+
+## Troubleshooting
+
+<Tabs className='docs__val' groupId='troubleshooting'>
+<TabItem value='screenshots-not-appearing-in-dashboard' label='Screenshots Not Appearing in Dashboard' default>
+
+**Issue: Screenshots Not Appearing in Dashboard**
+
+**Symptoms**: Tests run successfully but no screenshots appear in SmartUI dashboard
+
+**Possible Causes**:
+- Project token not set or incorrect
+- Project name mismatch
+- Network connectivity issues
+- CLI not installed or outdated
+
+**Solutions**:
+1. Verify `PROJECT_TOKEN` is set correctly:
+   ```bash
+   echo $PROJECT_TOKEN
+   ```
+
+2. Check project name matches exactly (case-sensitive)
+
+3. Verify SmartUI CLI is installed:
+   ```bash
+   npx smartui --version
+   ```
+
+4. Check network connectivity to <BrandName /> servers
+
+5. Review test execution logs for error messages
+
+</TabItem>
+<TabItem value='project-not-found-error' label='Project Not Found Error'>
+
+**Issue: Project Not Found" Error**
+
+**Symptoms**: Error message indicating project cannot be found
+
+**Possible Causes**:
+- Incorrect project token
+- Project deleted or renamed
+- Token from wrong project
+
+**Solutions**:
+1. Verify project exists in SmartUI dashboard
+2. Copy project token directly from Project Settings
+3. Ensure token includes the project ID prefix (e.g., `123456#...`)
+4. Check for extra spaces or quotes in token
+
+</TabItem>
+<TabItem value='screenshots-show-blank-or-incorrect-content' label='Screenshots Show Blank or Incorrect Content'>
+
+**Issue: Screenshots Show Blank or Incorrect Content**
+
+**Symptoms**: Screenshots captured but show blank pages or incorrect content
+
+**Possible Causes**:
+- Page not fully loaded
+- JavaScript not executed
+- Viewport size issues
+- Timing issues
+
+**Solutions**:
+1. Add explicit waits before screenshots:
+   ```javascript
+   await page.waitForSelector('#content', { state: 'visible' });
+   await page.waitForLoadState('networkidle');
+   ```
+
+2. Enable JavaScript in configuration:
+   ```json
+   {
+     enableJavaScript": true
+   }
+   ```
+
+3. Increase `waitForTimeout` in configuration
+
+4. Verify viewport size matches expected dimensions
+
+</TabItem>
+<TabItem value='build-execution-fails' label='Build Execution Fails'>
+
+**Issue: Build Execution Fails**
+
+**Symptoms**: `npx smartui exec` command fails
+
+**Possible Causes**:
+- Missing or incorrect configuration file
+- Invalid JSON in configuration
+- Port conflicts
+- Permission issues
+
+**Solutions**:
+1. Verify `.smartui.json` exists and is valid JSON
+2. Check configuration file syntax
+3. Try different port if default is in use:
+   ```bash
+   npx smartui exec -P 5000 -- <command">
+   ```
+4. Check file permissions for configuration and project files
+
+</TabItem>
+<TabItem value='npm-dependencies-not-resolving' label='npm Dependencies Not Resolving'>
+
+**Issue: npm Dependencies Not Resolving**
+
+**Symptoms**: npm cannot find `@lambdatest/playwright-driver` or `@lambdatest/smartui-cli`
+
+**Possible Causes**:
+- Incorrect package version
+- npm registry access issues
+- Network connectivity problems
+
+**Solutions**:
+1. Check latest versions on npm:
+   ```bash
+   npm view @lambdatest/playwright-driver version
+   npm view @lambdatest/smartui-cli version
+   ```
+
+2. Clear npm cache:
+   ```bash
+   npm cache clean --force
+   ```
+
+3. Verify internet connectivity for npm registry access
+
+4. Check package.json for version conflicts
+
+</TabItem>
+<TabItem value='screenshot-names-not-matching-baseline' label='Screenshot Names Not Matching Baseline'>
+
+**Issue: Screenshot Names Not Matching Baseline**
+
+**Symptoms**: Screenshots appear as New" instead of comparing with baseline
+
+**Possible Causes**:
+- Screenshot name changed
+- Baseline doesn't exist
+- Name contains special characters
+
+**Solutions**:
+1. Ensure screenshot names are consistent across test runs
+2. Verify baseline exists in project
+3. Avoid special characters in screenshot names
+4. Check for case sensitivity issues
+
+**Getting Help**
+
+If you encounter issues not covered here:
+
+- Review the [SmartUI Configuration Options](/support/docs/smartui-sdk-config-options) documentation
+- Check [Handling Dynamic Data](/support/docs/smartui-handle-dynamic-data) for dynamic content issues
+- Visit [<BrandName /> Support](https://www.lambdatest.com/support) for additional resources
+- Contact support at support@testmu.ai or use [24/7 Chat Support](https://www.lambdatest.com/support)
+
+</TabItem>
+</Tabs>
+
+## Additional Resources
+
+- [SmartUI Configuration Options](/support/docs/smartui-sdk-config-options)
+- [Handling Dynamic Data](/support/docs/smartui-handle-dynamic-data)
+- [Handling Lazy Loading](/support/docs/smartui-handle-lazy-loading)
+- [Running Your First Project](/support/docs/smartui-running-your-first-project)
+- [SmartUI API Documentation](https://www.lambdatest.com/support/api-doc/)

@@ -2,17 +2,20 @@
 id: selenium-geolocation-capabilities
 title: Selenium Testing from different Geolocations
 hide_title: false
-sidebar_label: Geolocation
-description: Selenium Geolocation capabilities documentation provides you the insights about the countries and region with their timezone LambdaTest supports so that you can test your application in that particular timezone.
+sidebar_label: IP Geolocation
+description: Selenium Geolocation capabilities documentation provides you the insights about the countries and region with their timezone TestMu AI supports so that you can test your application in that particular timezone.
 keywords:
-  - lambdatest automation
+  - testmu ai automation
   - selenium automation grid
   - selenium geoloction
   - timezone
-url: https://www.lambdatest.com/support/docs/selenium-geolocation-capabilities/
+url: https://www.testmu.ai/support/docs/selenium-geolocation-capabilities/
 site_name: LambdaTest
 slug: selenium-geolocation-capabilities/
+canonical: https://www.testmu.ai/support/docs/selenium-geolocation-capabilities/
 ---
+import BrandName, { BRAND_URL } from '@site/src/component/BrandName';
+
 
 <script type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -21,24 +24,24 @@ slug: selenium-geolocation-capabilities/
         "itemListElement": [{
           "@type": "ListItem",
           "position": 1,
-          "name": "LambdaTest",
-          "item": "https://www.lambdatest.com"
+          "name": "TestMu AI",
+          "item": BRAND_URL
         },{
           "@type": "ListItem",
           "position": 2,
           "name": "Other Capabilities",
-          "item": "https://www.lambdatest.com/support/docs/"
+          "item": `${BRAND_URL}/support/docs/`
         },{
           "@type": "ListItem",
           "position": 3,
           "name": "Selenium Geo location",
-          "item": "https://www.lambdatest.com/support/docs/selenium-geolocation-capabilities/"
+          "item": `${BRAND_URL}/support/docs/selenium-geolocation-capabilities/`
         }]
       })
     }}
 ></script>
 
-LambdaTest allows you to run your test from different geographies across the world.
+<BrandName /> allows you to run your test from different geographies across the world.
 
 <div className="ytframe"> 
 <div className="youtube" data-embed="n71MfNyDF5E">
@@ -47,13 +50,16 @@ LambdaTest allows you to run your test from different geographies across the wor
 </div>
 
 :::warning NOTE
-You cannot perform Geolocation testing with locally hosted web applications using LambdaTest Tunnel in a single test case. If you wish to perform both, then you can leverage parallel testing to run two tests simultaneously, one for Geolocation and the other for LambdaTest Tunnel.
+You cannot perform Geolocation testing with locally hosted web applications using <BrandName /> Tunnel in a single test case. If you wish to perform both, then you can leverage parallel testing to run two tests simultaneously, one for Geolocation and the other for <BrandName /> Tunnel.
 :::
 
 
 | Key | Values | Capability Description  | Alias | Value Type | Example | Possible Errors |
 |-----|--------|-------------------------|-------|------------|---------|-----------------|
 | `geoLocation` | Example: US | This capability helps you to perform Selenium automation testing from different countries. <br/>`capabilities.setCapability("geoLocation","US");` |geo | String |`capabilities.setCapability("geoLocation","US");`|Case Sensitive <br/>Invalid location error
+
+
+> **NOTE :** You can verify whether your geolocation IP address is working or not via [MaxMind's GeoIP Web Services](https://www.maxmind.com/en/geoip-web-services-demo).
 
 You can perform Selenium automation testing from the below-listed countries.
 
@@ -165,7 +171,7 @@ You can perform Selenium automation testing from the below-listed countries.
 
 ## List of Supported Timezones
 
-Following are the list of supported Timezones for automation testing on the LambdaTest platform.
+Following are the list of supported Timezones for automation testing on the <BrandName /> platform.
 
 | City           | Timezone                                                       |
 | -------------- | -------------------------------------------------------------- |

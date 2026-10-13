@@ -1,14 +1,18 @@
 ---
 id: analytics-create-dashboard
-title: Creating your first Dashboard using Lambdatest Analytics
+title: Creating your first Dashboard using TestMu AI Analytics
 sidebar_label: Create your Custom Dashboard
 description: Analytics - Overview
 keywords:
   - analytics
-url: https://www.lambdatest.com/support/docs/analytics-create-dashboard/
+url: https://www.testmuai.com/support/docs/analytics-create-dashboard/
 site_name: LambdaTest
 slug: analytics-create-dashboard/
+canonical: https://www.testmuai.com/support/docs/analytics-create-dashboard/
 ---
+
+
+import BrandName, { BRAND_URL } from '@site/src/component/BrandName';
 
 <script type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -18,43 +22,36 @@ slug: analytics-create-dashboard/
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://www.lambdatest.com"
+          "item": BRAND_URL
         },{
           "@type": "ListItem",
           "position": 2,
           "name": "Support",
-          "item": "https://www.lambdatest.com/support/docs/"
+          "item": `${BRAND_URL}/support/docs/`
         },{
           "@type": "ListItem",
           "position": 3,
           "name": "Linear App Integration",
-          "item": "https://www.lambdatest.com/support/docs/analytics-create-dashboard/"
+          "item": `${BRAND_URL}/support/docs/analytics-create-dashboard/`
         }]
       })
     }}
 ></script>
 
----
-import VideoEmbed from '../src/component/videoEmbed';
-
-
-### Using Custom Dashboards
+## Using Custom Dashboards
 
 Add widgets of multiple products and various insights to your dashboard. You can create a custom dashboard with the widgets of your choice. You can add widgets of the same type multiple times and also edit the layout of the dashboard according to your configuration.
 
-<VideoEmbed 
-  src="https://share.synthesia.io/embeds/videos/b94567c6-a454-4b85-9d19-46448ccb0e77" 
-  title="Create Customed Dashboard using Lambdatest Analytics"
-/>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/EHHA1z1KB4c?si=pE0tP4ReVgkMIR-_" title="Create Customed Dashboard using Lambdatest Analytics" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-### Prerequisites to use Lambdatest Insights
+### Prerequisites
 
 The following are requirements:
 
-- Should be logged in to the [Lambdatest application](https://accounts.lambdatest.com/login) using your credentials. If account is not created, please create an new account [here](https://accounts.lambdatest.com/register).
-- Have executed any tests on the Lambdatest Cloud Platform. _(Optional)_
+- Should be logged in to the [TestMu AI application](https://accounts.lambdatest.com/login) using your credentials. If account is not created, please create an new account [here](https://accounts.lambdatest.com/register).
+- Have executed any tests on the TestMu AI Cloud Platform. _(Optional)_
 
-### Step 1: Navigate to Lambdatest Insights
+### Step 1: Navigate to TestMu AI Insights
 
 Once, logged in to the application, please navigate to https://analytics.lambdatest.com/ or you can select **Insights** from the sidebar navigation as well.
 
@@ -82,7 +79,7 @@ Add **Dashboard Name** of your choice, according to the **report** which needs t
 
 <img loading="lazy" src={require('../assets/images/analytics/Custom-Dashboard-Name.webp').default} alt="cmd" width="768" height="373" className="doc_img"/>
 
-Your dashboard is ready to start **Analyzing** the data of all your tests which are executed using the Lambdatest Cloud platform.
+Your dashboard is ready to start **Analyzing** the data of all your tests which are executed using the TestMu AI Cloud platform.
 
 <img loading="lazy" src={require('../assets/images/analytics/Demo-Dashboard-with-Widget.webp').default} alt="cmd" width="768" height="373" className="doc_img"/>
 
@@ -96,24 +93,3 @@ You can add more widgets of the same type to your dashboard multiple times and a
 
 * Share the Dashboard with a public or a private link with your team - [Read More](/docs/analytics-dashboard-features/#expiry-settings-for-dashboard-share-link)
 * Exporting the Dashboard as a PDF - [Read More](/docs/analytics-dashboard-features/#export-dashboard-as-pdf)
-
-
-<nav aria-label="breadcrumbs">
-  <ul className="breadcrumbs">
-    <li className="breadcrumbs__item">
-      <a className="breadcrumbs__link" target="_self" href="https://www.lambdatest.com">
-        Home
-      </a>
-    </li>
-    <li className="breadcrumbs__item">
-      <a className="breadcrumbs__link" target="_self" href="https://www.lambdatest.com/support/docs/">
-        Support
-      </a>
-    </li>
-    <li className="breadcrumbs__item breadcrumbs__item--active">
-      <span className="breadcrumbs__link">
-      Create Your First Dashboard 
-      </span>
-    </li>
-  </ul>
-</nav>

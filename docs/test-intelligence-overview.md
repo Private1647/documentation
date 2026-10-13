@@ -1,14 +1,18 @@
 ---
 id: test-intelligence-overview
-title: AI-powered Test Intelligence For Advance Test Analysis
+title: AI Native Test Intelligence For Advance Test Analysis
 sidebar_label: Test Intelligence
-description: Test Intelligence is an AI-powered analytics module that helps you to identify the flaky tests in your test suite. It provides you with the list of tests that are flaky and the reason behind the flakiness of the test.
+description: Test Intelligence is an AI Native analytics module that helps you to identify the flaky tests in your test suite. It provides you with the list of tests that are flaky and the reason behind the flakiness of the test.
 keywords:
   - analytics
-url: https://www.lambdatest.com/support/docs/test-intelligence-overview/
+url: https://www.testmu.ai/support/docs/test-intelligence-overview/
 site_name: LambdaTest
 slug: test-intelligence-overview/
+canonical: https://www.testmu.ai/support/docs/test-intelligence-overview/
 ---
+
+
+import BrandName, { BRAND_URL } from '@site/src/component/BrandName';
 
 <script type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -18,17 +22,17 @@ slug: test-intelligence-overview/
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://www.lambdatest.com"
+          "item": BRAND_URL
         },{
           "@type": "ListItem",
           "position": 2,
           "name": "Support",
-          "item": "https://www.lambdatest.com/support/docs/"
+          "item": `${BRAND_URL}/support/docs/`
         },{
           "@type": "ListItem",
           "position": 3,
           "name": "Test Overview",
-          "item": "https://www.lambdatest.com/support/docs/test-intelligence-overview/"
+          "item": `${BRAND_URL}/support/docs/test-intelligence-overview/`
         }]
       })
     }}
@@ -43,33 +47,24 @@ With advanced AI algorithms and powerful analysis capabilities, Test Intelligenc
 
 Join the wait list today and be the first to experience the power of Test Intelligence. We will notify you as soon as the platform is ready for use.
 
-<a 
-href="https://www.lambdatest.com/test-intelligence" 
-target="_blank" 
-style={{background: "#1E8287", color: "#fff", fonWeight:"bolder", padding: "8px", borderRadius:"5px"}} 
-type="button" 
-> 
-Click here to Join Waitlist 
-</a>
-
 ## Features of Test Intelligence
 
-### Intelligent Flakiness Detection of WebDriver Command logs  <NewTag value="BETA" bgColor="#ffec02" color="#000" />
+### Intelligent Flakiness Detection of WebDriver Command logs 
 
 Experience the power of our AI algorithms that can detect inconsistent test results in your WebDriver command logs. With this feature, identifying flaky tests becomes a breeze, allowing you to focus on resolving issues effectively.
 
 <img loading="lazy" src={require('../assets/images/test-intelligence/ti-atx-ftd-dashboard-preview.webp').default} alt="cmd" width="768" height="373" className="doc_img"/>
 
 
-### Error Classification of Command Logs <NewTag value="UPCOMING" bgColor="#7c39ff" color="#fff" />
+### Error Classification of Command Logs
 
 Our platform goes beyond simple error detection by classifying different types of errors in your command logs. This classification enables you to prioritize and address issues accordingly, ensuring a more efficient and streamlined QA process.
 
-### Command Logs Error Trends Forecast <NewTag value="UPCOMING" bgColor="#7c39ff" color="#fff" />
+### Command Logs Error Trends Forecast
 
 Harness the capabilities of our advanced algorithms to identify trends in errors. By leveraging historical data and predictive analysis, <img loading="lazy" src="https://www.lambdatest.com/resources/images/testLogo.svg" alt="cmd" style={{width:"2%"}} className="doc_img"/> Test Intelligence helps you anticipate and prevent future issues, ultimately improving the overall quality of your applications.
 
-### Anomalies in Test Execution Across Environments <NewTag value="UPCOMING" bgColor="#7c39ff" color="#fff" />
+### Anomalies in Test Execution Across Environments
 
 Detecting anomalies in test execution is crucial for ensuring consistency and reliability. Our platform excels in identifying and highlighting anomalies that occur across various environments, providing you with valuable insights to optimize your application's performance.
 
@@ -93,13 +88,4 @@ Ready to experience the power of <img loading="lazy" src="https://www.lambdatest
 3. Explore the intuitive interface and dive into the automated analysis of your test data.
 4. Discover valuable insights, address issues proactively, and optimize your testing process for better results.
 
-Don't miss out on the opportunity to revolutionize your QA testing. Join us on this exciting journey with Test Intelligence and take your testing efforts to new heights. Get started today and unlock the full potential of your applications.
-
-<a 
-href="https://www.lambdatest.com/test-intelligence" 
-target="_blank" 
-style={{background: "#1E8287", color: "#fff", fonWeight:"bolder", padding: "8px", borderRadius:"5px"}} 
-type="button" 
-> 
-Click here to Join Waitlist 
-</a>
+Don't miss out on the opportunity to revolutionize your QA testing. Join us on this exciting journey with Test Intelligence and take your testing efforts to new heights. Get started today and unlock the full potential of your applications. 

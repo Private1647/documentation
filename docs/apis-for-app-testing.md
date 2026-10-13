@@ -8,15 +8,20 @@ keywords:
 - apis for manual app testing
 - api sfor app automation
 - mobile app testing apis
-url: https://www.lambdatest.com/support/docs/app-testing-apis/
+url: https://www.testmuai.com/support/docs/app-testing-apis/
 site_name: LambdaTest
 slug: app-testing-apis/
+canonical: https://www.testmuai.com/support/docs/app-testing-apis/
 ---
 
 import CodeBlock from '@theme/CodeBlock';
 import {YOUR_LAMBDATEST_USERNAME, YOUR_LAMBDATEST_ACCESS_KEY} from "@site/src/component/keys";
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RealDeviceTag from '../src/component/realDevice';
+import VirtualDeviceTag from '../src/component/virtualDevice';
+import BrandName, { BRAND_URL } from '@site/src/component/BrandName';
+
 
 <script type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -26,30 +31,26 @@ import TabItem from '@theme/TabItem';
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://www.lambdatest.com"
+          "item": BRAND_URL
         },{
           "@type": "ListItem",
           "position": 2,
           "name": "Support",
-          "item": "https://www.lambdatest.com/support/docs/"
+          "item": `${BRAND_URL}/support/docs/`
         },{
           "@type": "ListItem",
           "position": 3,
           "name": "Commonly Used APIs For Mobile App Testing",
-          "item": "https://www.lambdatest.com/support/docs/app-testing-apis"
+          "item": `${BRAND_URL}/support/docs/app-testing-apis`
         }]
       })
     }}
 ></script>
-
-## Overview
-***
-
+<RealDeviceTag value="Real Device" /> <VirtualDeviceTag value="Virtual Device" />
 In this documentation, we look at some APIs that will help you optimize your mobile app testing workflow. If you are performing live or automated app testing, you can use these APIs in your scripts to perform various actions.
 
 ## Fetching The Devices Available for Testing
-***
-
+<RealDeviceTag value="Real Device" />
 To fetch the Devices that are available for running Tests.
 
 <div className="lambdatest__codeblock">
@@ -70,7 +71,7 @@ To fetch the Devices that are available for running Tests.
 | PARAMETER | EXAMPLE | DESCRIPTION |
 |-----------------|-------------|------------|
 | `custom_id` | `-F "custom_id="Proverbial_1.0"` | You do not have to remember the `app_URL` and only use the `custom_id` to run your automation on the same app. |
-| `storage` | `-F "storage=file"` <br/> DEFAULT: `url` | Used to change the way LambdaTest stores the link. <br/> Used when we Upload using App URL |
+| `storage` | `-F "storage=file"` <br/> DEFAULT: `url` | Used to change the way <BrandName /> stores the link. <br/> Used when we Upload using App URL |
 | `visibility` | `-F "visibility=team"` <br/> DEFAULT: `individual` | Used to change the visibility of the application being uploaded. Once the app is uploaded using the `team`, everyone in the organisation can use the same URL to run the tests. |
 
 -----
@@ -95,7 +96,7 @@ To fetch the Devices that are available for running Tests.
 
 :::tip
 
-- If you do not have any **.apk** or **.ipa** file, you can run your sample tests on LambdaTest by using our sample :link: [Android app](https://prod-mobile-artefacts.lambdatest.com/assets/docs/proverbial_android.apk) or sample :link: [iOS app](https://prod-mobile-artefacts.lambdatest.com/assets/docs/proverbial_ios.ipa).
+- If you do not have any **.apk** or **.ipa** file, you can run your sample tests on <BrandName /> by using our sample :link: [Android app](https://prod-mobile-artefacts.lambdatest.com/assets/docs/proverbial_android.apk) or sample :link: [iOS app](https://prod-mobile-artefacts.lambdatest.com/assets/docs/proverbial_ios.ipa).
 - Response of above cURL will be a **JSON** object containing the `App URL` of the format - ``lt://APP123456789123456789``
 
 :::
@@ -237,25 +238,30 @@ Shown below is the response to the above cURL request.
 </div>
 
 ## Generate publicly shareable build and test links
-***
-
-To generate public shareable build link, run the below cURL command. 
+<RealDeviceTag value="Real Device" />
+<VirtualDeviceTag value="Virtual Device" />
+To generate public **shareable build link**, run the below cURL command. 
 
 <div className="lambdatest__codeblock">
 <CodeBlock className="language-bash">
 {`curl 'https://api.lambdatest.com/lshs/api/v1.0/share-item/generate-sharable-link' \
-  -H 'authorization: Bearer <Bearer Token>' \
-  --data-raw '{"entityIds":["123456"],"entityType":"App Automation Build","expiresAt":7}'`}
+  -H 'Content-Type: application/json' \
+  -u "${YOUR_LAMBDATEST_USERNAME()}:${YOUR_LAMBDATEST_ACCESS_KEY()}" \
+  --data-raw '{"entityIds":["buildID"],"entityType":"App Automation Build","expiresAt":7}'`}
 </CodeBlock>
 </div>
 
-To generate public shareable test link, run the below cURL command. 
+
+To generate public **shareable test link**, run the below cURL command. 
 
 <div className="lambdatest__codeblock">
 <CodeBlock className="language-bash">
 {`curl 'https://api.lambdatest.com/lshs/api/v1.0/share-item/generate-sharable-link' \
-  -H 'authorization: Bearer <Bearer Token>' \
-  --data-raw '{"entityIds":["APPTESaBCDefGHI5JlMnOPQ"],"entityType":"App Automation Test","expiresAt":7}'`}
+  -H 'Content-Type: application/json' \
+  -u "${YOUR_LAMBDATEST_USERNAME()}:${YOUR_LAMBDATEST_ACCESS_KEY()}" \
+  --data-raw '{"entityIds":["testID"],"entityType":"App Automation Test","expiresAt":7}'
+`}
+
 </CodeBlock>
 </div> 
 
@@ -267,17 +273,22 @@ To generate public shareable test link, run the below cURL command.
 
 -----
 
->That’s all! In case you have any questions or need any additional information, you could reach out at our <span className="doc__lt" onClick={() => window.openLTChatWidget()}>**24X7 Chat Support**</span> or mail us directly at support@lambdatest.com.
+:::note
+The shareable links are valid for a period of 7, 15, or 30 days, after which they will expire.
+
+:::
+
+>That’s all! In case you have any questions or need any additional information, you could reach out at our <span className="doc__lt" onClick={() => window.openLTChatWidget()}>**24X7 Chat Support**</span> or mail us directly at support@testmu.ai.
 
 <nav aria-label="breadcrumbs">
   <ul className="breadcrumbs">
     <li className="breadcrumbs__item">
-      <a className="breadcrumbs__link" target="_self" href="https://www.lambdatest.com">
+      <a className="breadcrumbs__link" target="_self" href={BRAND_URL}>
         Home
       </a>
     </li>
     <li className="breadcrumbs__item">
-      <a className="breadcrumbs__link" target="_self" href="https://www.lambdatest.com/support/docs/">
+      <a className="breadcrumbs__link" target="_self" href={`${BRAND_URL}/support/docs/`}>
         Support
       </a>
     </li>

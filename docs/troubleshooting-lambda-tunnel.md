@@ -1,18 +1,21 @@
 ---
 id: troubleshooting-lambda-tunnel
-title: How to troubleshoot LambdaTest Tunnel
+title: How to troubleshoot TestMu AI Tunnel
 hide_title: true
-sidebar_label: Troubleshooting LambdaTest Tunnel
-description: This document will help you troubleshoot the most common challenges faced during local app testing using LambdaTest Tunnel.
+sidebar_label: Troubleshooting TestMu AI Tunnel
+description: This document will help you troubleshoot the most common challenges faced during local app testing using TestMu AI Tunnel.
 keywords:
-  - troubleshooting lambdatest Tunnel
+  - troubleshooting testmu ai Tunnel
   - tunnel not connecting
   - localhost not reachable
   - connection refused
-url: https://www.lambdatest.com/support/docs/troubleshooting-lambda-tunnel/
+url: https://www.testmu.ai/support/docs/troubleshooting-lambda-tunnel/
 site_name: LambdaTest
 slug: troubleshooting-lambda-tunnel/
+canonical: https://www.testmu.ai/support/docs/troubleshooting-lambda-tunnel/
 ---
+import BrandName, { BRAND_URL } from '@site/src/component/BrandName';
+
 
 <script type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -21,32 +24,32 @@ slug: troubleshooting-lambda-tunnel/
         "itemListElement": [{
           "@type": "ListItem",
           "position": 1,
-          "name": "LambdaTest",
-          "item": "https://www.lambdatest.com"
+          "name": "TestMu AI",
+          "item": BRAND_URL
         },{
           "@type": "ListItem",
           "position": 2,
           "name": "Support",
-          "item": "https://www.lambdatest.com/support/docs/"
+          "item": `${BRAND_URL}/support/docs/`
         },{
           "@type": "ListItem",
           "position": 3,
           "name": "Troubleshooting LambdaTest Tunnel",
-          "item": "https://www.lambdatest.com/support/docs/troubleshooting-lambda-tunnel/"
+          "item": `${BRAND_URL}/support/docs/troubleshooting-lambda-tunnel/`
         }]
       })
     }}
 ></script>
 
-# Troubleshooting LambdaTest Tunnel
+# Troubleshooting <BrandName /> Tunnel
 ***
-LambdaTest Tunnel helps in establishing an SSH connection between your local machine and our cloud servers to help you perform tests on locally hosted websites and web-apps. With LambdaTest Tunnel, you can ensure how robust your website rendering is across 3000+ real browsers, even before you make it live on the internet.
+<BrandName /> Tunnel helps in establishing an SSH connection between your local machine and our cloud servers to help you perform tests on locally hosted websites and web-apps. With <BrandName /> Tunnel, you can ensure how robust your website rendering is across 3000+ real browsers, even before you make it live on the internet.
 
-If due to some unfortunate reason, you are unable to perform [cross browser testing](https://www.lambdatest.com) using LambdaTest Tunnel then this document will help you troubleshoot the most common challenges.
+If due to some unfortunate reason, you are unable to perform <a href={BRAND_URL}>cross browser testing</a> using <BrandName /> Tunnel then this document will help you troubleshoot the most common challenges.
 
 * * *
 
-Oops !! Facing issue while testing your locally hosted application through LambdaTest Tunnel? Here are a few guidelines for you.
+Oops !! Facing issue while testing your locally hosted application through <BrandName /> Tunnel? Here are a few guidelines for you.
 
 Before proceeding, here are some of the common issues:
 
@@ -78,7 +81,7 @@ however, URL: `https://localhost.lambdatest.com/demo.html` or `10.0.0.15/demo.ht
 
 * * *
 
-While testing an application hosted on your local machine, you may receive an "Invalid Host Header" error message when testing on LambdaTest using a local connection. This error is most commonly caused by a misconfiguration of the application server that causes it to reject non-local connections or reject requests directed at hostnames other than localhost(or any custom one set)
+While testing an application hosted on your local machine, you may receive an "Invalid Host Header" error message when testing on <BrandName /> using a local connection. This error is most commonly caused by a misconfiguration of the application server that causes it to reject non-local connections or reject requests directed at hostnames other than localhost(or any custom one set)
 
 Since, web applications are now built with various different kinds of frameworks like angular, react etc; In order to test it using tunnel the command used to run your web app needs to modified in your project manifest file i.e. "package.json"
 
@@ -116,20 +119,16 @@ By applying the above changes, you would find the CSS loading issue as resolved.
 
 If you are testing a server that requires IP whitelisting, then you just have to set up a Local Testing connection and whitelist the below few IP’s for the respective domain:
 
-`http://ts.lambdatest.com/`<br />
+`https://ts.lambdatest.com/`<br />
 
 - 199.58.84.59
 - 23.82.88.184
 - 23.106.34.219
 - 23.106.54.77
-
-> Below are IPs that will be deprecated soon
->  - 3.214.241.254
->  - 52.36.84.247
->  - 13.126.37.58
->  - 3.66.78.89
-
-However be advised, as we are aggressively adding more and more data centers, these IP would be changed, you can see the updated IP’s on this documentation as well.
+- 3.214.241.254
+- 52.36.84.247
+- 13.126.37.58
+- 3.66.78.89
 
 
 ## 5. Custom Host Name
@@ -153,9 +152,9 @@ Let’s say that you wish to resolve **mydomain.com** to the IP address **10.20.
 ## 6. Enable Verbose Logging
 * * *
 
-The `- v`  flag enables Verbose logging on the console. You can use this to log the HTTP headers & requests or to debug the LambdaTest Tunnel connection.
+The `- v`  flag enables Verbose logging on the console. You can use this to log the HTTP headers & requests or to debug the <BrandName /> Tunnel connection.
 
-The requests are also logged into a log file `lt.log` which is created in the same working directory as the LambdaTest Tunnel binary. You can also specify the tunnel log file name using the `--logFile` flag.
+The requests are also logged into a log file `lt.log` which is created in the same working directory as the <BrandName /> Tunnel binary. You can also specify the tunnel log file name using the `--logFile` flag.
 
 <img loading="lazy" src={require('../assets/images/troubleshooting-lambda-tunnel/verbose.webp').default} alt="troubleshoot lambdatest tunnel" width="981" height="508" className="doc_img"/>
 
@@ -164,25 +163,25 @@ The requests are also logged into a log file `lt.log` which is created in the sa
 
 * * *
 
-Catalina OS users may get the below error from the command line while trying to configure the LambdaTest Tunnel to test their locally hosted web pages:
-"LT can’t be opened because Apple cannot check it for malicious software"
+Catalina OS users may get the below error from the command line while trying to configure the <BrandName /> Tunnel to test their locally hosted web pages:
+"LT can't be opened because Apple cannot check it for malicious software"
 
-This error occurs due to the increased restrictions on third-party software, downloaded from the internet. Since Catalina OS is recently launched by Apple, we are working to make our LambdaTest Tunnel compatible with the new OS.
+This error occurs due to the increased restrictions on third-party software, downloaded from the internet. Since Catalina OS is recently launched by Apple, we are working to make our <BrandName /> Tunnel compatible with the new OS.
 
-While we are at it, here is a one-time setup workaround. All you need to do is run the below command before you start configuring your LambdaTest Tunnel:
+While we are at it, here is a one-time setup workaround. All you need to do is run the below command before you start configuring your <BrandName /> Tunnel:
 
 `xattr -d com.apple.quarantine ./LT`
 
 <nav aria-label="breadcrumbs">
   <ul className="breadcrumbs">
     <li className="breadcrumbs__item">
-      <a className="breadcrumbs__link" href="https://www.lambdatest.com">Home</a>
+      <a className="breadcrumbs__link" href={BRAND_URL}>Home</a>
     </li>
     <li className="breadcrumbs__item">
-      <a className="breadcrumbs__link" target="_ self" href="https://www.lambdatest.com/support/docs/">Support</a>
+      <a className="breadcrumbs__link" target="_ self" href={`${BRAND_URL}/support/docs/`}>Support</a>
     </li>
     <li className="breadcrumbs__item breadcrumbs__item--active">
-      <span className="breadcrumbs__link">Troubleshooting LambdaTest Tunnel</span>
+      <span className="breadcrumbs__link">Troubleshooting <BrandName /> Tunnel</span>
     </li>
   </ul>
 </nav> 

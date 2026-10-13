@@ -1,11 +1,11 @@
 ---
 id: hyperexecute-smart-ui-test-using-playwright
-title: Smart UI Testing in HyperExecute using Playwright
+title: SmartUI Testing in HyperExecute using Playwright
 hide_title: false
 sidebar_label: Playwright
 description: Boost bug detection speed using HyperExecute smart UI testing with Playwright. Perform Visual UI Regression Testing for perfect app delivery.
 keywords:
-  - smart ui testing in lambdatest
+  - smart ui testing in testmu ai
   - smart ui testing in hyperexecute
   - visual  ui testing,image to image comparison
   - free cross browser testing tool
@@ -16,13 +16,18 @@ keywords:
   - test on samsung a7 online
   - test on mac 10.11 el capitan online
   - apple mac el capitan virtual machine
-url: https://www.lambdatest.com/support/docs/hyperexecute-smart-ui-test-using-playwright/
+url: https://www.testmuai.com/support/docs/hyperexecute-smart-ui-test-using-playwright/
 site_name: LambdaTest
 slug: hyperexecute-smart-ui-test-using-playwright/
----
+canonical: https://www.testmuai.com/support/docs/hyperexecute-smart-ui-test-using-playwright/
 
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import NewTag from '../src/component/newTag';
 import CodeBlock from '@theme/CodeBlock';
 import {YOUR_LAMBDATEST_USERNAME, YOUR_LAMBDATEST_ACCESS_KEY} from "@site/src/component/keys";
+import BrandName, { BRAND_URL } from '@site/src/component/BrandName';
 
 <script type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -31,32 +36,32 @@ import {YOUR_LAMBDATEST_USERNAME, YOUR_LAMBDATEST_ACCESS_KEY} from "@site/src/co
         "itemListElement": [{
           "@type": "ListItem",
           "position": 1,
-          "name": "LambdaTest",
-          "item": "https://www.lambdatest.com"
+          "name": "TestMu AI",
+          "item": BRAND_URL
         },{
           "@type": "ListItem",
           "position": 2,
           "name": "Support",
-          "item": "https://www.lambdatest.com/support/docs/"
+          "item": `${BRAND_URL}/support/docs/`
         },{
           "@type": "ListItem",
           "position": 3,
-          "name": "Smart UI Testing",
-          "item": "https://www.lambdatest.com/support/docs/hyperexecute-smart-ui-test-using-playwright/"
+          "name": "SmartUI Testing",
+          "item": `${BRAND_URL}/support/docs/hyperexecute-smart-ui-test-using-playwright/`
         }]
       })
     }}
 ></script>
 
-This documentation will guide you step-by-step to execute the Smart UI tests on the HyperExecute platform using Playwright.
+This documentation will guide you step-by-step to execute the SmartUI tests on the HyperExecute platform using Playwright.
 
 ## Prerequisites
 
-- Your lambdatest [Username and Access key](/support/docs/hyperexecute-how-to-get-my-username-and-access-key/)
+- Your TestMu AI [Username and Access key](/support/docs/hyperexecute-how-to-get-my-username-and-access-key/)
 - [HyperExecute CLI](/support/docs/hyperexecute-cli-run-tests-on-hyperexecute-grid/) in order to initiate a test execution Job .
 - Setup the [Environment Variable](/support/docs/hyperexecute-environment-variable-setup/)
 - [HyperExecute YAML](/support/docs/hyperexecute-yaml-version0.2/) file which contains all the necessary instructions.
-- To run Smart UI tests, you need to have a **Baseline Image** and a **Comparison Image**. A baseline image is the reference image with which you want to compare. You can either upload this image from your computer or take a screenshot from your browser.
+- To run SmartUI tests, you need to have a **Baseline Image** and a **Comparison Image**. A baseline image is the reference image with which you want to compare. You can either upload this image from your computer or take a screenshot from your browser.
 
 :::info
 After creating the project, you will get your `PROJECT_TOKEN`. You need to keep this project token safe as it will be used in the further steps below.
@@ -67,9 +72,9 @@ After creating the project, you will get your `PROJECT_TOKEN`. You need to keep 
 You can use your own project to configure and test it. For demo purposes, we are using the sample repository.
 
 :::tip Sample repo
-Download or Clone the code sample for the Playwright JavaScript from the LambdaTest GitHub repository to run the tests on the HyperExecute.
+Download or Clone the code sample for the Playwright JavaScript from the <BrandName /> GitHub repository to run the tests on the HyperExecute.
 
-<a href="https://github.com/LambdaTest/HyperExecute-Playwright-Vanilla-Javascript/tree/smart-ui" className="github__anchor"><img loading="lazy" src={require('../assets/images/icons/github.png').default} alt="Image" className="doc_img"/> View on GitHub</a>
+<a href="https://github.com/LambdaTest/HyperExecute-Playwright-Vanilla-JavaScript/tree/smart-ui" className="github__anchor"><img loading="lazy" src={require('../assets/images/icons/github.png').default} alt="Image" className="doc_img"/> View on GitHub</a>
 :::
 
 If you are using your own project, make sure you update the **CDP endpoint** in your tests file.
@@ -101,7 +106,7 @@ const capabilities = {
 }
 ```
 
-> You can also use **dev** and **beta** browser versions. To generate capabilities for your test requirements, you can use our inbuilt 🔗 [Capabilities Generator Tool](https://www.lambdatest.com/capabilities-generator/).
+> You can also use **dev** and **beta** browser versions. To generate capabilities for your test requirements, you can use our inbuilt 🔗 <a href={`${BRAND_URL}/capabilities-generator/`}>Capabilities Generator Tool</a>.
 
 ## Step 2: Setup the CLI in your Test Suite
 
@@ -121,12 +126,10 @@ You can download the CLI for your desired platform from the below mentioned link
 
 ### Setup Environment Variable
 
-Now, you need to export your environment variables *LT_USERNAME* and *LT_ACCESS_KEY* that are available in the [LambdaTest Profile page](https://accounts.lambdatest.com/detail/profile).
+Now, you need to export your environment variables *LT_USERNAME* and *LT_ACCESS_KEY* that are available in the [<BrandName /> Profile page](https://accounts.lambdatest.com/detail/profile).
 
 Run the below mentioned commands in your terminal to setup the CLI and the environment variables.
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
 <Tabs className="docs__val">
 
@@ -224,7 +227,7 @@ OR use this command if you have not exported your username and access key in the
 
 <img loading="lazy" src={require('../assets/images/hyperexecute/integration/lt-products/smart-ui/playwright/1.png').default} alt="automation-dashboard"  width="1920" height="868" className="doc_img"/>
 
-- This will redirect you the Smart UI dashboard where you can see all the images you have pushed for the testing.
+- This will redirect you the SmartUI dashboard where you can see all the images you have pushed for the testing.
 
 <img loading="lazy" src={require('../assets/images/hyperexecute/integration/lt-products/smart-ui/playwright/2.png').default} alt="automation-dashboard"  width="1920" height="868" className="doc_img"/>
 

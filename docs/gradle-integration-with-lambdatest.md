@@ -1,25 +1,28 @@
 ---
 id: gradle-integration-with-lambdatest
-title: Gradle Plugin Integration With LambdaTest
-hide_title: true
+title: Gradle Plugin Integration With TestMu AI
+hide_title: false
 sidebar_label: Gradle Plugin
-description: Automate testing at scale! Integrate LambdaTest with Gradle for seamless CI/CD & lightning-fast execution.
+description: Automate testing at scale! Integrate TestMu AI with Gradle for seamless CI/CD & lightning-fast execution.
 keywords:
-  - lambdatest integrations
+  - testmu ai integrations
   - push issues to localstack
   - free cross browser testing tool
   - cross platform testing tools
   - check browser compatibility online
-  - lambdatest gradle integration
-  - integrate gradle with lambdatest
-  - create issue in gradle from lambdatest
-  - gradle integration with lambdatest
+  - testmu ai gradle integration
+  - integrate gradle with testmu ai
+  - create issue in gradle from testmu ai
+  - gradle integration with testmu ai
   - bug tracking tools
   - project management tools
-url: https://www.lambdatest.com/support/docs/gradle-integration-with-lambdatest/
+url: https://www.testmuai.com/support/docs/gradle-integration-with-testmu/
 site_name: LambdaTest
-slug: gradle-integration-with-lambdatest/
+slug: gradle-integration-with-testmu/
+canonical: https://www.testmuai.com/support/docs/gradle-integration-with-testmu/
 ---
+import BrandName, { BRAND_URL } from '@site/src/component/BrandName';
+
 
 <script type="application/ld+json"
     dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -28,27 +31,23 @@ slug: gradle-integration-with-lambdatest/
         "itemListElement": [{
           "@type": "ListItem",
           "position": 1,
-          "name": "LambdaTest",
-          "item": "https://www.lambdatest.com"
+          "name": "TestMu AI",
+          "item": BRAND_URL
         },{
           "@type": "ListItem",
           "position": 2,
           "name": "Support",
-          "item": "https://www.lambdatest.com/support/docs/"
+          "item": `${BRAND_URL}/support/docs/`
         },{
           "@type": "ListItem",
           "position": 3,
           "name": "Gradle Integration",
-          "item": "https://www.lambdatest.com/support/docs/gradle-integration-with-lambdatest/"
+          "item": `${BRAND_URL}/support/docs/gradle-integration-with-testmu/`
         }]
       })
     }}
 ></script>
-
-# Gradle Integration with LambdaTest
-***
-
-Gradle is a build automation tool for multi-language software development. It controls the development process in the tasks of compilation and packaging to testing, deployment, and publishing. Supported languages include Java, Kotlin, Groovy, Scala, C/C++, and JavaScript.
+Gradle is a build automation tool for multi-language software development. It controls the development process across various tasks, including compilation, packaging, testing, deployment, and publishing. Supported languages include Java, Kotlin, Groovy, Scala, C/C++, and JavaScript.
 
 <div className="ytframe"> 
 <div className="youtube" data-embed="as5IU-UjtAg">
@@ -58,11 +57,11 @@ Gradle is a build automation tool for multi-language software development. It co
 
 ## Steps to Setup the Gradle Plugin
 
-**Step 1:** Add LambdaTest Gradle Plugin to the `build.gradle` file.
+### Step 1: Add <BrandName /> Gradle Plugin to the `build.gradle` file
 
-```bash
+```java title="build.gradle"
 plugins {
-    id 'io.github.lambdatest.gradle' version '1.0.5'
+    id 'io.github.lambdatest.gradle' version '1.0.7'
 }
 
 repositories {
@@ -72,32 +71,54 @@ repositories {
 }
 ```
 
-**Step 2:** Configure LambdaTest Parameters in `build.gradle`
+### Step 2: Configure <BrandName /> Parameters in `build.gradle` file
 
-```bash
+```java title="build.gradle"
 runLambdaTest {
-  username = '<your_lambdatest_username>'
-  accessKey = '<your_lambdatest_access_key>'
-  appFilePath = '<path_to_your_App_File>'
-  testSuiteFilePath = '<path_to_your_Test_Suite>'
-  device = '<your_desired_device_for_Testing>'
-  isFlutter = true # if you are running flutter dart tests
-  appId = "lt://1234343" #provide this only if you have already uploaded the app
-  testSuiteId = "lt://1223444" #provide this only if you have already uploaded the app
+  username = 'YOUR_LAMBDATEST_USERNAME'
+  accessKey = 'YOUR_LAMBDATEST_ACCESS_KEY>'
+  appFilePath = 'PATH_TO_YOUR_APP_FILE'
+  testSuiteFilePath = 'PATH_TO_YOUR_TEST_SUITE'
+  device = 'YOUR_DESIRED_DEVICE_FOR_TESTING'
+  isFlutter = true //if you are running flutter dart tests
+  appId = "lt://1234343" //provide this only if you have already uploaded the app
+  testSuiteId = "lt://1223444" //provide this only if you have already uploaded the app
 }
 ```
 
-## Execution
+### Step 3: Configure Upload APK Parameters
+With the release of version **`1.0.7`** of the `lambdatest-gradle-plugin`, users now have the option to upload their APK files directly to <BrandName />. Add the following configuration to build.gradle to enable APK upload:
 
-To run the plugin added in the project's `build.gradle`, use the following command:
+```java title="build.gradle"
+uploadApkToLambdaTest {
+  username = 'YOUR_LAMBDATEST_USERNAME'
+  accessKey = 'YOUR_LAMBDATEST_ACCESS_KEY>'
+  appFilePath = 'PATH_TO_YOUR_APP_FILE'
+  testSuiteFilePath = 'PATH_TO_YOUR_TEST_SUITE'
+}
+```
+### Step 4: Execute the Plugin
+To run the plugin configured in build.gradle, execute the following command:
 
 ```bash
 ./gradlew runLambdaTest
 ```
 
+If you only want to upload your APK files to <BrandName />, use the following command:
+
+```bash
+./gradlew uploadApkToLambdaTest
+```
+
+## Post Upload Configuration
+Once the upload process is completed, <BrandName /> will return unique IDs for the uploaded files. These IDs can be used in the run<BrandName /> configuration to execute your tests seamlessly.
+
+## Virtual Device Support
+The <BrandName /> Gradle plugin now supports virtual devices. To execute tests on a virtual device, set **`isVirtualDevice: true`** in both **`runLambdaTest`** and **`uploadApkToLambdaTest`** configurations. If this flag is not provided, tests will default to running on a real device.
+
 ## Supported Capabilities
 
-The LambdaTest Gradle Plugin supports the following capabilities:
+The <BrandName /> Gradle Plugin supports the following capabilities:
 
 | Capability | Description | Example |
 |------------|-------------|---------|

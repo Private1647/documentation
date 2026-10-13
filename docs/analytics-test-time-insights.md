@@ -1,14 +1,18 @@
 ---
 id: analytics-test-time-trends
-title: Analytics Modules
+title: Time Insights
 sidebar_label: Setup Time Insights
-description: Monitor and optimize test environment setup times with LambdaTest's Setup Time Insights module. Analyze trends, compare across platforms, and receive AI-driven optimization recommendations
+description: Monitor and optimize test environment setup times with TestMu AI's Setup Time Insights module. Analyze trends, compare across platforms, and receive AI-driven optimization recommendations
 keywords:
   - analytics
-url: https://www.lambdatest.com/support/docs/analytics-test-time-trends/
+url: https://www.testmuai.com/support/docs/analytics-test-time-trends/
 site_name: LambdaTest
 slug: analytics-test-time-trends/
+canonical: https://www.testmuai.com/support/docs/analytics-test-time-trends/
 ---
+
+import NewTag from '../src/component/newTag';
+import BrandName, { BRAND_URL } from '@site/src/component/BrandName';
 
 <script type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -18,29 +22,21 @@ slug: analytics-test-time-trends/
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://www.lambdatest.com"
+          "item": BRAND_URL
         },{
           "@type": "ListItem",
           "position": 2,
           "name": "Support",
-          "item": "https://www.lambdatest.com/support/docs/"
+          "item": `${BRAND_URL}/support/docs/`
         },{
           "@type": "ListItem",
           "position": 3,
           "name": "Test Overview",
-          "item": "https://www.lambdatest.com/support/docs/analytics-test-time-trends/"
+          "item": `${BRAND_URL}/support/docs/analytics-test-time-trends/`
         }]
       })
     }}
 ></script>
-
----
-
-import NewTag from '../src/component/newTag';
-
-
-# Setup Time Insights
-
 <img loading="lazy" src={require('../assets/images/analytics/astt-widgets.webp').default} alt="cmd" width="800" height="400" className="doc_img"/>
 
 ## Understanding The Setup Time Insights Widget

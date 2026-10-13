@@ -3,23 +3,26 @@ id: testing-locally-hosted-pages
 title: Test Locally Hosted Web Pages
 hide_title: false
 sidebar_label: Testing Locally Hosted Pages
-description: Test your locally hosted web applications for cross browser compatibility across 3000+ browser and OS combinations with LambdaTest.
+description: TestMu AI Tunnel securely connects your local machine to cloud-based real devices for testing locally hosted web apps, with multiple connectivity options like TCP or Websocket.
 keywords:
   - test locally hosted web apps online
   - free cross browser testing tool
   - cross browser compatibility tools
-  - lambdatest tunnel
-  - ssh tunnel for windows
+  - testmu ai tunnel
+  - TCP tunnel for windows
   - testing local web pages
   - secure-shell-tunnel
-  - ssh tunnel
+  - TCP tunnel
   - tcp
   - websocket
 image: /resources/images/og-images/Testing-Locally-Hosted-Pages-min.jpg
-url: https://www.lambdatest.com/support/docs/testing-locally-hosted-pages/
+url: https://www.testmu.ai/support/docs/testing-locally-hosted-pages/
 site_name: LambdaTest
 slug: testing-locally-hosted-pages/
+canonical: https://www.testmu.ai/support/docs/testing-locally-hosted-pages/
 ---
+import BrandName, { BRAND_URL } from '@site/src/component/BrandName';
+
 
 <script type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -28,93 +31,66 @@ slug: testing-locally-hosted-pages/
         "itemListElement": [{
           "@type": "ListItem",
           "position": 1,
-          "name": "LambdaTest",
-          "item": "https://www.lambdatest.com"
+          "name": "TestMu AI",
+          "item": BRAND_URL
         },{
           "@type": "ListItem",
           "position": 2,
           "name": "Support",
-          "item": "https://www.lambdatest.com/support/docs/"
+          "item": `${BRAND_URL}/support/docs/`
         },{
           "@type": "ListItem",
           "position": 3,
           "name": "Docker Tunnel",
-          "item": "https://www.lambdatest.com/support/docs/testing-locally-hosted-pages/"
+          "item": `${BRAND_URL}/support/docs/testing-locally-hosted-pages/`
         }]
       })
     }}
 ></script>
-**LambdaTest Tunnel** is a secure and encrypted tunneling feature that allows devs and QAs to test their locally hosted web applications or websites on the cloud-based real machines. It establishes a secure connection between the user’s local machine and the real machine in the cloud.
 
-There are multiple connectivity options like **SSH (port 22 or 443)**, **TCP- port 443**. Tunnel Binary performs network scanning and selects the best mode if not explicitly specified.
+**<BrandName /> Tunnel** is a secure and encrypted tunneling feature that allows devs and QAs to test their locally hosted web applications or websites on the cloud-based real machines. It establishes a secure connection between the user's local machine and the real machine in the cloud. There are multiple connectivity options like **TCP with TLS 1.2 over port 443**, **Websocket (port 443)**,. Tunnel Binary performs network scanning and selects the best mode if not explicitly specified.
 
 <img loading="lazy" src={require('../assets/images/tunnel/tunnel.png').default} alt="TestNG HyperExecute Terminal Logs"  width="1920" height="868" className="doc_img"/>
 
-## Why to Use LambdaTest Tunnel?
+> All Tunnel credentials (access keys, API tokens, etc.) are private and confidential. A system compromise may result in their unauthorized disclosure; therefore, you must secure the machine running the <BrandName /> tunnel. Do not share or expose credentials in public code, repositories, or environments. In the event of a compromise, you are solely responsible for immediately revoking and regenerating the credentials. <BrandName /> assumes no liability for any losses arising from failure to comply. 
 
-LambdaTest Tunnel offers numerous benefits for web developers, testers, and QA professionals. These include secure and encrypted connection, cross-browser compatibility testing, localhost testing, etc.
+## Why to Use <BrandName /> Tunnel?
+
+<BrandName /> Tunnel offers numerous benefits for web developers, testers, and QA professionals. These include secure and encrypted connection, cross-browser compatibility testing, localhost testing, etc.
 
 - **Secured and Encrypted :** It provides a secure and encrypted connection between your local machine and the virtual machines in the cloud, thereby ensuring the privacy of your test data and online communications.
-- **Cost Effective :** With LambdaTest Tunnel, you can test your web applications or websites, local folder, and files across a wide range of browsers and operating systems without setting up complex and expensive local testing environments.
+- **Cost Effective :** With <BrandName /> Tunnel, you can test your web applications or websites, local folder, and files across a wide range of browsers and operating systems without setting up complex and expensive local testing environments.
 - **Test on Real Environment :** It lets you test your locally hosted web applications or websites on cloud-based real OS machines. You can even run accessibility tests on desktop browsers while testing locally hosted web applications and pages.
 
-## How to Connect LambdaTest Tunnel?
+> Please note that the <BrandName /> tunnel client does not include any AI or ML capabilities, and none of the data it proxies is used for AI or ML training.
 
-<div className="ytframe"> 
-<div className="youtube" data-embed="1B27vRreyKU">
-    <div className="play-button"></div>
-</div>
-</div>
+## Download the Tunnel Binary
+You can download the Tunnel Binary as per your respective machine architecture from the links given below :
 
-## LambdaTest Tunnel Guide
+| Platform | Download Link |
+|----------|---------------|
+| Windows/AMD64 | https://downloads.lambdatest.com/tunnel/v3/windows/amd64/LT.exe |
+| Windows/386 | https://downloads.lambdatest.com/tunnel/v3/windows/386/LT.exe | 
+| Linux/AMD64 | https://downloads.lambdatest.com/tunnel/v3/linux/amd64/LT |
+| Linux/ARM64 | https://downloads.lambdatest.com/tunnel/v3/linux/arm64/LT |
+| Linux/386 | https://downloads.lambdatest.com/tunnel/v3/linux/386/LT |
+| Darwin/AMD64 | https://downloads.lambdatest.com/tunnel/v3/mac/amd64/LT |
+| Darwin/ARM64 | https://downloads.lambdatest.com/tunnel/v3/mac/arm64/LT |
+| Darwin/386 | https://downloads.lambdatest.com/tunnel/v3/mac/386/LT |
+| FreeBSD/AMD64 | https://downloads.lambdatest.com/tunnel/v3/freebsd/amd64/LT |
+| FreeBSD/ARM64 | https://downloads.lambdatest.com/tunnel/v3/freebsd/arm64/LT| 
+| FreeBSD/A386 | https://downloads.lambdatest.com/tunnel/v3/freebsd/386/LT |
+| Solaris/AMD64 | https://downloads.lambdatest.com/tunnel/v3/solaris/amd64/LT |
 
-<div className="download_btn mb-10"> <a href="/support/docs/local-testing-windows/">How To Connect LambdaTest Tunnel For Windows?</a></div>
-
-<div className="download_btn mb-10"> <a href="/support/docs/local-testing-macos/">How To Connect LambdaTest Tunnel For Mac?</a></div>
-
-<div className="download_btn mb-10"> <a href="/support/docs/local-testing-linux/">How To Connect LambdaTest Tunnel For Linux?</a></div>
-
-<div className="download_btn mb-10"> <a href="/support/docs/underpass-tunnel-application/">Underpass - GUI Application for LambdaTest tunnel</a></div>
-
-<div className="download_btn mb-10"> <a href="/support/docs/advanced-tunnel-features/">Advanced LambdaTest Tunnel Features</a></div>
-
-<div className="download_btn mb-10"> <a href="/support/docs/environment-variables-supported-by-lambda-tunnel/">Environment Variables Supported By LambdaTest tunnel</a></div>
-
-<div className="download_btn mb-10"> <a href="/support/docs/maven-tunnel-for-locally-hosted-web-applications/">Maven Tunnel For Locally Hosted Web Applications</a></div>
-
-<div className="download_btn mb-10"> <a href="/support/docs/sharing-lambda-tunnel/">Sharing LambdaTest Tunnel</a></div>
-
-<div className="download_btn mb-10"> <a href="/support/docs/lambda-tunnel-modifiers/">LambdaTest Tunnel Modifiers</a></div>
-
-<div className="download_btn mb-10"> <a href="/support/docs/docker-tunnel/">Docker Tunnel</a></div>
-
-<div className="download_btn mb-10"> <a href="/support/docs/troubleshooting-lambda-tunnel/">Troubleshooting LambdaTest Tunnel</a></div>
-
-<div className="download_btn mb-10"> <a href="/support/docs/how-to-set-the-open-file-limit-while-using-tunnel/">Setting Up The Open File Limit While Using Tunnel</a></div>
-
-<div className="download_btn mb-10"> <a href="/support/docs/load-balancing-in-lambda-tunnel/">Load Balancing In LambdaTest Tunnel</a></div>
-
-<div className="download_btn mb-10"> <a href="/support/docs/dedicated-proxy/">Dedicated Proxy For IP Whitelisting</a></div>
-
-<div className="download_btn mb-10"> <a href="/support/docs/charles-proxy/">Setting Up Charles Proxy</a></div>
+## Minimum System Requirements for <BrandName /> Tunnel
 
 
-<nav aria-label="breadcrumbs">
-  <ul className="breadcrumbs">
-    <li className="breadcrumbs__item">
-      <a className="breadcrumbs__link" href="https://www.lambdatest.com">
-        Home
-      </a>
-    </li>
-    <li className="breadcrumbs__item">
-      <a className="breadcrumbs__link" target="_self" href="https://www.lambdatest.com/support/docs/">
-        Support
-      </a>
-    </li>
-    <li className="breadcrumbs__item breadcrumbs__item--active">
-      <span className="breadcrumbs__link">
-        Testing Locally Hosted Pages
-      </span>
-    </li>
-  </ul>
-</nav>
+To ensure optimal performance and reliability when running <BrandName /> Tunnel, your system should meet or exceed the following requirements:
+
+- **Operating System:** Windows 7 or later, macOS 10.12 or later, Linux (modern distributions), FreeBSD, Solaris
+- **CPU Architecture:** x86_64 (AMD64), ARM64
+- **CPU Cores:** 1 physical cores or higher
+- **Memory (RAM):** 2 GB minimum
+- **Disk Space:** 200 MB available
+- **Network:** Stable broadband connection (100 Mbps or higher recommended); must allow outbound connections to <BrandName /> servers over port 443 (TCP/WebSocket)
+- **Permissions:** User must have permission to execute the <BrandName /> Tunnel binary

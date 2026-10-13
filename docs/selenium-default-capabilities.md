@@ -3,15 +3,19 @@ id: selenium-default-capabilities
 title: Selenium Default Capabilities
 hide_title: false
 sidebar_label: Default Capabilities
-description: This document list downs the default Capabilities in selenium that are supported in LambdaTest
+description: This document list downs the default Capabilities in selenium that are supported in TestMu AI
 keywords:
-  - lambdatest automation
+  - testmu ai automation
   - selenium automation grid
   - selenium capabilities
-url: https://www.lambdatest.com/support/docs/selenium-default-capabilities/
+url: https://www.testmu.ai/support/docs/selenium-default-capabilities/
 site_name: LambdaTest
 slug: selenium-default-capabilities/
+canonical: https://www.testmu.ai/support/docs/selenium-default-capabilities/
 ---
+
+
+import BrandName, { BRAND_URL } from '@site/src/component/BrandName';
 
 <script type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -20,18 +24,18 @@ slug: selenium-default-capabilities/
         "itemListElement": [{
           "@type": "ListItem",
           "position": 1,
-          "name": "LambdaTest",
-          "item": "https://www.lambdatest.com"
+          "name": "TestMu AI",
+          "item": BRAND_URL
         },{
           "@type": "ListItem",
           "position": 2,
           "name": "Selenium Capabilities",
-          "item": "https://www.lambdatest.com/support/docs/"
+          "item": `${BRAND_URL}/support/docs/`
         },{
           "@type": "ListItem",
           "position": 3,
           "name": "Selenium Default Capability",
-          "item": "https://www.lambdatest.com/support/docs/selenium-default-capabilities/"
+          "item": `${BRAND_URL}/support/docs/selenium-default-capabilities/`
         }]
       })
     }}
@@ -48,4 +52,4 @@ slug: selenium-default-capabilities/
 | `acceptSslCerts` | true, false | Decides if a session by default should accept all SSL certificates.|
 | `unexpectedAlertBehaviour` | accept, dismiss, ignore | Determines the action of a browser for handling alerts, prior to pointing the UnhandledAlertException. |
 | `elementScrollBehavior` | integer | Determines the scrolling behavior according to the user provided input. The user can decide if the elements should be aligned to top(0) or bottom(1) with respect to the elements scroll-ability inside the viewport. By default the value is set to 1, aligning the scroll behavior to top. This is compatible with IE and Firefox (since 2.36) |
-| `enableCrossSiteBlocking` | true, false | Prevents cross-site tracking. |
+| `preventCrossSiteTracking` | true, false | Blocks or unblocks cross-site tracking. |

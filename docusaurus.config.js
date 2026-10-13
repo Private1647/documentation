@@ -1,39 +1,34 @@
 require('dotenv').config();
 import { themes as prismThemes } from 'prism-react-renderer';
 module.exports = {
-  title: 'LambdaTest',
+  title: 'TestMu AI (Formerly LambdaTest)',
   tagline: 'Ensure your web-apps work seamlessly on every desktop and mobile browsers.',
   url: 'https://www.lambdatest.com',
+  noIndex: true,
   baseUrl: '/support/',
   onBrokenLinks: 'throw',
   favicon: 'img/favicon.ico',
-  organizationName: 'Lambdatest', // Usually your GitHub org/user name.
-  projectName: 'Lambdatest', // Usually your repo name.
+  organizationName: 'TestMu AI', // Usually your GitHub org/user name.
+  projectName: 'TestMu AI', // Usually your repo name.
   clientModules: [
     require.resolve('./custom.js'),
   ],
   scripts: [
-    // {
-    //   src: 'https://www.lambdatest.com/resources/js/zohoscript.js',
-    //   defer: true,
-    // },
+  
     {
-      src: 'https://www.lambdatest.com/resources/js/salesforce_chatwidget.js',
+      src: 'https://assets.testmuai.com/resources/js/salesforce_chatwidget.js',
       defer: true,
     },
     {
-      src: 'https://www.lambdatest.com/resources/js/lambda_gtm.js',
+      src: 'https://assets.testmuai.com/resources/js/lambda_gtm.js',
       defer: true,
     },
     {
-      src: 'https://www.lambdatest.com/resources/js/sf_chat.js',
+      src: 'https://assets.testmuai.com/resources/js/sf_chat.js',
       defer: true,
       onload: "sf_messaging()",
     },
-    // {
-    //   src: 'https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js',
-    //   defer: true,
-    // }
+   
   ],
   themes: ['docusaurus-theme-search-typesense','docusaurus-theme-github-codeblock'],
   plugins: [require.resolve("docusaurus-plugin-image-zoom")],
@@ -52,14 +47,16 @@ module.exports = {
       typesenseServerConfig: {
         nodes: [
           {
-            host: process.env.HOST,
+            host: process.env.HOST ,
             port: 443,
             protocol: 'https',
           },
         ],
         apiKey: process.env.API,
       },
-      typesenseSearchParameters: {},
+      typesenseSearchParameters: {
+        enable_analytics: true,
+      },
       contextualSearch: true,
     },
 
@@ -75,7 +72,7 @@ module.exports = {
         alt: 'LambdaTest',
         src: 'img/logo.svg',
         srcDark: 'img/logo_dark.svg',
-        href: 'https://www.lambdatest.com',
+        href: 'https://www.testmuai.com',
         target: '_self',
         width: '147',
         height: '26',
@@ -113,7 +110,8 @@ module.exports = {
           type: 'html',
           position: 'left',
           value: '<a role="button" tabindex="0" href="https://github.com/LambdaTest" target="_blank" class="navbar__item navbar__link">GitHub<img src="https://www.lambdatest.com/support/img/Github.svg" alt="" role="presentation" title="LambdaTest GitHub" width="12" height="12" class="head_gitimg no-zoom" style="margin-left:5px;"/></a>',
-        }
+        },
+     
       ],
     },
   },

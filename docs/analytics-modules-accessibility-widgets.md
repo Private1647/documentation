@@ -1,8 +1,8 @@
 ---
 id: analytics-modules-accessibility-widgets
-title: Analytics Modules - Overview
+title: Accessibility Dashboard Widgets
 sidebar_label: Accessibility
-description: Discover LambdaTest's Accessibility Dashboard widgets for comprehensive accessibility testing insights. Optimize your accessibility testing efforts today.
+description: Discover TestMu AI's Accessibility Dashboard widgets for comprehensive accessibility testing insights. Optimize your accessibility testing efforts today.
 keywords:
  - analytics
  - test insights
@@ -10,11 +10,15 @@ keywords:
  - accessibility analytics
  - accessibility trends
  - accessibility status ratio
-url: https://www.lambdatest.com/support/docs/analytics-modules-accessibility-widgets/
+url: https://www.testmuai.com/support/docs/analytics-modules-accessibility-widgets/
 site_name: LambdaTest
 slug: analytics-modules-accessibility-widgets/
-
+canonical: https://www.testmuai.com/support/docs/analytics-modules-accessibility-widgets/
 ---
+
+import NewTag from '../src/component/newTag';
+import BrandName, { BRAND_URL } from '@site/src/component/BrandName';
+
 
 <script type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -24,33 +28,27 @@ slug: analytics-modules-accessibility-widgets/
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://www.lambdatest.com"
+          "item": BRAND_URL
         },{
           "@type": "ListItem",
           "position": 2,
           "name": "Support",
-          "item": "https://www.lambdatest.com/support/docs/"
+          "item": `${BRAND_URL}/support/docs/`
         },{
           "@type": "ListItem",
           "position": 3,
           "name": "Test Overview",
-          "item": "https://www.lambdatest.com/support/docs/analytics-modules-accessibility-widgets/"
+          "item": `${BRAND_URL}/support/docs/analytics-modules-accessibility-widgets/`
         }]
       })
     }}
 ></script>
 
----
-
-import NewTag from '../src/component/newTag';
-
-# Accessibility Dashboard Widgets
-
-LambdaTest Accessibility Dashboard widgets provide comprehensive insights into your accessibility testing efforts. These widgets help you optimize your accessibility testing efforts by providing detailed insights into your accessibility testing scans, 
+<BrandName /> Accessibility Dashboard widgets provide comprehensive insights into your accessibility testing efforts. These widgets help you optimize your accessibility testing efforts by providing detailed insights into your accessibility testing scans, 
 Top 10 URLs Issue Criticality, and more.
 
 :::note
-The Accessibility Widgets module is currently in  <NewTag value="BETA" bgColor="#ffec02" color="#000" />. If you have any feedback or suggestions, please feel free to reach out to us at [support@lambdatest.com](mailto:support@lambdatest.com).
+The Accessibility Widgets module is currently in  <NewTag value="BETA" bgColor="#ffec02" color="#000" />. If you have any feedback or suggestions, please feel free to reach out to us at [support@testmu.ai](mailto:support@testmu.ai).
 :::
 
 ## Accessibility Test Overview

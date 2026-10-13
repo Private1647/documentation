@@ -5,13 +5,16 @@ hide_title: false
 sidebar_label: Using Snooper on Hyperexecute
 description: Learn more about Using Snooper on Hyperexecute
 keywords:
-  - LambdaTest Hyperexecute
-  - LambdaTest Hyperexecute help
-  - LambdaTest Hyperexecute documentation
-url: https://www.lambdatest.com/support/docs/hyperexecute-snooper/
+  - TestMu AI Hyperexecute
+  - TestMu AI Hyperexecute help
+  - TestMu AI Hyperexecute documentation
+url: https://www.testmuai.com/support/docs/hyperexecute-snooper/
 site_name: Using Snooper on Hyperexecute
 slug: hyperexecute-snooper/
+canonical: https://www.testmuai.com/support/docs/hyperexecute-snooper/
 ---
+import BrandName, { BRAND_URL } from '@site/src/component/BrandName';
+
 
 <script type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -21,17 +24,17 @@ slug: hyperexecute-snooper/
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://www.lambdatest.com"
+          "item": BRAND_URL
         },{
           "@type": "ListItem",
           "position": 2,
           "name": "Support",
-          "item": "https://www.lambdatest.com/support/docs/"
+          "item": `${BRAND_URL}/support/docs/`
         },{
           "@type": "ListItem",
           "position": 3,
           "name": "Using Snooper on Hyperexecute",
-          "item": "https://www.lambdatest.com/support/docs/hyperexecute-snooper"
+          "item": `${BRAND_URL}/support/docs/hyperexecute-snooper`
         }]
       })
     }}
@@ -46,6 +49,10 @@ For example, the following command will discover the list of Feature file scenar
 ```yaml
 snooper --featureFilePaths=features/ --frameWork=java
 ```
+
+:::info
+Snooper is **not compatible** with **Alpine-based** Docker images, as Alpine uses **musl libc** instead of **glibc**, which Snooper depends on. To ensure proper functionality, use a non-Alpine base image that includes glibc.
+:::
 
 ## How to implement Snooper on HyperExecute
 

@@ -1,20 +1,22 @@
 ---
-id: kaneai-test-manual
+id: kaneai-test-manual-interaction-video
 title: Manual Interaction Using KaneAI
 hide_title: false
 sidebar_label: Manual Interaction
-description: Learn how to KaneAI simplifies test automation by allowing manual interaction to create prompts in natural language, analyzing test steps, generating code in various languages. 
+description: Discover how KaneAI streamlines test automation by enabling manual interactions to create natural language prompts, analyze test steps, and generate code in multiple programming languages. 
 keywords:
-  - lambdatest automation
-  - lambdatest kaneai
+  - testmu ai automation
+  - testmu ai kaneai
   - kaneai manual interaction
-url: https://www.lambdatest.com/support/docs/kaneai-manual-interaction
+url: https://www.testmuai.com/support/docs/kaneai-manual-interaction-video/
 site_name: LambdaTest
-slug: kaneai-manual-interaction/
+slug: kaneai-manual-interaction-video/
+canonical: https://www.testmuai.com/support/docs/kaneai-manual-interaction-video/
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import BrandName, { BRAND_URL } from '@site/src/component/BrandName';
 
 <script type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -24,17 +26,17 @@ import TabItem from '@theme/TabItem';
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://www.lambdatest.com"
+          "item": BRAND_URL
         },{
           "@type": "ListItem",
           "position": 2,
           "name": "Support",
-          "item": "https://www.lambdatest.com/support/docs/"
+          "item": `${BRAND_URL}/support/docs/`
         },{
           "@type": "ListItem",
           "position": 3,
           "name": "Manual Interaction Using KaneAI",
-          "item": "https://www.lambdatest.com/support/docs/kaneai-manual-interaction/"
+          "item": `${BRAND_URL}/support/docs/kaneai-manual-interaction-video/`
         }]
       })
     }}
@@ -45,4 +47,4 @@ import TabItem from '@theme/TabItem';
 
 In this tutorial, learn how KaneAI simplifies test automation by allowing manual interaction to create prompts in natural language, analyzing test steps, generating code in various languages, and providing detailed test descriptions. 
 
-<iframe src="https://www.loom.com/embed/7cd4d768f1fe4f088dea3b9a5ce40a7a?sid=0ec0f69f-da6b-45a5-9a9c-94d1f3e5422a" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen height="400" width="800"></iframe>
+<iframe src="https://app.trupeer.ai/embed?slug=vrSqRvouk" width="640" height="360" frameborder="0" allowfullscreen="true" className="KaneIframe"></iframe>

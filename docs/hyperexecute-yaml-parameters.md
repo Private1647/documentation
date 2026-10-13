@@ -5,15 +5,17 @@ hide_title: false
 sidebar_label: HyperExecute YAML
 description: This document list enumerates the diverse configuration options supported by HyperExecute YAML, providing you with the flexibility to tailor test execution according to the specific requirements of your project.
 keywords:
-  - LambdaTest Hyperexecute
-  - LambdaTest Hyperexecute help
-  - LambdaTest Hyperexecute documentation
-url: https://www.lambdatest.com/support/docs/hyperexecute-yaml-parameters/
+  - TestMu AI Hyperexecute
+  - TestMu AI Hyperexecute help
+  - TestMu AI Hyperexecute documentation
+url: https://www.testmuai.com/support/docs/hyperexecute-yaml-parameters/
 site_name: LambdaTest Deep dive into hyperexecute yaml
 slug: hyperexecute-yaml-parameters/
+canonical: https://www.testmuai.com/support/docs/hyperexecute-yaml-parameters/
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import BrandName, { BRAND_URL } from '@site/src/component/BrandName';
 
 <script type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -23,17 +25,17 @@ import TabItem from '@theme/TabItem';
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://www.lambdatest.com"
+          "item": BRAND_URL
         },{
           "@type": "ListItem",
           "position": 2,
           "name": "Support",
-          "item": "https://www.lambdatest.com/support/docs/"
+          "item": `${BRAND_URL}/support/docs/`
         },{
           "@type": "ListItem",
           "position": 3,
           "name": "Deep Dive into HyperExecute YAML",
-          "item": "https://www.lambdatest.com/support/docs/hyperexecute-yaml-parameters/"
+          "item": `${BRAND_URL}/support/docs/hyperexecute-yaml-parameters/`
         }]
       })
     }}
@@ -91,7 +93,7 @@ The **HyperExecute YAML** file serves as the foundational component for test exe
 | [maxRetries](/support/docs/deep-dive-into-hyperexecute-yaml/#maxretries) | Integer | The maximum number of times your scenarios can be retried. <br /> If `retryOnFailure` is true then Default value will be 2. Value Range 1 to 5.|
 | [post](/support/docs/deep-dive-into-hyperexecute-yaml/#post) | List of Strings | The actions that are performed after test execution. |
 | [report](/support/docs/deep-dive-into-hyperexecute-yaml/#report) | Boolean | To generate the test report at the end of the job using the framework generated reports, set this value to true. We also need to set partialReports for generating report |
-| [partialReports](/support/docs/deep-dive-into-hyperexecute-yaml/#reports) | Map | Configurations related to generate report. |
+| [partialReports](/support/docs/deep-dive-into-hyperexecute-yaml/#report) | Map | Configurations related to generate report. |
 | [errorCategorizedOnFailureOnly](/support/docs/deep-dive-into-hyperexecute-yaml/#errorcategorizedonfailureonly) | Boolean | Control the behavior of error categorization generated on your tests|
 |[errorCategorizedReport](/support/docs/deep-dive-into-hyperexecute-yaml/#errorcategorizedreport) | Map, Boolean | Generate a RCA report for your failed tests.|
 | [jobLabel](/support/docs/deep-dive-into-hyperexecute-yaml/#joblabel) | List of Strings | Add tags or labels to jobs. This allows you to search your jobs using the labels or tags assigned to them. |
@@ -131,6 +133,8 @@ The **HyperExecute YAML** file serves as the foundational component for test exe
 
 | Key | Type | Description|
 |-----|------|------------|
+| [globalPre](/support/docs/deep-dive-into-hyperexecute-yaml/#globalpre) | Map | This flag runs once before all tasks start, used for global setup such as installing dependencies or configuring environments. |
+| [globalPost](/support/docs/deep-dive-into-hyperexecute-yaml/#globalpost) | Map | This flag runs once after all tasks finish, used for global cleanup such as removing logs or finalizing reports. |
 | [failFast](/support/docs/deep-dive-into-hyperexecute-yaml/#failfast) | Map | Flag to fail a job faster if there are `x` consecutive failures. |
 | [differentialUpload](/support/docs/deep-dive-into-hyperexecute-yaml/#differentialupload) | Map | Minimize the time of upload of code. |
 | [background](/support/docs/deep-dive-into-hyperexecute-yaml/#background) | Map |It is used to trigger long-running Application Servers tasks like running WebApps or databases |
@@ -160,18 +164,20 @@ The **HyperExecute YAML** file serves as the foundational component for test exe
 | [postDirectives](/support/docs/deep-dive-into-hyperexecute-yaml/#postdirectives) | Map |Similar to post with option to retry. |
 | [alwaysRunPostSteps](/support/docs/deep-dive-into-hyperexecute-yaml/#alwaysrunpoststeps) | Boolean | Execute the Post Steps in every scenario case |
 | [cacheTestURL](/support/docs/deep-dive-into-hyperexecute-yaml/#cachetesturl) | Boolean |It enables users to cache static test files. |
-| [afterAll](/support/docs/deep-dive-into-hyperexecute-yaml/#afterall) | Map |It is used to run commands after the job has finished. |
-| [projectName](/support/docs/deep-dive-into-hyperexecute-yaml/#projectname) | String | Segregate data at a project/repo level |
+| [project](/support/docs/deep-dive-into-hyperexecute-yaml/#project) | String | Segregate data at a project/repo level |
+| [slackChannel](/support/docs/deep-dive-into-hyperexecute-yaml/#slackchannel) | String | Allows you to receive notifications of your Job updates directly in your preferred Slack channel. |
+| [afterEachScenario](/support/docs/deep-dive-into-hyperexecute-yaml/#aftereachscenario) | List of Strings | Allows you to trigger your define tasks after each test scenario. |
+| [syncStart](/support/docs/deep-dive-into-hyperexecute-yaml/#syncstart) | Map | Ensures all VMs are ready before starting parallel tasks.|
 
 <nav aria-label="breadcrumbs">
   <ul className="breadcrumbs">
     <li className="breadcrumbs__item">
-      <a className="breadcrumbs__link" target="_self" href="https://www.lambdatest.com">
+      <a className="breadcrumbs__link" target="_self" href={BRAND_URL}>
         Home
       </a>
     </li>
     <li className="breadcrumbs__item">
-      <a className="breadcrumbs__link" target="_self" href="https://www.lambdatest.com/support/docs/">
+      <a className="breadcrumbs__link" target="_self" href={`${BRAND_URL}/support/docs/`}>
         Support
       </a>
     </li>

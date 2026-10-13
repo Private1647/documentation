@@ -5,16 +5,20 @@ hide_title: false
 sidebar_label: Task Metrics
 description: HyperExecute Task Metrics helps you to understand your resource utilization for different stages of test execution.
 keywords:
-  - LambdaTest Hyperexecute
-  - LambdaTest Hyperexecute help
-  - LambdaTest Hyperexecute documentation
+  - TestMu AI Hyperexecute
+  - TestMu AI Hyperexecute help
+  - TestMu AI Hyperexecute documentation
     - HyperExecute
   - HyperExecute Metrics
   - HyperExecute Task
-url: https://www.lambdatest.com/support/docs/hyperexecute-task-metrics/
+url: https://www.testmuai.com/support/docs/hyperexecute-task-metrics/
 site_name: LambdaTest
 slug: hyperexecute-task-metrics/
+canonical: https://www.testmuai.com/support/docs/hyperexecute-task-metrics/
 ---
+
+
+import BrandName, { BRAND_URL } from '@site/src/component/BrandName';
 
 <script type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -24,17 +28,17 @@ slug: hyperexecute-task-metrics/
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://www.lambdatest.com"
+          "item": BRAND_URL
         },{
           "@type": "ListItem",
           "position": 2,
           "name": "Support",
-          "item": "https://www.lambdatest.com/support/docs/"
+          "item": `${BRAND_URL}/support/docs/`
         },{
           "@type": "ListItem",
           "position": 3,
           "name": "HyperExecute Metrics",
-          "item": "https://www.lambdatest.com/support/docs/hyperexecute-task-metrics/"
+          "item": `${BRAND_URL}/support/docs/hyperexecute-task-metrics/`
         }]
       })
     }}
@@ -51,10 +55,6 @@ The task level view provides insights into the CPU and memory consumption at the
 
 By analyzing the task level view, you can pinpoint any tasks that may be causing high CPU or memory usage issues, allowing you to optimize their performance for better overall results.
 
-<video class="right-side" width="100%" controls id="vid">
-<source src= {require('../assets/videos/hyperexecute/task-metrics/task-level-metrics.mp4').default} type="video/mp4" />
-</video>
-
 ## Stage Level View
 
 In the stage level view of HyperExecute, the analysis is segmented into three distinct phases: pre-stage, scenario stage, and post-stage.
@@ -65,6 +65,10 @@ In the stage level view of HyperExecute, the analysis is segmented into three di
 
 - **Post-Stage :** The post-stage view concentrates on resource consumption and actions taken after completing the main test scenario. By reviewing the post-stage metrics, you can evaluate resource management efficiency and ensure system stability post-test scenario execution.
 
-<video class="right-side" width="100%" controls id="vid">
-<source src= {require('../assets/videos/hyperexecute/task-metrics/stage-level-metrics.mp4').default} type="video/mp4" />
-</video>
+<div className="storylane-iframe">
+  <script async src="https://js.storylane.io/js/v2/storylane.js"></script>
+  <div className="sl-embed">
+    <iframe loading="lazy" className="sl-demo" src="https://app.storylane.io/demo/ujyqd8y01zch?embed=inline" name="sl-embed" allow="fullscreen" allowfullscreen></iframe>
+  </div>
+</div>
+

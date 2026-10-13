@@ -1,4 +1,4 @@
----
+﻿---
 id: tosca-integration-with-hyperexecute-using-commander
 title: Tosca Integration using Commander
 hide_title: true
@@ -10,13 +10,15 @@ keywords:
     - products
     - tosca
     - tricentis
-url: https://www.lambdatest.com/support/docs/tosca-integration-with-hyperexecute-using-commander/
+url: https://www.testmu.ai/support/docs/tosca-integration-with-hyperexecute-using-commander/
 site_name: LambdaTest
 slug: tosca-integration-with-hyperexecute-using-commander/
+canonical: https://www.testmu.ai/support/docs/tosca-integration-with-hyperexecute-using-commander/
 ---
 
 import CodeBlock from '@theme/CodeBlock';
 import {YOUR_LAMBDATEST_USERNAME, YOUR_LAMBDATEST_ACCESS_KEY} from "@site/src/component/keys";
+import BrandName, { BRAND_URL } from '@site/src/component/BrandName';
 
 <script type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -26,17 +28,17 @@ import {YOUR_LAMBDATEST_USERNAME, YOUR_LAMBDATEST_ACCESS_KEY} from "@site/src/co
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://www.lambdatest.com"
+          "item": BRAND_URL
         },{
           "@type": "ListItem",
           "position": 2,
           "name": "Support",
-          "item": "https://www.lambdatest.com/support/docs/"
+          "item": `${BRAND_URL}/support/docs/`
         },{
           "@type": "ListItem",
           "position": 3,
           "name": "Tosca Integration with HyperExecute using Commander",
-          "item": "https://www.lambdatest.com/support/docs/tosca-integration-with-hyperexecute-using-commander/"
+          "item": `${BRAND_URL}/support/docs/tosca-integration-with-hyperexecute-using-commander/`
         }]
       })
     }}
@@ -92,11 +94,11 @@ To Integrate Tosca with HyperExecute using YAML, follow the below mentioned step
 
 #### Prerequisite
 
--  Ensure that you have integrated Tosca with [LambdaTest’s cloud-based Selenium Grid](https://www.lambdatest.com/support/docs/tricentis-tosca-integration-lambdatest-selenium-grid/).
+-  Ensure that you have integrated Tosca with [<BrandName />’s cloud-based Selenium Grid](/support/docs/tricentis-tosca-integration-testmu-selenium-grid/).
 
 **Step 1:** Create an Execution List:
 
-- Go to the execution tab in your Tosca commander to [create an execution list](https://documentation.tricentis.com/tosca/1510/en/content/tosca_commander/execution_lists_section.htm).
+- Go to the execution tab in your Tosca commander to create an execution list.
     
 - You can drag and drop test cases from the **Test Cases** tab to the execution list. In the example given below, the execution list is called LT.
 
@@ -104,7 +106,7 @@ To Integrate Tosca with HyperExecute using YAML, follow the below mentioned step
 
 **Step 2:** Create a **TC-Shell Script**:
 
-- A TC-Shell script file usually has the extension _.tcs_, and it contains a sequence of [TC-Shell commands](https://documentation.tricentis.com/tosca/1300/en/content/tosca_commander/tcshell_commands.htm#TC-Shell_&_Keyboard_Shortcuts_699197005_998491) in plain text to configure the steps to execute a Tosca test via command line. This script file is kept in the same folder where you have the actual Tosca project saved.
+- A TC-Shell script file usually has the extension _.tcs_, and it contains a sequence of [TC-Shell commands](https://support-hub.tricentis.com/open?id=kb_article_view&table=kb_knowledge&number=KB0035628&searchTerm=shell%20commands) in plain text to configure the steps to execute a Tosca test via command line. This script file is kept in the same folder where you have the actual Tosca project saved.
 
 <img loading="lazy" src={require('../assets/images/hyperexecute/integration/products/tosca/tosca-commander/Tosca2.png').default} alt="Image"  className="doc_img"/>
 

@@ -1,6 +1,6 @@
 ---
 id: supported-locales-xcui
-title: Supported Locales And Languages
+title: Supported Locales And Languages - XCUI
 hide_title: false
 sidebar_label: Supported Locales And Languages
 description: Checkout the list of all supported locales
@@ -8,10 +8,13 @@ keywords:
   - Supported locales
   - Locales
   - Appium supported locales
-url: https://www.lambdatest.com/support/docs/supported-locales-xcui/
+url: https://www.testmu.ai/support/docs/supported-locales-xcui/
 site_name: LambdaTest
 slug: supported-locales-xcui/
+canonical: https://www.testmu.ai/support/docs/supported-locales-xcui/
 ---
+import BrandName, { BRAND_URL } from '@site/src/component/BrandName';
+
 
 <script type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -21,17 +24,17 @@ slug: supported-locales-xcui/
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://www.lambdatest.com"
+          "item": BRAND_URL
         },{
           "@type": "ListItem",
           "position": 2,
           "name": "Support",
-          "item": "https://www.lambdatest.com/support/docs/"
+          "item": `${BRAND_URL}/support/docs/`
         },{
           "@type": "ListItem",
           "position": 3,
           "name": "List of Supported Locales",
-          "item": "https://www.lambdatest.com/support/docs/supported-locales-xcui/"
+          "item": `${BRAND_URL}/support/docs/supported-locales-xcui/`
         }]
       })
     }}
@@ -143,7 +146,7 @@ You can also configure both locale and language during XCUI test execution for a
 
 ### Language
 
-To test a localized version of your app on LambdaTest, use the `language` parameter in the XCUI test execution API request. This allows you to change the language of the application under test.
+To test a localized version of your app on <BrandName />, use the `language` parameter in the XCUI test execution API request. This allows you to change the language of the application under test.
 
 | Parameter | Description                            | Values     |
 |-----------|----------------------------------------|------------|
@@ -151,7 +154,7 @@ To test a localized version of your app on LambdaTest, use the `language` parame
 
 ### Locale
 
-To test a localized version of your app on LambdaTest, use the `locale` parameter in the XCUI test execution API request. This allows you to set the locale for the application under test.
+To test a localized version of your app on <BrandName />, use the `locale` parameter in the XCUI test execution API request. This allows you to set the locale for the application under test.
 
 | Parameter | Description                       | Values     |
 |-----------|-----------------------------------|------------|
@@ -179,7 +182,13 @@ curl --location --request POST 'https://mobile-api.lambdatest.com/framework/v1/x
 ```
 
 :::note
-- Ensure that both the **language** and **locale** parameters are passed simultaneously in the API request.
-- App should support the language and locale mentioned in the API request to work.
-- For XCUI sharding tests, you have to mention this in the `.yaml` file.
+- When setting language or locale parameters, make sure your tests use the `ProcessInfo` object to pass these arguments correctly. This ensures the app launches with the specified language and locale settings.
+ ```swift
+    let app = XCUIApplication()
+    app.launchArguments += ProcessInfo().arguments
+    app.launch() 
+```
+-	The language and locale settings are applied at the app level.
+-	To ensure your application under test displays the correct localized strings, dates, times, and calendar formats, include both language and locale in your desired capabilities.
+- For XCUI sharding tests, you have to mention this in the  `.yaml` file.
 :::

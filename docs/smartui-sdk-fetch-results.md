@@ -15,13 +15,18 @@ keywords:
   - Visual Regression Testing Environment
   - How to Run Visual Regression Tests
 
-url: https://www.lambdatest.com/support/docs/smartui-cli/
+url: https://www.testmu.ai/support/docs/smartui-cli/
 slug: smartui-sdk-fetch-results/
----
+canonical: https://www.testmu.ai/support/docs/smartui-sdk-fetch-results/
 
+---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import NewTag from '../src/component/newTag';
+import CodeBlock from '@theme/CodeBlock';
+import {YOUR_LAMBDATEST_USERNAME, YOUR_LAMBDATEST_ACCESS_KEY} from "@site/src/component/keys";
+import BrandName, { BRAND_URL } from '@site/src/component/BrandName';
+
 
 ---
 
@@ -32,18 +37,18 @@ import NewTag from '../src/component/newTag';
         "itemListElement": [{
           "@type": "ListItem",
           "position": 1,
-          "name": "LambdaTest",
-          "item": "https://www.lambdatest.com"
+          "name": "TestMu AI",
+          "item": BRAND_URL
         },{
           "@type": "ListItem",
           "position": 2,
           "name": "Support",
-          "item": "https://www.lambdatest.com/support/docs/"
+          "item": `${BRAND_URL}/support/docs/`
         },{
           "@type": "ListItem",
           "position": 3,
           "name": "Smart Visual Testing",
-          "item": "https://www.lambdatest.com/support/docs/smart-ui-cypress/"
+          "item": `${BRAND_URL}/support/docs/smartui-sdk-fetch-results/`
         }]
       })
     }}
@@ -51,13 +56,16 @@ import NewTag from '../src/component/newTag';
 
 SmartUI CLI allows you to fetch detailed build results after executing your visual tests. This feature enables you to access comprehensive information about your build and screenshots in a JSON file, making it easier to integrate with your CI/CD pipelines and automation workflows.
 
-
 ## Prerequisites
 
 - Basic understanding of Command Line Interface
-- Login to [LambdaTest SmartUI](https://smartui.lambdatest.com/) with your credentials.
-- Ensure you are using `@lambdatest/smartui-cli` version 4.0.8 or higher.
+- Login to [<BrandName /> SmartUI](https://smartui.lambdatest.com/) with your credentials.
+- Ensure you are using `@lambdatest/smartui-cli` version 4.1.43 or higher
 - A properly configured SmartUI CLI project
+
+:::note
+If you face any problems executing tests with SmartUI-CLI `versions >= v4.x.x`, upgrade your Node.js version to `v20.3` or above.
+:::
 
 ## Steps to Use
 
@@ -65,34 +73,41 @@ SmartUI CLI allows you to fetch detailed build results after executing your visu
 
 If you haven't already installed SmartUI CLI, install it using npm:
 
+**Global Installation (Recommended):**
 ```bash
-npm i @lambdatest/smartui-cli
+npm install -g @lambdatest/smartui-cli
+```
+
+**Local Installation:**
+```bash
+npm install @lambdatest/smartui-cli
 ```
 
 ### **Step 2:** Configure your Project Token
 
-Setup your project token show in the **SmartUI** app after, creating your project.
+Setup your project token shown in the **SmartUI** app after creating your project.
 
-<Tabs className="docs__val" groupId="language">
-<TabItem value="MacOS/Linux" label="MacOS/Linux" default>
+<Tabs className='docs__val' groupId='language'>
+<TabItem value='MacOS/Linux' label='MacOS/Linux' default>
 
 ```bash
 export PROJECT_TOKEN="123456#1234abcd-****-****-****-************"
 ```
 
 </TabItem>
-<TabItem value="Windows" label="Windows - CMD">
+<TabItem value='Windows' label='Windows - CMD'>
 
 ```bash
 set PROJECT_TOKEN="123456#1234abcd-****-****-****-************"
 ```
 
 </TabItem>
-<TabItem value="Powershell" label="Windows-PS">
+<TabItem value='PowerShell' label='PowerShell'>
 
-```bash
-$Env:PROJECT_TOKEN="123456#1234abcd-****-****-****-************"
+```powershell
+$env:PROJECT_TOKEN="123456#1234abcd-****-****-****-************"
 ```
+
 </TabItem>
 </Tabs>
 
@@ -107,7 +122,7 @@ If no filename is specified, results will be stored in `results.json`:
 npx smartui --config .smartui.json exec --fetch-results -- <execution-command>
 ```
 >**Example:**
- For a `Node.js` test script : 
+ For a `Node.js` test script :
 >```bash
 >npx smartui --config .smartui.json exec --fetch-results -- node test.js
 >```
@@ -233,20 +248,154 @@ The fetched results JSON file contains detailed information about your build and
 }
 ```
 
-<nav aria-label="breadcrumbs">
-  <ul className="breadcrumbs">
-    <li className="breadcrumbs__item">
-      <a className="breadcrumbs__link" target="_self" href="https://www.lambdatest.com">
+## Using SmartUI Reporter Tool
+
+The SmartUI Reporter is a web-based tool that allows you to visualize and analyze your SmartUI test results in a tabular format with comprehensive statistics and export capabilities.
+
+### Step 1: Obtain Results JSON File
+
+You can get the `results.json` file using one of the following methods:
+
+#### Method 1: Export from CLI (Recommended)
+
+Use the `--fetch-results` flag when executing your SmartUI tests:
+
+**For Capture Command:**
+```bash
+npx smartui capture urls.json --config config.json --fetch-results results.json
+```
+
+**For Exec Command:**
+```bash
+npx smartui --config .smartui.json exec --fetch-results results.json -- <execution-command>
+```
+
+**Example with Capture:**
+```bash
+npx smartui capture urlTest.json --config config.json --fetch-results results.json
+```
+
+**Example with Exec:**
+```bash
+npx smartui --config .smartui.json exec --fetch-results results.json -- npm test
+```
+
+If no filename is specified, results will be saved as `results.json` by default:
+```bash
+npx smartui capture urls.json --config config.json --fetch-results
+```
+
+#### Method 2: Fetch from SmartUI API
+
+You can also fetch the results JSON file directly from the SmartUI API using the [Fetch Build Screenshots endpoint](https://swagger-api-support.lambdatest.com/smartui/index.html#/Fetch%20Build%20Screenshots).
+
+**API Endpoint:**
+```
+GET /build/screenshots
+```
+
+**Parameters:**
+- `project_id` (required): Your SmartUI project ID
+- `build_id` (optional): Specific build ID
+- `build_name` (optional): Build name (if both build_id and build_name are provided, build_id takes priority)
+
+**Example API Request:**
+```bash
+curl -X GET "https://api.lambdatest.com/smartui/build/screenshots?project_id=YOUR_PROJECT_ID&build_id=YOUR_BUILD_ID" \
+  -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
+```
+
+For detailed API documentation, visit the [SmartUI API Swagger Documentation](https://swagger-api-support.lambdatest.com/smartui/index.html#/Fetch%20Build%20Screenshots).
+
+### Step 2: Upload to SmartUI Reporter
+
+1. Navigate to [SmartUI Reporter](https://smartui-reporter.netlify.app/)
+2. Click on the upload area or drag and drop your `results.json` file
+3. Wait for the file to be processed and parsed
+
+### Step 3: View Results
+
+After uploading, you'll see:
+
+- **Tabular View**: All screenshots organized in a comprehensive table
+- **Statistics**: Key metrics including:
+  - Total screenshots
+  - Mismatch percentage
+  - Status breakdown (Approved, Changes Found, etc.)
+  - Browser and viewport distribution
+- **Screenshot Links**: Direct links to:
+  - Baseline images
+  - Captured images
+  - Comparison/diff images
+- **Build Information**: Project details, build ID, branch, commit information
+
+### Step 4: Export Options
+
+The SmartUI Reporter provides two export options:
+
+#### Export to PDF
+- Click the **Export to PDF** button
+- Generates a comprehensive PDF report with all screenshots and statistics
+- Perfect for sharing with stakeholders or archiving results
+
+#### Export to CSV
+- Click the **Export to CSV** button
+- Exports all data in CSV format including:
+  - Page Name
+  - Browser
+  - Resolution/Viewport
+  - Mismatch Percentage
+  - Status
+  - Screenshot URLs (Baseline, Captured, Diff)
+- Ideal for data analysis in spreadsheet applications
+
+### Use Cases
+
+- **CI/CD Integration**: Automatically generate reports after test execution
+- **Stakeholder Reporting**: Share visual test results with non-technical team members
+- **Historical Analysis**: Track visual changes over time
+- **Debugging**: Quickly identify which screenshots have mismatches
+- **Documentation**: Create PDF reports for project documentation
+
+### Example Workflow
+
+```bash
+# 1. Run SmartUI tests and fetch results
+npx smartui capture urlTest.json --config config.json --fetch-results results.json
+
+# 2. Upload results.json to SmartUI Reporter
+# Visit https://smartui-reporter.netlify.app/ and upload the file
+
+# 3. View results in tabular format with statistics
+
+# 4. Export to PDF or CSV for sharing
+```
+
+## Additional Resources
+
+- [Comprehensive Troubleshooting Guide](/support/docs/smartui-troubleshooting-guide)
+- [CLI Documentation](/support/docs/smartui-cli)
+- [CLI Exec Commands](/support/docs/smartui-cli-exec)
+- [Baseline Management](/support/docs/smartui-baseline-management)
+- [Running Your First Project](/support/docs/smartui-running-your-first-project)
+- [SmartUI API Documentation](https://www.lambdatest.com/support/api-doc/)
+- [SmartUI Reporter Tool](https://smartui-reporter.netlify.app/)
+- [SmartUI API Swagger Documentation](https://swagger-api-support.lambdatest.com/smartui/index.html#/Fetch%20Build%20Screenshots)
+
+<nav aria-label='breadcrumbs'>
+  <ul className='breadcrumbs'>
+    <li className='breadcrumbs__item'>
+      <a className='breadcrumbs__link' target="_self" href={BRAND_URL}>
         Home
       </a>
     </li>
-    <li className="breadcrumbs__item">
-      <a className="breadcrumbs__link" target="_self" href="https://www.lambdatest.com/support/docs/">
+    <li className='breadcrumbs__item'>
+      <a className='breadcrumbs__link' target="_self" href={`${BRAND_URL}/support/docs/`}>
         Support
       </a>
     </li>
-    <li className="breadcrumbs__item breadcrumbs__item--active">
-      <span className="breadcrumbs__link"> Smart UI with Cypress  </span>
+    <li className='breadcrumbs__item breadcrumbs__item--active'>
+      <span className='breadcrumbs__link'> SmartUI with Cypress  </span>
     </li>
   </ul>
 </nav>

@@ -15,13 +15,17 @@ keywords:
   - Visual Regression Testing Environment
   - How to Run Visual Regression Tests
 
-url: https://www.lambdatest.com/support/docs/smartui-cli/
+url: https://www.testmu.ai/support/docs/smartui-cli/
 slug: smartui-sdk-config-options/
----
+canonical: https://www.testmu.ai/support/docs/smartui-sdk-config-options/
 
+---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import NewTag from '../src/component/newTag';
+import CodeBlock from '@theme/CodeBlock';
+import {YOUR_LAMBDATEST_USERNAME, YOUR_LAMBDATEST_ACCESS_KEY} from "@site/src/component/keys";
+import BrandName, { BRAND_URL } from '@site/src/component/BrandName';
 
 ---
 
@@ -32,18 +36,18 @@ import NewTag from '../src/component/newTag';
         "itemListElement": [{
           "@type": "ListItem",
           "position": 1,
-          "name": "LambdaTest",
-          "item": "https://www.lambdatest.com"
+          "name": "TestMu AI",
+          "item": BRAND_URL
         },{
           "@type": "ListItem",
           "position": 2,
           "name": "Support",
-          "item": "https://www.lambdatest.com/support/docs/"
+          "item": `${BRAND_URL}/support/docs/`
         },{
           "@type": "ListItem",
           "position": 3,
           "name": "Smart Visual Testing",
-          "item": "https://www.lambdatest.com/support/docs/smart-ui-cypress/"
+          "item": `${BRAND_URL}/support/docs/smartui-sdk-config-options/`
         }]
       })
     }}
@@ -51,7 +55,7 @@ import NewTag from '../src/component/newTag';
 
 Welcome to the world of simplified visual testing with the SmartUI SDK.
 
-This guide is designed to provide you with comprehensive information about the various configuration options available within the SmartUI SDK. Whether you're a new user seeking to customize your SmartUI integration or an experienced developer looking to optimize your testing workflows, this documentation will serve as your go-to resource for understanding and utilizing the configuration options effectively. 
+This guide is designed to provide you with comprehensive information about the various configuration options available within the SmartUI SDK. Whether you're a new user seeking to customize your SmartUI integration or an experienced developer looking to optimize your testing workflows, this documentation will serve as your go-to resource for understanding and utilizing the configuration options effectively.
 
 To generate the SmartUI SDK configuration file, please execute the following command:
 
@@ -59,7 +63,15 @@ To generate the SmartUI SDK configuration file, please execute the following com
 npx smartui config:create .smartui.json
 ```
 
-# Configuration File Structure
+:::note
+For the latest features including advanced configurations, ensure you are using the latest version of SmartUI CLI. Install or update using:
+
+```bash
+npm install -g @lambdatest/smartui-cli@latest
+```
+:::
+
+## Configuration File Structure
 
 The SmartUI configuration file follows a JSON structure. Below is a sample configuration file with detailed explanations of each option:
 
@@ -92,16 +104,21 @@ The SmartUI configuration file follows a JSON structure. Below is a sample confi
   "allowedHostnames": ["cdn.xyz.com"]
 }
 ```
-## 1. Web Configuration
 
-### 1.1 browsers: 
+## Configuration Options
+
+<Tabs className='docs__val' groupId='config-options'>
+<TabItem value='web' label='Web Configuration' default>
+
+**browsers**
+
 An array of browsers to capture screenshots from. Supported browsers include `chrome`, `firefox`, `safari`, and `edge`.
 
-### 1.2 viewports: 
-An array of arrays representing different screen resolutions for web browsers. Each inner array contains viewport sizes. 
-Each web viewport is automatically rendered for each of the browser mentioned in the config.
+**viewports**
 
-#### 1.2.1 For capturing fullpage screenshots
+An array of arrays representing different screen resolutions for web browsers. Each inner array contains viewport sizes. Each web viewport is automatically rendered for each of the browser mentioned in the config.
+
+**For capturing fullpage screenshots**
 
 To capture a screenshot of the entire page, you only need to define the viewport width in your configuration settings. Specify the desired width parameters as demonstrated in the following example to ensure a fullpage capture.
 
@@ -119,7 +136,7 @@ To capture a screenshot of the entire page, you only need to define the viewport
     ],
 ```
 
-#### 1.2.2 For capturing viewport screenshots
+**For capturing viewport screenshots**
 
 To capture a screenshot of the content currently visible in your viewport, rather than the entire page, it's important to define the viewport's width and height in your configuration settings. Specify the desired width and height parameters as demonstrated in the following example to ensure that the screenshot encompasses only the viewport area.
 
@@ -140,40 +157,84 @@ To capture a screenshot of the content currently visible in your viewport, rathe
     ],
 ```
 
-## 2. Mobile Configuration
+</TabItem>
 
-### 2.1 devices: 
-An array of mobile devices to capture screenshots from. List of supported device names can be found [here](#list-of-supported-device-viewports). 
+<TabItem value='mobile' label='Mobile Configuration'>
+
+**devices**
+
+An array of mobile devices to capture screenshots from. List of supported device names can be found [here](#list-of-supported-device-viewports).
 
 :::note
  Mobile viewports are emulated in desktop environments.Android devices will have the screenshots rendered in Chrome, while iOS devices in Safari.
  SmartUI SDK will soon be supported simulation in case of iOS devices.
 :::
 
-### 2.2 fullPage: 
+**fullPage**
+
 Specifies whether to capture full-page screenshots for mobile devices. <b>By default</b>, `fullPage` is taken as <b>true</b>; set it to `false` in order to take a viewport screenshot on a mobile viewport.
 
-### 2.3 orientation: 
+**orientation**
+
 Specifies the orientation of the mobile device. You can choose from `portrait` or `landscape` according to your usecase. <b>By default</b>, the orientation is taken as <b>portrait</b>.
 
-## 3. Global Options (Optional)
+</TabItem>
 
-### 3.1 waitForPageRender:
+<TabItem value='global' label='Global Options'>
+
+**waitForPageRender**
+
 If one or more URLs in your script require a relatively higher amount of time to load, you may use the `waitForPageRender` key in the config file to make sure the screenshots are rendered correctly. Avoid using the same in case your websites render in less than 30 seconds as it might increase the execution time of your tests.
 
-### 3.2 waitForTimeout: 
+**waitForTimeout**
+
 If you are using any async components, you can add wait time for the page to load the DOM of your components. This can help avoid false-positive results for your tests. You can add the wait time in milliseconds, which might increase the execution time of your tests.
 
-### 3.3 enableJavaScript:
+**enableJavaScript**
+
 The `enableJavaScript` option is a boolean parameter that determines whether JavaScript is enabled for all snapshots within the project. Enabling JavaScript may lead to side-effects such as animations or redirects, potentially affecting the reliability of your snapshots.  <b>By default</b>, this option is set to <b>false.</b>
 
-### 3.4 allowedHostnames: 
+**allowedHostnames**
+
 The `allowedHostnames` option controls the capture of assets from specific hostnames. By default, the SmartUI SDK only captures assets that match the hostname of the snapshot location. For instance, if snapshots are taken on `https://xyz.com`, assets hosted on `https://cdn.xyz.com` will not be captured. To include assets from other hostnames, each additional hostname needs to be added to the allowedHostnames configuration.
 
+</TabItem>
 
-For additional information about SmartUI APIs please explore the documentation [here](https://www.lambdatest.com/support/api-doc/)
+<TabItem value='lazyload' label='Lazy Load Configuration'>
 
-## List of supported Device viewports
+**lazyLoadConfiguration**
+
+The `lazyLoadConfiguration` option is used to handle lazy-loaded content on web pages. This configuration helps ensure that all content is loaded before capturing screenshots, preventing incomplete captures due to lazy loading.
+
+To use this feature, ensure you have the latest version of SmartUI CLI installed:
+
+```bash
+npm install -g @lambdatest/smartui-cli@latest
+```
+
+Add the following configuration to your `.smartui.json` file:
+
+```json
+{
+  "lazyLoadConfiguration": {
+    "enabled": true,
+    "jumpBackToTop": true,
+    "scrollDelay": 250,
+    "scrollStep": 250
+  }
+}
+```
+
+- `enabled`: Boolean to enable/disable lazy load handling (default: false)
+- `jumpBackToTop`: Boolean to scroll back to top after scrolling to bottom (default: true)
+- `scrollDelay`: Delay in milliseconds between scroll actions (default: 250)
+- `scrollStep`: Pixels to scroll in each step (default: 250)
+
+</TabItem>
+
+<TabItem value='devices' label='Supported Devices'>
+
+**List of supported Device viewports**
 
 | IOS Devices            | Android Devices             |
 |------------------|------------------------|
@@ -304,23 +365,6 @@ For additional information about SmartUI APIs please explore the documentation [
 |                  | Xperia Z5 Dual         |
 |                  | Zenfone 6              |
 
+</TabItem>
+</Tabs>
 
-
-
-<nav aria-label="breadcrumbs">
-  <ul className="breadcrumbs">
-    <li className="breadcrumbs__item">
-      <a className="breadcrumbs__link" target="_self" href="https://www.lambdatest.com">
-        Home
-      </a>
-    </li>
-    <li className="breadcrumbs__item">
-      <a className="breadcrumbs__link" target="_self" href="https://www.lambdatest.com/support/docs/">
-        Support
-      </a>
-    </li>
-    <li className="breadcrumbs__item breadcrumbs__item--active">
-      <span className="breadcrumbs__link"> Smart UI with Cypress  </span>
-    </li>
-  </ul>
-</nav>

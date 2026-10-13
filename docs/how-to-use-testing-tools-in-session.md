@@ -3,16 +3,19 @@ id: how-to-use-testing-tools-in-session
 title: How to use testing tools in-session?
 hide_title: true
 sidebar_label: Testing Tools
-description: Mobile app testing is the process of testing a mobile application to ensure that their functionality and usability is not compromised when installed across multiple Android and iOS devices. With LambdaTest, you can test mobile applications manually to ensure they perform seamlessly across all Android and iOS real devices.
+description: Mobile app testing is the process of testing a mobile application to ensure that their functionality and usability is not compromised when installed across multiple Android and iOS devices. With TestMu AI, you can test mobile applications manually to ensure they perform seamlessly across all Android and iOS real devices.
 keywords:
   - real device app testing
   - real device browser testing
   - mobile app testing
   - app automation
-url: https://www.lambdatest.com/support/docs/how-to-use-testing-tools-in-session/
+url: https://www.testmuai.com/support/docs/how-to-use-testing-tools-in-session/
 site_name: LambdaTest
 slug: how-to-use-testing-tools-in-session/
+canonical: https://www.testmuai.com/support/docs/how-to-use-testing-tools-in-session/
 ---
+import BrandName, { BRAND_URL } from '@site/src/component/BrandName';
+
 
 <script type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -21,18 +24,18 @@ slug: how-to-use-testing-tools-in-session/
         "itemListElement": [{
           "@type": "ListItem",
           "position": 1,
-          "name": "LambdaTest",
-          "item": "https://www.lambdatest.com"
+          "name": "TestMu AI",
+          "item": BRAND_URL
         },{
           "@type": "ListItem",
           "position": 2,
           "name": "Support",
-          "item": "https://www.lambdatest.com/support/docs/"
+          "item": `${BRAND_URL}/support/docs/`
         },{
           "@type": "ListItem",
           "position": 3,
           "name": "How to use testing tools in-session?",
-          "item": "https://www.lambdatest.com/support/docs/how-to-use-testing-tools-in-session/"
+          "item": `${BRAND_URL}/support/docs/how-to-use-testing-tools-in-session/`
         }]
       })
     }}
@@ -42,14 +45,19 @@ slug: how-to-use-testing-tools-in-session/
 
 ***
 
-With LambdaTest Real Device App Testing, you get access to a plethora of features that helps QA ease their app testing process, without the need of leaving the instance window. From mark as bug and changing IP geolocation, to in-depth device logs and network logs, LambdaTest's real device app testing offers it all. 
+With <BrandName /> Real Device App Testing, you get access to a plethora of features that helps QA ease their app testing process, without the need of leaving the instance window. From mark as bug and changing IP geolocation, to in-depth device logs and network logs, <BrandName />'s real device app testing offers it all. 
 
 Let us get an overview of all the features in our real device instance:
 
-<img loading="lazy" src={require('../assets/images/real-device-app-testing/real-device-app-testing-home.webp').default} alt="add" width="1346" height="647" className="doc_img"/>
-
 ## Comprehensive Sidebar
 ***
+
+<div className="storylane-iframe">
+  <script async src="https://js.storylane.io/js/v2/storylane.js"></script>
+  <div className="sl-embed">
+    <iframe loading="lazy" className="sl-demo" src="https://app.storylane.io/demo/n5wnsyhh220a?embed=inline" name="sl-embed" allow="fullscreen" allowfullscreen></iframe>
+  </div>
+</div>
 
 ### Home
 
@@ -96,7 +104,7 @@ The **IP Geolocation** feature allows you to emulate website and mobile experien
 
 <img loading="lazy" src={require('../assets/images/real-device-app-testing/ip-geolocation.webp').default} alt="add" width="1346" height="647" className="doc_img"/>
 
-Check out our detailed support documentation to know more about the [IP Geolocation](https://www.lambdatest.com/support/docs/list-of-supported-locales/) feature.
+Check out our detailed support documentation to know more about the [IP Geolocation](/support/docs/list-of-supported-locales/) feature.
 
 ### GPS Location
 
@@ -109,22 +117,22 @@ However, if your preferred location is not showing, you can specify the exact lo
 
 ### Network Throttling
 
-With LambdaTest’s **Network Throttling**, you can test mobile applications across a range of network conditions, including offline, as well as specific network profiles like 3G, 3G+, 4G LTE, 4G Advanced and even custom network profile with its extensive real mobile device cloud.
+With <BrandName />’s **Network Throttling**, you can test mobile applications across a range of network conditions, including offline, as well as specific network profiles like 3G, 3G+, 4G LTE, 4G Advanced and even custom network profile with its extensive real mobile device cloud.
 
 You can simulate these network environments using either pre-defined profiles or by creating custom network profiles to suit your needs.
 
 <img loading="lazy" src={require('../assets/images/real-device-app-testing/network-throttling-real-device.webp').default} alt="add" width="1346" height="647" className="doc_img"/>
 
-Check out our detailed support documentation to know more about the [Network Throttling](https://www.lambdatest.com/support/docs/app-auto-network-throttling/) feature.
+Check out our detailed support documentation to know more about the [Network Throttling](/support/docs/app-auto-network-throttling/) feature.
 
 
 ### Files Upload
 
-Real device app testing on LambdaTest comes with preloaded media files on remote devices for testing scenarios that need file access. Additionally, you have the option to upload your own media or non-media files to cover your testing scenarios. You can upload files with formats: JPEG, PNG, MP4, 3GP, PDF, CSV, DOC and other major formats.
+Real device app testing on <BrandName /> comes with preloaded media files on remote devices for testing scenarios that need file access. Additionally, you have the option to upload your own media or non-media files to cover your testing scenarios. You can upload files with formats: JPEG, PNG, MP4, 3GP, PDF, CSV, DOC and other major formats.
 
 <img loading="lazy" src={require('../assets/images/real-device-app-testing/upload-files-real-device.webp').default} alt="add" width="1346" height="647" className="doc_img"/>
 
-Check out our detailed support documentation to know more about the [Files Upload](https://www.lambdatest.com/support/docs/upload-media/) feature.
+Check out our detailed support documentation to know more about the [Files Upload](/support/docs/upload-media/) feature.
 
 ### iOS Settings
 
@@ -136,6 +144,13 @@ With the **iOS settings**, you can access the crash logs as well as the app sett
 - **App Settings :** This will open the settings of the application in your mobile device.
 - **Accessibility :** Accessibility testing on iOS devices focuses on ensuring that applications and web content are usable by individuals with different abilities. Learn in detailed way about [Accessibility in iOS devices.](/support/docs/accessibility-settings-ios)
 
+- **Select Date and Time :** Opens a modal where you can:
+  - Toggle **Set Automatically** to sync with network time.
+  - Manually select a **Date** (up to 7 days ahead).
+  - Enter a **Time** in **HH:MM:SS** format.
+  - Choose between **12-hour** or **24-hour** time formats.
+  - Once configured, click **Update**  to apply the changes to the device.
+
 ### Device Controls
 
 With the **Device Controls** feature, you can easily manage various settings on your device, such as adjusting the volume and changing its orientation.
@@ -145,9 +160,10 @@ Under Device Control, you'll find multiple options to customize your device's se
 1. **Volume**: Adjust the device's volume to your preferred level.
 2. **Rotate**: Change the screen orientation between landscape and portrait modes.
 3. **Recent Apps** : Available on `iOS 15` and above, this feature allows you to view recent apps. Note that it is not supported on devices that rely on a physical button for accessing recent apps instead of the swipe-up gesture.
+4. **Bluetooth**: Used to enable the bluetooth functionality during the session.
 
 
-<img loading="lazy" src={require('../assets/images/real-device-app-testing/device-controls.webp').default} alt="add" width="1346" height="647" className="doc_img"/>
+<img loading="lazy" src={require('../assets/images/real-device-app-testing/devicecontrolplusbluetooth.png').default} alt="add" width="1346" height="647" className="doc_img"/>
 
 ### Settings
 
@@ -173,6 +189,13 @@ By clicking on the end session button, you can close your current test session.
 
 ## Comprehensive Top Bar
 ***
+
+<div className="storylane-iframe">
+  <script async src="https://js.storylane.io/js/v2/storylane.js"></script>
+  <div className="sl-embed">
+    <iframe loading="lazy" className="sl-demo" src="https://app.storylane.io/demo/me0ezcoti8ts?embed=inline" name="sl-embed" allow="fullscreen" allowfullscreen></iframe>
+  </div>
+</div>
 
 ### Zoom In-Out
 
@@ -208,18 +231,18 @@ Unified **Test Manager** simplifies test authoring, management, triggering, and 
 
 
 
-> **Notes:** The max duration for running manual tests on LambdaTest Real Device Cloud is 2 hours. In order to extend the duration, you can opt for our dedicated real device cloud.
+> **Notes:** The max duration for running manual tests on <BrandName /> Real Device Cloud is 2 hours. In order to extend the duration, you can opt for our dedicated real device cloud.
 
 
 <nav aria-label="breadcrumbs">
   <ul className="breadcrumbs">
     <li className="breadcrumbs__item">
-      <a className="breadcrumbs__link" href="https://www.lambdatest.com">
+      <a className="breadcrumbs__link" href={BRAND_URL}>
         Home
       </a>
     </li>
     <li className="breadcrumbs__item">
-      <a className="breadcrumbs__link" target="_self" href="https://www.lambdatest.com/support/docs/">
+      <a className="breadcrumbs__link" target="_self" href={`${BRAND_URL}/support/docs/`}>
         Support
       </a>
     </li>

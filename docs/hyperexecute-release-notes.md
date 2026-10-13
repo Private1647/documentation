@@ -3,15 +3,16 @@ id: hyperexecute-release-notes
 title: HyperExecute Release Notes
 hide_title: false
 sidebar_label: Release Notes
-description: Stay updated on the latest HyperExecute releases. View detailed release notes, including new features, bug fixes, and improvements for our AI-powered test orchestration platform.
+description: See the release notes for HyperExecute to stay informed about new features, fixes, and enhancements that improve your testing performance.
 keywords:
-  - LambdaTest Hyperexecute
-  - LambdaTest Hyperexecute help
-  - LambdaTest Hyperexecute documentation
+  - TestMu AI Hyperexecute
+  - TestMu AI Hyperexecute help
+  - TestMu AI Hyperexecute documentation
   - FAQs
-url: https://www.lambdatest.com/support/docs/hyperexecute-release-notes/
+url: https://www.testmuai.com/support/docs/hyperexecute-release-notes/
 site_name: LambdaTest
 slug: hyperexecute-release-notes/
+canonical: https://www.testmuai.com/support/docs/hyperexecute-release-notes/
 ---
 
 <script type="application/ld+json"
@@ -37,26 +38,120 @@ slug: hyperexecute-release-notes/
       })
     }}
 ></script>
-HyperExecute is an AI Powered Test Orchestration Cloud Platform, enabling test automation teams worldwide to achieve an accelerated time to market by providing JIT (Just-in-time) testing infrastructure that offers enhanced test execution speeds, smart test orchestration, detailed execution logs and much more.
+HyperExecute is an AI Native Test Orchestration Cloud Platform, enabling test automation teams worldwide to achieve an accelerated time to market by providing JIT (Just-in-time) testing infrastructure that offers enhanced test execution speeds, smart test orchestration, detailed execution logs and much more.
 
 <img loading="lazy" src={require('../assets/images/hyperexecute/release-notes/release-notes.gif').default} alt="Image"  className="doc_img"/>
 
 ## HyperExecute Releases
 
-### December, 2024
+### MCP releases
+#### May, 2025
+| Release Number | Release Date |
+|----------------|--------------|
+| [Version 1.0.0](/support/docs/hyperexecute-mcp-server-release-notes-1-0-0/) | May 28, 2025|
+
+### CLI releases
+#### January, 2025
+| Release Number | Release Date |
+|----------------|--------------|
+| [Version 0.2.249](/support/docs/hyperexecute-cli-release-notes-0-2-249) | January 13, 2025|
+
+### 2025 releases
+#### December, 2025
+| Release Number | Release Date |
+|----------------|--------------|
+| [Version 3.1.7](/support/docs/hyperexecute-release-notes-3-1-7) | Dec 15, 2025|
+| [Version 3.1.6](/support/docs/hyperexecute-release-notes-3-1-6) | Dec 08, 2025|
+| [Version 3.1.5](/support/docs/hyperexecute-release-notes-3-1-5) | Dec 01, 2025|
+
+#### November, 2025
+| Release Number | Release Date |
+|----------------|--------------|
+| [Version 3.1.4](/support/docs/hyperexecute-release-notes-3-1-4) | Nov 24, 2025|
+| [Version 3.1.2](/support/docs/hyperexecute-release-notes-3-1-2) | Nov 10, 2025|
+
+#### October, 2025
+| Release Number | Release Date |
+|----------------|--------------|
+| [Version 3.1.0](/support/docs/hyperexecute-release-notes-3-1-0) | Oct 13, 2025|
+| [Version 3.0.8](/support/docs/hyperexecute-release-notes-3-0-8) | Oct 13, 2025|
+
+#### September, 2025
+| Release Number | Release Date |
+|----------------|--------------|
+| [Version 3.0.6](/support/docs/hyperexecute-release-notes-3-0-6) | Sept 29, 2025|
+| [Version 3.0.4](/support/docs/hyperexecute-release-notes-3-0-4) | Sept 15, 2025|
+| [Version 3.0.3](/support/docs/hyperexecute-release-notes-3-0-3) | Sept 08, 2025|
+
+#### August, 2025
+| Release Number | Release Date |
+|----------------|--------------|
+| [Version 3.0.0](/support/docs/hyperexecute-release-notes-3-0-0) | August 18, 2025|
+| [Version 2.9.9](/support/docs/hyperexecute-release-notes-2-9-9) | August 11, 2025|
+| [Version 2.9.8](/support/docs/hyperexecute-release-notes-2-9-8) | August 04, 2025|
+
+#### July, 2025
+| Release Number | Release Date |
+|----------------|--------------|
+| [Version 2.9.7](/support/docs/hyperexecute-release-notes-2-9-7) | July 28, 2025|
+| [Version 2.9.6](/support/docs/hyperexecute-release-notes-2-9-6) | July 21, 2025|
+| [Version 2.9.5](/support/docs/hyperexecute-release-notes-2-9-5) | July 14, 2025|
+| [Version 2.9.4](/support/docs/hyperexecute-release-notes-2-9-4) | July 07, 2025|
+
+#### June, 2025
+| Release Number | Release Date |
+|----------------|--------------|
+| [Version 2.9.1](/support/docs/hyperexecute-release-notes-2-9-1) | June 16, 2025|
+| [Version 2.9.0](/support/docs/hyperexecute-release-notes-2-9-0) | June 09, 2025|
+| [Version 2.8.9](/support/docs/hyperexecute-release-notes-2-8-9) | June 02, 2025|
+
+#### May, 2025
+| Release Number | Release Date |
+|----------------|--------------|
+| [Version 2.8.8](/support/docs/hyperexecute-release-notes-2-8-8) | May 26, 2025|
+| [Version 2.8.7](/support/docs/hyperexecute-release-notes-2-8-7) | May 19, 2025|
+| [Version 2.8.6](/support/docs/hyperexecute-release-notes-2-8-6) | May 12, 2025|
+| [Version 2.8.5](/support/docs/hyperexecute-release-notes-2-8-5) | May 05, 2025|
+
+#### April, 2025
+| Release Number | Release Date |
+|----------------|--------------|
+| [Version 2.8.4](/support/docs/hyperexecute-release-notes-2-8-4) | April 28, 2025|
+| [Version 2.8.2](/support/docs/hyperexecute-release-notes-2-8-2) | April 21, 2025|
+| [Version 2.8.1](/support/docs/hyperexecute-release-notes-2-8-1) | April 14, 2025|
+
+#### March, 2025
+| Release Number | Release Date |
+|----------------|--------------|
+| [Version 2.7.8](/support/docs/hyperexecute-release-notes-2-7-8) | March 24, 2025|
+| [Version 2.7.6](/support/docs/hyperexecute-release-notes-2-7-6) | March 24, 2025|
+
+#### February, 2025
+| Release Number | Release Date |
+|----------------|--------------|
+| [Version 2.7.3](/support/docs/hyperexecute-release-notes-2-7-3) | February 17, 2025|
+| [Version 2.7.1](/support/docs/hyperexecute-release-notes-2-7-1) | February 03, 2025|
+
+#### January, 2025
+| Release Number | Release Date |
+|----------------|--------------|
+| [Version 2.7.0](/support/docs/hyperexecute-release-notes-2-7-0) | January 27, 2025|
+
+### 2024 releases
+#### December, 2024
 | Release Number | Release Date |
 |----------------|--------------|
 | [Version 2.6.5](/support/docs/hyperexecute-release-notes-2-6-5) | December 23, 2024|
 | [Version 2.6.2](/support/docs/hyperexecute-release-notes-2-6-2) | December 02, 2024|
 
-### November, 2024
+#### November, 2024
 | Release Number | Release Date |
 |----------------|--------------|
 | [Version 2.6.0](/support/docs/hyperexecute-release-notes-2-6-0) | November 18, 2024|
 | [Version 2.5.9](/support/docs/hyperexecute-release-notes-2-5-9) | November 11, 2024|
 | [Version 2.5.8](/support/docs/hyperexecute-release-notes-2-5-8) | November 04, 2024|
 
-### October, 2024
+#### October, 2024
 | Release Number | Release Date |
 |----------------|--------------|
 | [Version 2.5.7](/support/docs/hyperexecute-release-notes-2-5-7) | October 28, 2024|
@@ -64,7 +159,7 @@ HyperExecute is an AI Powered Test Orchestration Cloud Platform, enabling test a
 | [Version 2.5.5](/support/docs/hyperexecute-release-notes-2-5-5) | October 14, 2024|
 | [Version 2.5.4](/support/docs/hyperexecute-release-notes-2-5-4) | October 07, 2024|
 
-### September, 2024
+#### September, 2024
 | Release Number | Release Date |
 |----------------|--------------|
 | [Version 2.5.3](/support/docs/hyperexecute-release-notes-2-5-3) | September 30, 2024|
@@ -72,31 +167,31 @@ HyperExecute is an AI Powered Test Orchestration Cloud Platform, enabling test a
 | [Version 2.5.1](/support/docs/hyperexecute-release-notes-2-5-1) | September 16, 2024|
 | [Version 2.5.0](/support/docs/hyperexecute-release-notes-2-5-0) | September 10, 2024|
 
-### August, 2024
+#### August, 2024
 | Release Number | Release Date |
 |----------------|--------------|
 | [Version 2.4.8](/support/docs/hyperexecute-release-notes-2-4-8) | August 27, 2024|
 | [Version 2.4.7](/support/docs/hyperexecute-release-notes-2-4-7) | August 20, 2024|
 | [Version 2.4.6](/support/docs/hyperexecute-release-notes-2-4-6) | August 12, 2024|
 
-### July, 2024
+#### July, 2024
 | Release Number | Release Date |
 |----------------|--------------|
 | [Version 2.4.5](/support/docs/hyperexecute-release-notes-2-4-5) | July 29, 2024|
 | [Version 2.4.4](/support/docs/hyperexecute-release-notes-2-4-4) | July 22, 2024|
 | [Version 2.4.0](/support/docs/hyperexecute-release-notes-2-4-0) | July 01, 2024|
 
-### June, 2024
+#### June, 2024
 | Release Number | Release Date |
 |----------------|--------------|
 | [Version 2.3.8](/support/docs/hyperexecute-release-notes-2-3-8) | June 18, 2024|
 | [Version 2.3.7](/support/docs/hyperexecute-release-notes-2-3-7) | June 10, 2024|
 | [Version 2.3.6](/support/docs/hyperexecute-release-notes-2-3-6) | June 03, 2024|
-### May, 2024
+#### May, 2024
 | Release Number | Release Date |
 |----------------|--------------|
 | [Version 2.3.3](/support/docs/hyperexecute-release-notes-2-3-3) | May 13, 2024|
-### April, 2024
+#### April, 2024
 | Release Number | Release Date |
 |----------------|--------------|
 | [Version 2.3.1](/support/docs/hyperexecute-release-notes-2-3-1) | April 29, 2024|
@@ -104,24 +199,25 @@ HyperExecute is an AI Powered Test Orchestration Cloud Platform, enabling test a
 | [Version 2.2.9](/support/docs/hyperexecute-release-notes-2-2-9) | April 15, 2024|
 | [Version 2.2.8](/support/docs/hyperexecute-release-notes-2-2-8) | April 8, 2024|
 | [Version 2.2.7](/support/docs/hyperexecute-release-notes-2-2-7) | April 01, 2024|
-### March, 2024
+#### March, 2024
 | Release Number | Release Date |
 |----------------|--------------|
 | [Version 2.2.6](/support/docs/hyperexecute-release-notes-2-2-6) | March 28, 2024|
 | [Version 2.2.5](/support/docs/hyperexecute-release-notes-2-2-5) | March 18, 2024|
 | [Version 2.2.3](/support/docs/hyperexecute-release-notes-2-2-3) | March 03, 2024|
-### February, 2024
+#### February, 2024
 | Release Number | Release Date |
 |----------------|--------------|
 | [Version 2.2.2](/support/docs/hyperexecute-release-notes-2-2-2) | February 25, 2024|
 | [Version 2.2.1](/support/docs/hyperexecute-release-notes-2-2-1) | February 18, 2024|
 | [Version 2.2.0](/support/docs/hyperexecute-release-notes-2-2-0) | February 11, 2024|
-### January, 2024
+#### January, 2024
 | Release Number | Release Date |
 |----------------|--------------|
 | [Version 2.1.6](/support/docs/hyperexecute-release-notes-2-1-6) | January 14, 2024|
 | [Version 2.1.5](/support/docs/hyperexecute-release-notes-2-1-5) | January 07, 2024|
-### Previous releases
+
+### 2023 releases
 #### December, 2023
 | Release Number | Release Date |
 |----------------|--------------|

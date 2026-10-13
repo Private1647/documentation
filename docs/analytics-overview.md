@@ -1,14 +1,17 @@
 ---
 id: analytics-overview
-title: Lambdatest - Test Insights for visualizing your tests runs
+title: TestMu AI - Test Insights for visualizing your tests runs
 sidebar_label: Insights
 description: Optimize test management with Test Insights. Visualize test runs, track progress, and improve quality with actionable analytics. Enhance testing efficiency.
 keywords:
   - analytics
-url: https://www.lambdatest.com/support/docs/analytics-overview/
+url: https://www.testmuai.com/support/docs/analytics-overview/
 site_name: LambdaTest
 slug: analytics-overview/
+canonical: https://www.testmuai.com/support/docs/analytics-overview/
 ---
+import BrandName, { BRAND_URL } from '@site/src/component/BrandName';
+
 
 <script type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -18,17 +21,17 @@ slug: analytics-overview/
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://www.lambdatest.com"
+          "item": BRAND_URL
         },{
           "@type": "ListItem",
           "position": 2,
           "name": "Support",
-          "item": "https://www.lambdatest.com/support/docs/"
+          "item": `${BRAND_URL}/support/docs/`
         },{
           "@type": "ListItem",
           "position": 3,
           "name": "Linear App Integration",
-          "item": "https://www.lambdatest.com/support/docs/analytics-overview/"
+          "item": `${BRAND_URL}/support/docs/analytics-overview/`
         }]
       })
     }}
@@ -40,7 +43,7 @@ import NewTag from '../src/component/newTag';
 
 :::note Explore AI Dashboard CoPilot
 
-We have recently launched an AI Dashboard CoPilot <NewTag value="BETA" bgColor="#ffec02" color="#000" /> feature that provides intelligent recommendations, insights, and predictions tailored to your specific data.
+We have recently launched an AI Dashboard CoPilot feature that provides intelligent recommendations, insights, and predictions tailored to your specific data.
 
 To know more about this feature, refer to the [AI Dashboard CoPilot](/docs/analytics-dashboard-copilot/) documentation.
 
@@ -50,7 +53,7 @@ To know more about this feature, refer to the [AI Dashboard CoPilot](/docs/analy
 
 ## What is Insights?
 
-Insights in LambdaTest allows the QA managers and executives to efficiently track the tests conducted on the platform and get deep-level insights with the numerous widgets that the product provides.
+Insights in <BrandName /> allows the QA managers and executives to efficiently track the tests conducted on the platform and get deep-level insights with the numerous widgets that the product provides.
 
 <div className="ytframe"> 
 <div className="youtube" data-embed="AFQWaAkLg6o" data-loading-attribute="eager">
@@ -76,36 +79,36 @@ Insights effectively allows these managers to track and improve the tests at one
 <a href="/support/docs/analytics-modules-resource-utilization/">
     <div className="support_inners">
       <h3>Concurrency Usage</h3>
-      <p>Learn how to to get an overview of the LambdaTest resources being utilized by your teams.</p>
+      <p>Learn how to to get an overview of the <BrandName /> resources being utilized by your teams.</p>
     </div>
   </a>
   <a href="/support/docs/analytics-modules-automation-test-overview/">
     <div className="support_inners">
       <h3>Overview</h3>
-      <p>Learn how to get an overview of the tests running on the LambdaTest.</p>
+      <p>Learn how to get an overview of the tests running on the <BrandName />.</p>
     </div>
   </a>
   <a href="/support/docs/analytics-modules-test-intelligence-command-logs-analytics/">
     <div className="support_inners">
       <h3>Error Insights</h3>
-      <p>Learn how to get all the insights into the test errors on the LambdaTest.</p>
+      <p>Learn how to get all the insights into the test errors on the <BrandName />.</p>
     </div>
   </a>
   <a href="/support/docs/analytics-modules-test-intelligence-flaky-test-analytics/">
     <div className="support_inners">
-      <h3>Flaky Tests AI &nbsp; <NewTag value="BETA" bgColor="#ffec02" color="#000" /></h3>
+      <h3>Flaky Tests AI</h3>
       <p>Monitor all the Flaky tests run on the platform and review the quality of the feature on your SMOKE and Regression Jobs.</p>
     </div>
   </a>
   <a href="/support/docs/analytics-test-case-insights/">
     <div className="support_inners">
-      <h3>Test Case Insights &nbsp; <NewTag value="BETA" bgColor="#ffec02" color="#000" /></h3>
+      <h3>Test Case Insights</h3>
       <p>Get insights for `describe()` block level for your test frameworks in HyperExecute. Monitor the quality metrics at each test case.</p>
     </div>
   </a>
     <a href="/support/docs/analytics-allure-api-widgets/">
     <div className="support_inners">
-      <h3>API Test Insights &nbsp; <NewTag value="BETA" bgColor="#ffec02" color="#000" /></h3>
+      <h3>API Test Insights</h3>
       <p>Get API test time-series insights using Allure report integration with your test suite and run it on HyperExecute.</p>
     </div>
   </a>
@@ -191,18 +194,18 @@ Insights effectively allows these managers to track and improve the tests at one
 </div>
 
 :::info
-The <NewTag value="BETA" bgColor="#ffec02" color="#000" /> features are available for limited users only. If you wish to try them out, please reach out to our [24/7 customer support](mailto:support@lambdatest.com).
+The <NewTag value="BETA" bgColor="#ffec02" color="#000" /> features are available for limited users only. If you wish to try them out, please reach out to our [24/7 customer support](mailto:support@testmu.ai).
 :::
 
 <nav aria-label="breadcrumbs">
   <ul className="breadcrumbs">
     <li className="breadcrumbs__item">
-      <a className="breadcrumbs__link" target="_self" href="https://www.lambdatest.com">
+      <a className="breadcrumbs__link" target="_self" href={BRAND_URL}>
         Home
       </a>
     </li>
     <li className="breadcrumbs__item">
-      <a className="breadcrumbs__link" target="_self" href="https://www.lambdatest.com/support/docs/">
+      <a className="breadcrumbs__link" target="_self" href={`${BRAND_URL}/support/docs/`}>
         Support
       </a>
     </li>

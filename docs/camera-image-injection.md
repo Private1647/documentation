@@ -2,21 +2,22 @@
 id: camera-image-injection
 title: Camera Image Injection
 sidebar_label: Camera Image Injection
-description: Now you can test image capturing and QR code or Barcode scanning in your app on LambdaTest Real Device Cloud Platform with 3000+ real mobile devices.
+description: Simulate camera input to test camera-based features like QR scanning and document capture without needing physical devices.
 keywords:
   - image injection
   - app test automation
   - camera image
   - QR code scanning
   - Barcode scanning
-  - lambdatest capture code
-  - framework on lambdatest
+  - testmu ai capture code
+  - framework on testmu ai
   - app testing appium
   - app testing
   - real devices
-url: https://www.lambdatest.com/support/docs/camera-image-injection/
+url: https://www.testmuai.com/support/docs/camera-image-injection/
 site_name: LambdaTest
 slug: camera-image-injection/
+canonical: https://www.testmuai.com/support/docs/camera-image-injection/
 ---
 
 import CodeBlock from '@theme/CodeBlock';
@@ -24,6 +25,10 @@ import {YOUR_LAMBDATEST_USERNAME, YOUR_LAMBDATEST_ACCESS_KEY} from "@site/src/co
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RealDeviceTag from '../src/component/realDevice';
+import VirtualDeviceTag from '../src/component/virtualDevice';
+import BrandName, { BRAND_URL } from '@site/src/component/BrandName';
+
 
 <script type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -33,22 +38,23 @@ import TabItem from '@theme/TabItem';
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://www.lambdatest.com"
+          "item": BRAND_URL
         },{
           "@type": "ListItem",
           "position": 2,
           "name": "Support",
-          "item": "https://www.lambdatest.com/support/docs/"
+          "item": `${BRAND_URL}/support/docs/`
         },{
           "@type": "ListItem",
           "position": 3,
           "name": "Camera Image Injection",
-          "item": "https://www.lambdatest.com/support/docs/camera-image-injection/"
+          "item": `${BRAND_URL}/support/docs/camera-image-injection/`
         }]
       })
     }}
 ></script>
-Camera Image Injection feature allows you to test **image capturing, QR code scanning**, and **barcode scanning** functionalities in your app across **3000+ real devices** on the LambdaTest Real Device Cloud platform.
+<RealDeviceTag value="Real Device" /> <VirtualDeviceTag value="Virtual Device" />
+Camera Image Injection feature allows you to test **image capturing, QR code scanning**, and **barcode scanning** functionalities in your app across **10000+ real devices** on the <BrandName /> Real Device Cloud platform.
 
 This tool is ideal for testing features such as:
 
@@ -58,7 +64,7 @@ This tool is ideal for testing features such as:
 - Uploading images to your app
 
 ## How It Works
-LambdaTest utilizes **Sensor Instrumentation** to integrate with various mobile sensors, including the camera. When you enable Image Injection for a session, LambdaTest injects its camera code module into your app through Sensor Instrumentation. This module then mocks or overrides the Android or iOS SDK used in your app.
+<BrandName /> utilizes **Sensor Instrumentation** to integrate with various mobile sensors, including the camera. When you enable Image Injection for a session, <BrandName /> injects its camera code module into your app through Sensor Instrumentation. This module then mocks or overrides the Android or iOS SDK used in your app.
 
 ### Key Features
 
@@ -67,13 +73,14 @@ LambdaTest utilizes **Sensor Instrumentation** to integrate with various mobile 
 - Seamless integration with your existing app testing workflow
 
 :::warning note
-- Video capture and other media types are not currently supported.
 - For iOS apps signed with Enterprise Certificates, app resigning (a prerequisite for using the Image Injection tool) is not available.
+- For virtual devices this feature is available on Android App Automation Testing.
+
 :::
 
 ## Supported Camera APIs
 
-Below given is the list of Camera APIs which are supported by LambdaTest Image Injection tool. Please ensure that your app uses these APIs only to enable Image Injection.
+Below given is the list of Camera APIs which are supported by <BrandName /> Image Injection tool. Please ensure that your app uses these APIs only to enable Image Injection.
 
 <Tabs className="docs__val">
 
@@ -107,9 +114,9 @@ Below given is the list of Camera APIs which are supported by LambdaTest Image I
 
 This section explains how to use Image Injection with App automation. This section will also teach you how to use image injection for all the possible test cases for your app along with other useful information.
 
-### Step 1: Upload image to LambdaTest
+### Step 1: Upload image to <BrandName />
 
-You can use the following curl command to upload any image of your choice to the LambdaTest cloud. Please note that we support only **JPG, JPEG, and PNG formats which can be 10 MB or less**.
+You can use the following curl command to upload any image of your choice to the <BrandName /> cloud. Please note that we support only **JPG, JPEG, and PNG formats which can be 10 MB or less**.
 
 <div className="lambdatest__codeblock">
 <CodeBlock className="language-bash">
@@ -196,12 +203,12 @@ You need to first add a logic to inject the uploaded image in the script. Therea
 <nav aria-label="breadcrumbs">
   <ul className="breadcrumbs">
     <li className="breadcrumbs__item">
-      <a className="breadcrumbs__link" target="_self" href="https://www.lambdatest.com">
+      <a className="breadcrumbs__link" target="_self" href={BRAND_URL}>
         Home
       </a>
     </li>
     <li className="breadcrumbs__item">
-      <a className="breadcrumbs__link" target="_self" href="https://www.lambdatest.com/support/docs/">
+      <a className="breadcrumbs__link" target="_self" href={`${BRAND_URL}/support/docs/`}>
         Support
       </a>
     </li>

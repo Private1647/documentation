@@ -7,10 +7,14 @@ description: Export multiple test cases with the export to csv option for easy d
 keywords:
   - export-test-cases
   - test cases
-url: https://www.lambdatest.com/support/docs/export-test-cases/
+url: https://www.testmuai.com/support/docs/export-test-cases/
 site_name: LambdaTest
 slug: export-test-cases/
+canonical: https://www.testmuai.com/support/docs/export-test-cases/
 ---
+
+
+import BrandName, { BRAND_URL } from '@site/src/component/BrandName';
 
 <script type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -19,18 +23,18 @@ slug: export-test-cases/
         "itemListElement": [{
           "@type": "ListItem",
           "position": 1,
-          "name": "LambdaTest",
-          "item": "https://www.lambdatest.com"
+          "name": "TestMu AI",
+          "item": BRAND_URL
         },{
           "@type": "ListItem",
           "position": 2,
           "name": "Support",
-          "item": "https://www.lambdatest.com/support/docs/"
+          "item": `${BRAND_URL}/support/docs/`
         },{
           "@type": "ListItem",
           "position": 3,
           "name": "Export Test Cases",
-          "item": "https://www.lambdatest.com/support/docs/export-test-cases/"
+          "item": `${BRAND_URL}/support/docs/export-test-cases/`
         }]
       })
     }}
@@ -42,32 +46,32 @@ Efficient test management is crucial for successful project execution. One of th
 
 **Let’s look at the steps involved:**
 
-1. Navigate to the Test Cases section and select multiple test cases within a folder. 
+1. Bulk select Test cases you want to include in the export file & click on the `Bulk Action` button. 
 
-<img loading="lazy" src={require('../assets/images/mobile-app-testing/select-test-cases.webp').default} alt="Real "  className="doc_img" width="1366" height="629"/>
+<img loading="lazy" src={require('../assets/images/mobile-app-testing/bulk_export_testcases.jpeg').default} alt="export test cases "  className="doc_img" width="1366" height="629"/>
 
-2. Click on **Bulk Actions** and select **Export to CSV** to export test cases.
+2. Click `Export to CSV` present on the appeared dropdown.
 
-<img loading="lazy" src={require('../assets/images/mobile-app-testing/export-to-csv.webp').default} alt="Real "  className="doc_img" width="1366" height="629"/>
+3. When you click Export to CSV, you’ll see options to choose which test case fields to include in the export. Select the desired fields and click **Export to CSV** to download the file.
 
-3. Once you click on Export to CSV, the file will automatically download in CSV format. 
+<img loading="lazy" src={require('../assets/images/mobile-app-testing/select-specifc-fields-export.png').default} alt="export test cases "  className="doc_img" width="1366" height="629"/>
 
-<img loading="lazy" src={require('../assets/images/mobile-app-testing/download-csv.webp').default} alt="Real "  className="doc_img" width="1366" height="629"/>
+This is how your exported CSV file would look like :
 
-By following these steps, you can easily export your test cases. The file will be available in the download folder on your system.
-
+<img loading="lazy" src={require('../assets/images/mobile-app-testing/exported_csv.jpeg').default} alt="exported CSV "  className="doc_img" width="1366" height="629"/>
+This file includes all the metadata fields that were selected during export.
 
 
 
 <nav aria-label="breadcrumbs">
   <ul className="breadcrumbs">
     <li className="breadcrumbs__item">
-      <a className="breadcrumbs__link" href="https://www.lambdatest.com">
+      <a className="breadcrumbs__link" href={BRAND_URL}>
         Home
       </a>
     </li>
     <li className="breadcrumbs__item">
-      <a className="breadcrumbs__link" target="_self" href="https://www.lambdatest.com/support/docs/">
+      <a className="breadcrumbs__link" target="_self" href={`${BRAND_URL}/support/docs/`}>
         Support
       </a>
     </li>

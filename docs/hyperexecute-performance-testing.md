@@ -7,20 +7,22 @@ description: Prevent app launch disaster! Test app performance under load with H
 keywords:
   - hyperexecute performance testing
   - hyperexecute
-  - lambdatest
+  - testmu ai
   - jmeter
   - k6
   - browser
   - apache
   - http
   - test plan
-url: https://www.lambdatest.com/support/docs/hyperexecute-performance-testing/
+url: https://www.testmuai.com/support/docs/hyperexecute-performance-testing/
 site_name: LambdaTest
 slug: hyperexecute-performance-testing/
+canonical: https://www.testmuai.com/support/docs/hyperexecute-performance-testing/
 ---
 
 import CodeBlock from '@theme/CodeBlock';
 import {YOUR_LAMBDATEST_USERNAME, YOUR_LAMBDATEST_ACCESS_KEY} from "@site/src/component/keys";
+import BrandName, { BRAND_URL } from '@site/src/component/BrandName';
 
 <script type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -30,25 +32,23 @@ import {YOUR_LAMBDATEST_USERNAME, YOUR_LAMBDATEST_ACCESS_KEY} from "@site/src/co
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://www.lambdatest.com"
+          "item": BRAND_URL
         },{
           "@type": "ListItem",
           "position": 2,
           "name": "Products Integration",
-          "item": "https://www.lambdatest.com/support/docs/"
+          "item": `${BRAND_URL}/support/docs/`
         },{
           "@type": "ListItem",
           "position": 3,
           "name": "Performance Testing",
-          "item": "https://www.lambdatest.com/support/docs/hyperexecute-performance-testing/"
+          "item": `${BRAND_URL}/support/docs/hyperexecute-performance-testing/`
         }]
       })
     }}
 ></script>
 
 **Imagine launching your dream app...only to see it crash under the weight of excited users !!**
-
-> This is currently in the **Beta** version.
 
 Your team devoted months to meticulously crafting an app or a website that is finally ready for the world. Your users are hyped, anticipation is boiling, and you hit the **launch** button. 🚀
 
@@ -64,7 +64,6 @@ Think of it like putting your app through a rigorous training regime. We throw v
 
 HyperExecute offers a comprehensive platform for performance testing, providing users with the following benefits:
 
-- **Seamless Integration with JMeter:** HyperExecute seamlessly integrates with Apache JMeter, a popular open-source tool for performance testing, allowing users to leverage their existing JMeter test plans in the cloud environment effortlessly.
 - **Real-Time Monitoring and Reporting:** HyperExecute provides real-time monitoring and reporting capabilities, enabling users to track performance metrics, identify bottlenecks, and analyze results as tests are running. This empowers users to make informed decisions and take immediate action to optimize performance.
 
 - **Customizable Load Distribution:** HyperExecute enables users to configure load distribution, specifying different data center names and percentages of load to be generated from them. This flexibility ensures efficient utilization of resources and accurate simulation of real-world scenarios.

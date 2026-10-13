@@ -1,21 +1,28 @@
 ---
 id: getting-started-with-flutter-dart-ios-automation
-title: Flutter Dart Testing On LambdaTest - iOS
+title: Flutter Dart Testing On TestMu AI - iOS
 sidebar_label: Flutter Dart iOS
-description: This guide details running your first Flutter Dart test on real iPhones using LambdaTest's Real Device Cloud.
+description: This guide details running your first Flutter Dart test on real iPhones using TestMu AI's Real Device Cloud.
 keywords:
 - flutter
-- lambdatest
-- framework on lambdatest
+- testmu ai
+- framework on testmu ai
 - app testing
 - real devices
-url: https://www.lambdatest.com/support/docs/getting-started-with-flutter-dart-ios-automation/
+url: https://www.testmuai.com/support/docs/getting-started-with-flutter-dart-ios-automation/
 site_name: LambdaTest
 slug: getting-started-with-flutter-dart-ios-automation/
+canonical: https://www.testmuai.com/support/docs/getting-started-with-flutter-dart-ios-automation/
 ---
 
 import CodeBlock from '@theme/CodeBlock';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 import {YOUR_LAMBDATEST_USERNAME, YOUR_LAMBDATEST_ACCESS_KEY} from "@site/src/component/keys";
+import RealDeviceTag from '../src/component/realDevice';
+import VirtualDeviceTag from '../src/component/virtualDevice';
+import BrandName, { BRAND_URL } from '@site/src/component/BrandName';
+
 
 <script type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -25,34 +32,36 @@ import {YOUR_LAMBDATEST_USERNAME, YOUR_LAMBDATEST_ACCESS_KEY} from "@site/src/co
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://www.lambdatest.com"
+          "item": BRAND_URL
         },{
           "@type": "ListItem",
           "position": 2,
           "name": "Support",
-          "item": "https://www.lambdatest.com/support/docs/"
+          "item": `${BRAND_URL}/support/docs/`
         },{
           "@type": "ListItem",
           "position": 3,
-          "name": "Getting Started With Flutter Tests on LambdaTest",
-          "item": "https://www.lambdatest.com/support/docs/getting-started-with-flutter-dart-android-automation/"
+          "name": "Getting Started With Flutter Tests on TestMu AI",
+          "item": `${BRAND_URL}/support/docs/getting-started-with-flutter-dart-android-automation/`
         }]
       })
     }}
 ></script>
+
+<RealDeviceTag value="Real Device" /> 
 Flutter, an open-source UI toolkit created by Google, is a popular choice among developers to build natively compiled applications for mobile, web, and desktop from a single codebase. With Dart as its programming language, Flutter enables fast development of beautiful apps with a highly productive, extensible and open-source set of features.
 
-In this guide, we will explore how to run your first Flutter Dart test on an iOS device using the LambdaTest Real Device Cloud. By combining the capabilities of Flutter Dart and LambdaTest, you can ensure the proper functioning of your app across different devices and make your app more reliable and robust.
+In this guide, we will explore how to run your first Flutter Dart test on an iOS device using the <BrandName /> Real Device Cloud. By combining the capabilities of Flutter Dart and <BrandName />, you can ensure the proper functioning of your app across different devices and make your app more reliable and robust.
 
 ## Prerequisites for Getting Started
 
 1. Flutter SDK installed on your system
-2. You will need a LambdaTest username and access key. To obtain your access credentials, [purchase a plan](https://billing.lambdatest.com/billing/plans) or access the [automation dashboard](https://appautomation.lambdatest.com/).
+2. You will need a <BrandName /> username and access key. To obtain your access credentials, [purchase a plan](https://billing.lambdatest.com/billing/plans) or access the [automation dashboard](https://appautomation.lambdatest.com/).
 3. Access to a Flutter **Sample** test suite (.zip).
 
 :::tip
 
-If you do not have any **Flutter iOS** test suite (.zip), you can run your sample tests on LambdaTest by using our sample :link: [Flutter iOS](https://prod-mobile-artefacts.lambdatest.com/assets/docs/Flutter_iOS.zip).
+If you do not have any **Flutter iOS** test suite (.zip), you can run your sample tests on <BrandName /> by using our sample :link: [Flutter iOS](https://prod-mobile-artefacts.lambdatest.com/assets/docs/Flutter_iOS.zip).
 
 :::
 
@@ -60,10 +69,7 @@ If you do not have any **Flutter iOS** test suite (.zip), you can run your sampl
 
 ### Step 1: Upload Your Test Suite
 
-Upload your **iOS** test suite (.zip file) to the LambdaTest servers using our **REST API**. You need to provide your **Username** and **AccessKey** in the format `Username:AccessKey` in the **cURL** command for authentication. Make sure to add the path of the **appFile** in the cURL request. Here is an example cURL request to upload your app using our REST API:
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+Upload your **iOS** test suite (.zip file) to the <BrandName /> servers using our **REST API**. You need to provide your **Username** and **AccessKey** in the format `Username:AccessKey` in the **cURL** command for authentication. Make sure to add the path of the **appFile** in the cURL request. Here is an example cURL request to upload your app using our REST API:
 
 **Using App File:**
 
@@ -165,9 +171,9 @@ curl --location --request POST "https://mobile-api.lambdatest.com/framework/v1/f
 </TabItem>
 </Tabs>
 
-### Step 4: View Test Execution
+### Step 3: View Test Execution
 
-Once you have run your tests, you can view the test execution along with logs. You will be able to see the test cases passing or failing. You can view the same at [LambdaTest Automation](https://appautomation.lambdatest.com/builds).
+Once you have run your tests, you can view the test execution along with logs. You will be able to see the test cases passing or failing. You can view the same at [<BrandName /> Automation](https://appautomation.lambdatest.com/builds).
 
 ## Capabilities Supported
 
@@ -183,6 +189,12 @@ The following capabilities are supported:
 8. **tunnel:** Boolean value to run build via Tunnel. Example: `true`.  
 9. **tunnelName:** Name of the tunnel to be used in conjunction with `tunnel` capability.  
 10. **region:** String to device the region from which device will be allocated. Example - `eu`,`us`,`ap`.
+11. **gpsLocation:** This capability should be defined to override the device’s default GPS coordinates and should be provided as a comma-separated string. Example: `"location": {"lat": "-50","long": "150.028333"}`.
+12. **enableBluetooth:** This capability is used to enable the bluetooth functionality during the session. Example: `enableBluetooth: true`
+
+:::note
+Ensure that the latitude is between -90 and 90, and the longitude is between -180 and 180. Otherwise, an error will occur like "Invalid GPS location: Latitude must be between -90 and +90, Longitude must be between -180 and +180."
+:::
 
 
 ## Running Tests in Parallel
@@ -214,12 +226,12 @@ Do note that Flutter builds when run in parallel, result in separate builds bein
 <nav aria-label="breadcrumbs">
   <ul className="breadcrumbs">
     <li className="breadcrumbs__item">
-      <a className="breadcrumbs__link" target="_self" href="https://www.lambdatest.com">
+      <a className="breadcrumbs__link" target="_self" href={BRAND_URL}>
         Home
       </a>
     </li>
     <li className="breadcrumbs__item">
-      <a className="breadcrumbs__link" target="_self" href="https://www.lambdatest.com/support/docs/">
+      <a className="breadcrumbs__link" target="_self" href={`${BRAND_URL}/support/docs/`}>
         Support
       </a>
     </li>

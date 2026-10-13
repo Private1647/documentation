@@ -5,13 +5,17 @@ hide_title: true
 sidebar_label: How to configure sourcePayload
 description: Learn to configure sourcePayload in HyperExecute with ease, allowing secure and direct sourcing of test scripts from your Git provider for seamless testing integration.
 keywords:
-  - LambdaTest Hyperexecute
-  - LambdaTest Hyperexecute help
-  - LambdaTest Hyperexecute documentation
-url: https://www.lambdatest.com/support/docs/hyperexecute-how-to-configure-sourcePayload/
+  - TestMu AI Hyperexecute
+  - TestMu AI Hyperexecute help
+  - TestMu AI Hyperexecute documentation
+url: https://www.testmuai.com/support/docs/hyperexecute-how-to-configure-sourcePayload/
 site_name: LambdaTest
 slug: hyperexecute-how-to-configure-sourcePayload/
+canonical: https://www.testmuai.com/support/docs/hyperexecute-how-to-configure-sourcePayload/
 ---
+
+
+import BrandName, { BRAND_URL } from '@site/src/component/BrandName';
 
 <script type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -21,17 +25,17 @@ slug: hyperexecute-how-to-configure-sourcePayload/
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://www.lambdatest.com"
+          "item": BRAND_URL
         },{
           "@type": "ListItem",
           "position": 2,
           "name": "Support",
-          "item": "https://www.lambdatest.com/support/docs/"
+          "item": `${BRAND_URL}/support/docs/`
         },{
           "@type": "ListItem",
           "position": 3,
           "name": "HyperExecute Concepts",
-          "item": "https://www.lambdatest.com/support/docs/hyperexecute-how-to-configure-sourcePayload/"
+          "item": `${BRAND_URL}/support/docs/hyperexecute-how-to-configure-sourcePayload/`
         }]
       })
     }}
@@ -64,15 +68,15 @@ sourcePayload:
     
 3.  **ref**: The name of the branch that you want to test.
     
-4.  **accessToken**: Your personal access token (PAT), generated on your Git platform. If you want to know how to generate a PAT for GitHub, go through [this](#how-to-generate-a-personal-access-token-on-github) section.  
+4.  **accessToken**: Your personal access token (PAT), generated on your Git platform. If you want to know how to generate a PAT for GitHub, go through [this](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) section.  
 
 > **Note**: You don’t need to use a Personal Access Token if your repository is public. 
 
 5. **commit**: If you want to run a specific commit file other than the **HEAD** commit, then you need to define here the specific commit ID.
 
-> As a best practice, you should not use your PAT directly in the YAML file. Instead of that, you can make use of our [vault](/support/docs/deep-dive-into-hyperexecute-yaml/#12-vault) feature and add the PAT to your secrets. To use the vault feature in the HyperExecute YAML file, you can refer the example given below.
+> As a best practice, you should not use your PAT directly in the YAML file. Instead of that, you can make use of our [vault](/support/docs/hyperexecute-how-to-save-and-manage-secrets/) feature and add the PAT to your secrets. To use the vault feature in the HyperExecute YAML file, you can refer the example given below.
 
-```bash
+```yaml title="hyperexecute.yaml"
 sourcePayload:
   platform: git
   link: https://--------
@@ -88,7 +92,7 @@ sourcePayload:
 
 A sample HyperExecute YAML file is added below for your reference.
 
-```yaml
+```yaml title="hyperexecute.yaml"
 ---
 version: "0.1"
 globalTimeout: 90
@@ -219,12 +223,12 @@ sourcePayload:
 <nav aria-label="breadcrumbs">
   <ul className="breadcrumbs">
     <li className="breadcrumbs__item">
-      <a className="breadcrumbs__link" target="_self" href="https://www.lambdatest.com">
+      <a className="breadcrumbs__link" target="_self" href={BRAND_URL}>
         Home
       </a>
     </li>
     <li className="breadcrumbs__item">
-      <a className="breadcrumbs__link" target="_self" href="https://www.lambdatest.com/support/docs/">
+      <a className="breadcrumbs__link" target="_self" href={`${BRAND_URL}/support/docs/`}>
         Support
       </a>
     </li>

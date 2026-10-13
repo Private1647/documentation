@@ -1,21 +1,24 @@
 ---
 id: capability-map
-title: LambdaTest Capability Map to Migrate from BrowserStack & SauceLabs
+title: TestMu AI Capability Map to Migrate from BrowserStack & SauceLabs
 hide_title: true
-sidebar_label: LambdaTest Migration Guide
-description: A quick guide on LambdaTest Capability Map to Migrate from BrowserStack & SauceLabs.
+sidebar_label: TestMu AI Migration Guide
+description: A quick guide on TestMu AI Capability Map to Migrate from BrowserStack & SauceLabs.
 keywords:
   - migrate desired capabilities from sauce labs
   - migrate desired capabilities from browserstack
-  - migrate desired capabilities from sauce labs to lambdatest
-  - migrate desiredcapabilities from browserstack to lambdatest
-  - how to migrate desired capabilities from sauce labs to lambdatest
-  - how to migrate desired capabilities from browserstack to lambdatest
+  - migrate desired capabilities from sauce labs to testmu ai
+  - migrate desiredcapabilities from browserstack to testmu ai
+  - how to migrate desired capabilities from sauce labs to testmu ai
+  - how to migrate desired capabilities from browserstack to testmu ai
 
-url: https://www.lambdatest.com/support/docs/lambdatest-capability-map/
+url: https://www.testmuai.com/support/docs/testmu-capability-map/
 site_name: LambdaTest
-slug: lambdatest-capability-map/
+slug: testmu-capability-map/
+canonical: https://www.testmuai.com/support/docs/testmu-capability-map/
 ---
+import BrandName, { BRAND_URL } from '@site/src/component/BrandName';
+
 <script type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify({
        "@context": "https://schema.org",
@@ -24,17 +27,17 @@ slug: lambdatest-capability-map/
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://www.lambdatest.com"
+          "item": BRAND_URL
         },{
           "@type": "ListItem",
           "position": 2,
           "name": "Support",
-          "item": "https://www.lambdatest.com/support/docs/"
+          "item": `${BRAND_URL}/support/docs/`
         },{
           "@type": "ListItem",
           "position": 3,
           "name": "LambdaTest Capability Map",
-          "item": "https://www.lambdatest.com/support/docs/lambdatest-capability-map/"
+          "item": `${BRAND_URL}/support/docs/testmu-capability-map/`
         }]
       })
     }}
@@ -43,95 +46,169 @@ slug: lambdatest-capability-map/
 import CodeBlock from '@theme/CodeBlock';
 import {YOUR_LAMBDATEST_USERNAME, YOUR_LAMBDATEST_ACCESS_KEY} from "@site/src/component/keys";
 
-# LambdaTest Capability Map to Migrate from BrowserStack & SauceLabs
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# <BrandName /> Capability Map to Migrate from BrowserStack & SauceLabs
 ---
 
-## Introduction
+Switching automation platforms can seem challenging, but a clear capability comparison helps simplify the decision and migration process. Teams often explore alternative testing platforms to improve speed, scalability, test coverage, and overall efficiency in their delivery pipelines. 
 
-Besides LambdaTest, BrowserStack and SauceLabs also offer the cloud-based Selenium Grid. Migrating your BrowserStack or Sauce Labs tests to LambdaTest requires a few tweaks in your code. In this guide, we'll look at what changes that have to be made for easy migration to LambdaTest.
+<BrandName /> provides a cloud-based test execution environment that supports various automation frameworks, real device testing, visual validations, debugging tools, and analytics, making it a flexible option for organizations aiming to optimize and modernize their testing workflows.
 
-## Changes to be made
 
----
+## Authentication & <BrandName /> Hub Configuration
 
-### Authentication
+To migrate your automation tests from BrowserStack or Sauce Labs to <BrandName />, you must add <BrandName /> authentication credentials and configure the execution hub endpoint.
 
-Firstly, you need to change the authentication in the configuration settings of your test suite. For running tests on LambdaTest Selenium Grid, you need to have a valid `user_name` and `access_key` to perform tests on our cloud Grid. In case you don’t have an account on LambdaTest, visit the [LambdaTest signup page](https://accounts.lambdatest.com/register) and create a new account.
+### Add Authentication Credentials
+Firstly, you need to change the authentication in your configuration settings of your test suite. For running tests on <BrandName /> Selenium Grid, you need to have a valid user_name and access_key to perform tests on our Grid. In case you do not have an account on <BrandName />, visit the [<BrandName /> signup page](https://accounts.lambdatest.com/register) and create a new account.
 
-The following are the changes in the parameters:
 
-- Username
-- Access Key
 
-You can find the `Username` and `Access Key` in the **LambdaTest Automation Dashboard**.
+When migrating your test from BrowserStack or Sauce Labs to <BrandName />, the following updates are required in your existing code:
 
-<img loading="lazy" src={require('../assets/images/getting-started/auth.png').default} alt="Image" width="1366" height="625" className="doc_img"/>
+1.  <b>Get <BrandName /> Credentials</b>: You can find these credentials under Account Settings > [Password & Security](https://accounts.lambdatest.com/security/username-accesskey) and copy your Username and Access Key, then add them to the .env file to keep them safe from public exposure.
 
-When migrating from BrowserStack or SauceLabs to LambdaTest, you need to make the following changes in the existing code:
 
-1. UserName
-2. AccessKey
-3. Hub URL
-4. Desired Capabilities
 
-Here is a side-by-side comparison of each of the fields that we have highlighted above:
+2. <b>Create .env file</b>: Securely store your <BrandName /> credentials, create a .env file in the root of your project and add the following values:
 
-| Property      | Type   | LambdaTest                                    | BrowserStack                                    | SauceLabs                                     |
-| ------------- | ------ | --------------------------------------------- | ----------------------------------------------- | --------------------------------------------- |
-| **UserName**  | String | UserName to access Selenium Grid on LambdaTest  | UserName to access Selenium Grid on BrowserStack  | UserName to access Selenium Grid on Sauce Labs  |
-| **AccessKey** | String | AccessKey to access Selenium Grid on LambdaTest | AccessKey to access Selenium Grid on BrowserStack | AccessKey to access Selenium Grid on Sauce Labs |
-| **Hub URL**   | String | @hub.lambdatest.com/wd/hub                    | @hub-cloud.browserstack.com/wd/hub              | ondemand.us-west-1.saucelabs.com/wd/hub       |
-
-```bash title="Authentication"
-userName = "LambdaTest_UserName"
-accessKey = "LambdaTest_AccessKey"
+```
+LT_USERNAME="<your_username>"
+LT_ACCESS_KEY="<your_access_key>"
 ```
 
-## Mapping of Capabilities
+Once the .env file is set up, ensure your test framework correctly reads these variables at runtime. This helps keep your authentication secure and avoids hard-coding credentials within your scripts. With the credentials in place, you’re now ready to update your Hub URL for <BrandName /> execution.
 
----
 
-The following capabilities from the other Cloud platforms (BrowserStack and SauceLabs) will be mapped automatically in the LambdaTest platform.
+### Add <BrandName /> Hub URL
+Next, you need to add the <BrandName /> Hub URL to your test suite configuration. This endpoint defines where the tests will be executed on the <BrandName /> Grid.
 
-| Capabilities                   | LambdaTest       | Browserstack    | SauceLabs                    |
-| ------------------------------ | ---------------- | --------------- | ---------------------------- |
-| **Build name**                 | build            | buildName       | build                        |
-| **Project name**               | projectName      | project         | -                            |
-| **Session name/Test**          | name             | sessionName     | name                         |
-| **OS (Selenium 4)**            | platformName     | os              | platformName                 |
-| **OS (Selenium)**              | platform         | os              | platform                     |
-| **OS version**                 | -                | osVersion       | -                            |
-| **Browser version (Selenium)** | version          | browserVersion  | version                      |
-| **Screen Resolution**          | resolution       | resolution      | screenResolution             |
-| **Selenium version**           | selenium_version | seleniumVersion | seleniumVersion              |
-| **Driver version**             | driver_version   | -               | _browser_name_+driverVersion |
-| **Geo Locations**              | geoLocation      | geoLocation     | -                            |
-| **Local testing**              | tunnel (bool)    | local (bool)    | tunnelIdentifier (string)    |
-| **Screenshot**                 | visual           | debug           | recordScreenshots            |
-| **Video Recording**            | video            | video           | recordVideo                  |
-| **Time zone**                  | timezone         | timezone        | timeZone                     |
-| **Console**                    | console          | consoleLogs     | extendedDebugging            |
-| **Network logs**               | network          | networkLogs     | extendedDebugging            |
+```js
+@hub.lambdatest.com/wd/hub
+```
 
-:::tip
-You can generate capabilities for your test requirements with the help of our inbuilt 🔗 [Capabilities Generator tool](https://www.lambdatest.com/capabilities-generator/).
-:::
+
+## Migrating from BrowserStack to <BrandName />
+
+
+Switching between cloud-based automation platforms may require capability evaluation, test configuration updates, and CI/CD integration mapping. A side-by-side comparison helps simplify this transition by clarifying feature coverage, execution options, testing frameworks, and platform-level differences.
+
+
+<BrandName /> can serve as an alternative to BrowserStack for teams seeking improved execution speed, parallel scalability, cost-efficiency, advanced debugging, and deeper analytics for test optimization. With support for a wide range of automation frameworks, device coverage, and performance-focused orchestration, <BrandName /> enables smoother migration for teams modernizing their testing infrastructure.
+
+Below are the capabilities of BrowserStack and <BrandName /> to help teams map BrowserStack features to their <BrandName /> equivalents.
+
+
+
+
+
+<Tabs className="docs__val">
+
+<TabItem value="ios" label="BrowserStack Capabilities" default>
+
+```js
+MutableCapabilities capabilities = new MutableCapabilities();
+HashMap<String, Object> bstackOptions = new HashMap<String, Object>();
+capabilities.setCapability("browserName", "Safari");
+bstackOptions.put("os", "OS X");
+bstackOptions.put("osVersion", "Tahoe");
+bstackOptions.put("browserVersion", "26.0");
+bstackOptions.put("userName", "YOUR_USERNAME");
+bstackOptions.put("accessKey", "YOUR_ACCESS_KEY");
+capabilities.setCapability("bstack:options", bstackOptions);
+```
+
+</TabItem>
+
+<TabItem value="android" label="<BrandName /> Capabilities" default>
+
+```js
+SafariOptions browserOptions = new SafariOptions();
+browserOptions.setPlatformName("MacOS Tahoe");
+browserOptions.setBrowserVersion("26");
+HashMap<String, Object> ltOptions = new HashMap<String, Object>();
+ltOptions.put("username", "<your_username>");
+ltOptions.put("accessKey", "<your_access_key>");
+ltOptions.put("w3c", true);
+browserOptions.setCapability("LT:Options", ltOptions);
+```
+</TabItem>
+
+</Tabs>
+
+
+To migrate your test suites from BrowserStack, checkout this guide on [Migrating from BrowserStack to <BrandName />](/support/docs/browserstack-to-testmu-migration-guide/).
+
+## Migrating from Sauce Labs to <BrandName />
+
+Switching between cloud-based test execution platforms can involve configuration updates, capability adjustments, and integration alignment. A capability comparison makes this transition more seamless by helping teams understand feature availability, execution models, and tooling compatibility. 
+
+<BrandName /> can be adopted as an alternative to Sauce Labs for organizations looking to enhance performance, scale automation workloads efficiently, and streamline debugging and reporting within their CI/CD pipelines.
+
+
+
+Below are the capabilities of Sauce Labs and <BrandName /> to help teams map Sauce Labs features to their <BrandName /> equivalents.
+
+
+<Tabs className="docs__val">
+
+<TabItem value="ios" label="Sauce Labs Capabilities" default>
+
+```js
+SafariOptions browserOptions = new SafariOptions();
+browserOptions.setPlatformName("macOS 15");
+browserOptions.setBrowserVersion("latest");
+Map<String, Object> sauceOptions = new HashMap<>();
+sauceOptions.put("username", "YOUR_USERNAME");
+sauceOptions.put("accessKey", "YOUR_ACCESS_KEY");
+sauceOptions.put("build", "<your build id>");
+sauceOptions.put("name", "<your test name>");
+sauceOptions.put("armRequired", true);
+browserOptions.setCapability("sauce:options", sauceOptions);
+```
+
+</TabItem>
+
+<TabItem value="android" label="<BrandName /> Capabilities" default>
+
+```js
+SafariOptions browserOptions = new SafariOptions();
+browserOptions.setPlatformName("MacOS Tahoe");
+browserOptions.setBrowserVersion("26");
+HashMap<String, Object> ltOptions = new HashMap<String, Object>();
+ltOptions.put("username", "<your_username>");
+ltOptions.put("accessKey", "<your_access_key>");
+ltOptions.put("w3c", true);
+browserOptions.setCapability("LT:Options", ltOptions);
+```
+</TabItem>
+
+</Tabs>
+
+To migrate your test suites from Sauce Labs, checkout this guide on [Migrating from Sauce Labs to <BrandName />](/support/docs/saucelabs-to-testmu-migration-guide/).
+
+:::tip 
+To generate capabilities use [<BrandName /> Capabilities Generator](https://www.lambdatest.com/capabilities-generator/) to define key automation testing parameters, such as browser, version, operating system, and additional test settings.
+
+
 
 <nav aria-label="breadcrumbs">
   <ul className="breadcrumbs">
     <li className="breadcrumbs__item">
-      <a className="breadcrumbs__link" href="https://www.lambdatest.com">
+      <a className="breadcrumbs__link" href={BRAND_URL}>
         Home
       </a>
     </li>
     <li className="breadcrumbs__item">
-      <a className="breadcrumbs__link" target="_self" href="https://www.lambdatest.com/support/docs/">
+      <a className="breadcrumbs__link" target="_self" href={`${BRAND_URL}/support/docs/`}>
         Support
       </a>
     </li>
     <li className="breadcrumbs__item breadcrumbs__item--active">
       <span className="breadcrumbs__link">
-        LambdaTest Capability Map
+        <BrandName /> Capability Map
       </span>
     </li>
   </ul>

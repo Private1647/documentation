@@ -5,14 +5,18 @@ hide_title: false
 sidebar_label: Version 2.2.2
 description: Version 2.2.2
 keywords:
-  - LambdaTest Hyperexecute
-  - LambdaTest Hyperexecute help
-  - LambdaTest Hyperexecute documentation
+  - TestMu AI Hyperexecute
+  - TestMu AI Hyperexecute help
+  - TestMu AI Hyperexecute documentation
   - FAQs
-url: https://www.lambdatest.com/support/docs/hyperexecute-release-notes-2-2-2/
+url: https://www.testmuai.com/support/docs/hyperexecute-release-notes-2-2-2/
 site_name: LambdaTest
 slug: hyperexecute-release-notes-2-2-2/
+canonical: https://www.testmuai.com/support/docs/hyperexecute-release-notes-2-2-2/
 ---
+
+
+import BrandName, { BRAND_URL } from '@site/src/component/BrandName';
 
 <script type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -22,24 +26,24 @@ slug: hyperexecute-release-notes-2-2-2/
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://www.lambdatest.com"
+          "item": BRAND_URL
         },{
           "@type": "ListItem",
           "position": 2,
           "name": "Support",
-          "item": "https://www.lambdatest.com/support/docs/"
+          "item": `${BRAND_URL}/support/docs/`
         },{
           "@type": "ListItem",
           "position": 3,
           "name": "Version",
-          "item": "https://www.lambdatest.com/support/docs/hyperexecute-release-notes-2-2-2/"
+          "item": `${BRAND_URL}/support/docs/hyperexecute-release-notes-2-2-2/`
         }]
       })
     }}
 ></script>
 ## Testsigma Integration
 
-Testsigma is an AI-powered, cloud-based test automation platform designed to help testers create, run, and maintain automated tests for various applications. It caters to web, mobile, and API testing, aiming to simplify the automation process for users of all experience levels.
+Testsigma is an AI Native, cloud-based test automation platform designed to help testers create, run, and maintain automated tests for various applications. It caters to web, mobile, and API testing, aiming to simplify the automation process for users of all experience levels.
 
 <img loading="lazy" src={require('../assets/images/hyperexecute/integration/products/testsigma/2.png').default} alt="HyperExecute" className="doc_img"/>
 

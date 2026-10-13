@@ -2,20 +2,23 @@
 id: appium-lambdatest-hooks
 title: Lambda Hooks For Appium Automation
 sidebar_label: Lambda Hooks For Appium 
-description: Now you can add custom status & remark to your App Automation scripts that you run on LambdaTest.
+description: Now you can add custom status & remark to your App Automation scripts that you run on TestMu AI.
 keywords:
   - appium
-  - lambdatest hooks
+  - testmu ai hooks
   - custom status
   - custom remark
   - app automation
   - mobile test
   - app testing
   - real devices
-url: https://www.lambdatest.com/support/docs/appium-lambdatest-hooks/
+url: https://www.testmuai.com/support/docs/appium-testmu-hooks/
 site_name: LambdaTest
-slug: appium-lambdatest-hooks/
+slug: appium-testmu-hooks/
+canonical: https://www.testmuai.com/support/docs/appium-testmu-hooks/
 ---
+import BrandName, { BRAND_URL } from '@site/src/component/BrandName';
+
 
 <script type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -25,17 +28,17 @@ slug: appium-lambdatest-hooks/
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://www.lambdatest.com"
+          "item": BRAND_URL
         },{
           "@type": "ListItem",
           "position": 2,
           "name": "Support",
-          "item": "https://www.lambdatest.com/support/docs/"
+          "item": `${BRAND_URL}/support/docs/`
         },{
           "@type": "ListItem",
           "position": 3,
-          "name": "LambdaTest Hooks for Appium",
-          "item": "https://www.lambdatest.com/support/docs/appium-lambdatest-hooks/"
+          "name": "TestMu AI Hooks for Appium",
+          "item": `${BRAND_URL}/support/docs/appium-testmu-hooks/`
         }]
       })
     }}
@@ -46,10 +49,15 @@ import {YOUR_LAMBDATEST_USERNAME, YOUR_LAMBDATEST_ACCESS_KEY} from "@site/src/co
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RealDeviceTag from '../src/component/realDevice';
+import VirtualDeviceTag from '../src/component/virtualDevice';
 
 
+<RealDeviceTag value="Real Device" /> 
+<VirtualDeviceTag value="Virtual Device" />
 
-This document will help you provide lambdahooks which can be used to improve your test scripts to easily debug your test cases for **App Automation on Real Devices** on **LambdaTest Cloud**.
+
+This document will help you provide lambdahooks which can be used to improve your test scripts to easily debug your test cases for **App Automation on Real Devices** on **<BrandName /> Cloud**.
 
 ## Adding custom status & remark
 
@@ -107,7 +115,7 @@ public class vanilla_android {
 }
 ```
 
-Once you have added the code snippet, the status and remark will be visible on the [LambdaTest App Automation Dashboard](https://appautomation.lambdatest.com/build) as shown below:
+Once you have added the code snippet, the status and remark will be visible on the [<BrandName /> App Automation Dashboard](https://appautomation.lambdatest.com/build) as shown below:
 
 
 <img loading="lazy" src={require('../assets/images/appium-lambdaHooks/01.webp').default} alt="Build Page Remark" width="1200" height="550" className="doc_img"/>
@@ -128,7 +136,7 @@ Arguments | Example
 ## Differentiating Test Cases in Single Session
 ---
 
-LambdaTest has introduced a LambdaHook to help automation engineers differentiate between multiple test cases within a single Appium session. This feature aims to improve debugging capabilities, making it easier to identify which test cases may be causing errors or taking longer to execute.
+<BrandName /> has introduced a LambdaHook to help automation engineers differentiate between multiple test cases within a single Appium session. This feature aims to improve debugging capabilities, making it easier to identify which test cases may be causing errors or taking longer to execute.
 
 ### Adding LambdaHooks
 
@@ -158,18 +166,17 @@ Any command logs executed between `lambda-testCase-start` and `lambda-testCase-e
 
 You can also filter the command logs based on these labels.A screenshot has been provided below, demonstrating the use of labels and how to filter command logs based on them.
 
-<img loading="lazy" src={require('../assets/images/appium-lambdaHooks/02.webp').default} alt="Test Case Filter" width="1200" height="550" className="doc_img"/>
-
+![Test Cases](../assets/images/real-device-app-testing/Test-Cases.png)
 
 <nav aria-label="breadcrumbs">
   <ul className="breadcrumbs">
     <li className="breadcrumbs__item">
-      <a className="breadcrumbs__link" target="_self" href="https://www.lambdatest.com">
+      <a className="breadcrumbs__link" target="_self" href={BRAND_URL}>
         Home
       </a>
     </li>
     <li className="breadcrumbs__item">
-      <a className="breadcrumbs__link" target="_self" href="https://www.lambdatest.com/support/docs/">
+      <a className="breadcrumbs__link" target="_self" href={`${BRAND_URL}/support/docs/`}>
         Support
       </a>
     </li>
@@ -180,3 +187,36 @@ You can also filter the command logs based on these labels.A screenshot has been
     </li>
   </ul>
 </nav>
+
+---
+
+## Command Annotations 
+
+Command Annotations allow you to add metadata and debugging information to your test scripts. They work similarly to LambdaHooks by providing structured logs on the **<BrandName /> Automation Dashboard**, making it easier to track test execution, debug failures, and navigate specific test sections.
+
+![Command Annotation](../assets/images/real-device-app-testing/command-annotation.png)
+
+### Using Command Annotations
+
+#### Annotation Start
+```java
+driver.execute_script("lambdatest_executor: {\"action\": \"stepcontext\", \"arguments\": {\"data\": \"youtube\", \"level\": \"debug\"}}");
+```
+
+**Arguments:**
+
+| Argument | Description |
+|----------|-------------|
+| `data` | String value representing the information you want to log. |
+| `level` | Log severity level. Acceptable values: `info` (default), `debug`, `warn`, `error`. |
+
+#### Annotation End
+To close the executor at the end of your script, pass `data` as an empty string:
+
+```java
+driver.execute_script("lambdatest_executor: {\"action\": \"stepcontext\", \"arguments\": {\"data\": \"\"}}");
+```
+
+:::info
+**Mutual exclusivity:** Test case and Command Annotations cannot be used together in the same script. You can only use **one** of them per session.
+:::

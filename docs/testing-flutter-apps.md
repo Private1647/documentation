@@ -10,10 +10,13 @@ keywords:
 - test flutter apps on ios
 - test flutter apps on iphone
 - flutter test app
-url: https://www.lambdatest.com/support/docs/testing-flutter-apps/
+url: https://www.testmu.ai/support/docs/testing-flutter-apps/
 site_name: LambdaTest
 slug: testing-flutter-apps/
+canonical: https://www.testmu.ai/support/docs/testing-flutter-apps/
 ---
+import BrandName, { BRAND_URL } from '@site/src/component/BrandName';
+
 
 <script type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -23,17 +26,17 @@ slug: testing-flutter-apps/
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://www.lambdatest.com"
+          "item": BRAND_URL
         },{
           "@type": "ListItem",
           "position": 2,
           "name": "Support",
-          "item": "https://www.lambdatest.com/support/docs/"
+          "item": `${BRAND_URL}/support/docs/`
         },{
           "@type": "ListItem",
           "position": 3,
           "name": "Testing Flutter Apps With Appium",
-          "item": "https://www.lambdatest.com/support/docs/testing-flutter-apps/"
+          "item": `${BRAND_URL}/support/docs/testing-flutter-apps/`
         }]
       })
     }}
@@ -44,7 +47,7 @@ slug: testing-flutter-apps/
 
 Google's Flutter is an open-source tool for developing native mobile apps. It enables developers to create cross-platform apps for both Android and iOS using a single codebase and programming language.
 
-You can now test Flutter apps on the LambdaTest [Appium testing](#) platform across 3000+ real Android and iOS devices. LambdaTest supports Appium’s Flutter driver that lets you test Flutter apps using the Appium framework. To test Flutter apps, you will need to upload apps on LambdaTest cloud servers and then run your automated tests. 
+You can now test Flutter apps on the <BrandName /> <a href={`${BRAND_URL}/appium-testing`}>Appium testing</a> platform across 3000+ real Android and iOS devices. <BrandName /> supports Appium's Flutter driver that lets you test Flutter apps using the Appium framework. To test Flutter apps, you will need to upload apps on <BrandName /> cloud servers and then run your automated tests. 
 
 ## Prerequisites
 ***
@@ -80,7 +83,7 @@ void main() {
  desiredCapabilities.setCapability("automationName", "flutter");
 ```
 
-Shown below is the test script for automating Flutter apps on LambdaTest platform.
+Shown below is the test script for automating Flutter apps on <BrandName /> platform.
 
 ```py
 import os
@@ -125,17 +128,17 @@ counter_element = FlutterElement(driver, counter_finder)
 print(counter_element.text)
 ```
 
->In case you have any questions or need any additional information, you could reach out at our <span className="doc__lt" onClick={() => window.openLTChatWidget()}>**24X7 Chat Support**</span> or mail us directly at support@lambdatest.com.
+>In case you have any questions or need any additional information, you could reach out at our <span className="doc__lt" onClick={() => window.openLTChatWidget()}>**24X7 Chat Support**</span> or mail us directly at support@testmu.ai.
 
 <nav aria-label="breadcrumbs">
   <ul className="breadcrumbs">
     <li className="breadcrumbs__item">
-      <a className="breadcrumbs__link" target="_self" href="https://www.lambdatest.com">
+      <a className="breadcrumbs__link" target="_self" href={BRAND_URL}>
         Home
       </a>
     </li>
     <li className="breadcrumbs__item">
-      <a className="breadcrumbs__link" target="_self" href="https://www.lambdatest.com/support/docs/">
+      <a className="breadcrumbs__link" target="_self" href={`${BRAND_URL}/support/docs/`}>
         Support
       </a>
     </li>

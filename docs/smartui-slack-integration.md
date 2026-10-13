@@ -2,7 +2,7 @@
 id: smartui-slack-integration
 title: Slack Integration with SmartUI
 sidebar_label: Slack Integration
-description: Integrate Slack with LambdaTest SmartUI for real-time notifications. Follow our guide to set up, configure, and receive SmartUI job updates directly in your Slack workspace.
+description: Integrate Slack with TestMu AI SmartUI for real-time notifications. Follow our guide to set up, configure, and receive SmartUI job updates directly in your Slack workspace.
 keywords:
   - Visual Regression
   - Visual Regression Testing Guide
@@ -14,10 +14,20 @@ keywords:
   - Visual Regression Run Specific Test
   - Visual Regression Testing Environment
   - How to Run Visual Regression Tests
-url: https://www.lambdatest.com/support/docs/ssmartui-slack-integration/
+url: https://www.testmu.ai/support/docs/ssmartui-slack-integration/
 site_name: LambdaTest
 slug: smartui-slack-integration/
+canonical: https://www.testmu.ai/support/docs/smartui-slack-integration/
+
 ---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import NewTag from '../src/component/newTag';
+import CodeBlock from '@theme/CodeBlock';
+import {YOUR_LAMBDATEST_USERNAME, YOUR_LAMBDATEST_ACCESS_KEY} from "@site/src/component/keys";
+import BrandName, { BRAND_URL } from '@site/src/component/BrandName';
+
 
 <script type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -27,17 +37,17 @@ slug: smartui-slack-integration/
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://www.lambdatest.com"
+          "item": BRAND_URL
         },{
           "@type": "ListItem",
           "position": 2,
           "name": "Support",
-          "item": "https://www.lambdatest.com/support/docs/"
+          "item": `${BRAND_URL}/support/docs/`
         },{
           "@type": "ListItem",
           "position": 3,
           "name": "WebDriverIO With Appium",
-          "item": "https://www.lambdatest.com/support/docs/smartui-slack-integration/"
+          "item": `${BRAND_URL}/support/docs/smartui-slack-integration/`
         }]
       })
     }}
@@ -47,13 +57,13 @@ This document will guide you to integrate your SmartUI jobs and Slack, allowing 
 
 ## Prerequisite
 
-- An active LambdaTest account with Admin or User-level access. 
+- An active <BrandName /> account with Admin or User-level access.
 - Set up a dedicated Slack channel where you want to receive notifications from SmartUI.
 - Should have setup the SmartUI suite.
 
 ## Step 1: Navigate to the Integration Page
 
-- Login to your LambdaTest Account.
+- Login to your <BrandName /> Account.
 - Navigate to the **Settings** > **Integration** page.
 - Select the **Communication** tab and search for Slack.
 
@@ -61,7 +71,7 @@ This document will guide you to integrate your SmartUI jobs and Slack, allowing 
 <source src= {require('../assets/videos/hyperexecute/integration/products/slack/1.mp4').default} type="video/mp4" />
 </video>
 
-## Step 2: Integrate the Slack with your LambdaTest Account
+## Step 2: Integrate the Slack with your <BrandName /> Account
 
 - Click on the **Connect** button and then **Install** for the Slack integration.
 
@@ -91,7 +101,7 @@ Once you integrate Slack, you need to configure notification settings to get tes
 
 - Once you save that configuration, you will start receiving the custom notifications in Slack!
 
-<img loading="lazy" src={require('../assets/videos/smart-ui/slack-integration/slack-notification.png').default} alt="add slack-notification"  className="doc_img" width="1347" height="648"/>
+<img loading="lazy" src={require('../assets/videos/smart-ui/slack-integration/slack-notification.png').default} alt="add slack-notification"  className='doc_img' width="1347" height="648"/>
 
 ## Remove the Slack Integration
 

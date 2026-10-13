@@ -3,15 +3,19 @@ id: hyperexecute-reports
 title: Job Reports
 hide_title: false
 sidebar_label: HyperExecute Job Reports
-description: Effortlessly explore HyperExecute Reports! Gain a deeper understanding of your test outcomes with the comprehensive insights and analytics offered by LambdaTest.
+description: Effortlessly explore HyperExecute Reports! Gain a deeper understanding of your test outcomes with the comprehensive insights and analytics offered by TestMu AI.
 keywords:
-  - LambdaTest Hyperexecute
-  - LambdaTest Hyperexecute help
-  - LambdaTest Hyperexecute documentation
-url: https://www.lambdatest.com/support/docs/hyperexecute-reports/
+  - TestMu AI Hyperexecute
+  - TestMu AI Hyperexecute help
+  - TestMu AI Hyperexecute documentation
+url: https://www.testmuai.com/support/docs/hyperexecute-reports/
 site_name: LambdaTest
 slug: hyperexecute-reports/
+canonical: https://www.testmuai.com/support/docs/hyperexecute-reports/
 ---
+
+
+import BrandName, { BRAND_URL } from '@site/src/component/BrandName';
 
 <script type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -21,22 +25,26 @@ slug: hyperexecute-reports/
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://www.lambdatest.com"
+          "item": BRAND_URL
         },{
           "@type": "ListItem",
           "position": 2,
           "name": "Support",
-          "item": "https://www.lambdatest.com/support/docs/"
+          "item": `${BRAND_URL}/support/docs/`
         },{
           "@type": "ListItem",
           "position": 3,
           "name": "HyperExecute Concepts",
-          "item": "https://www.lambdatest.com/support/docs/hyperexecute-reports/"
+          "item": `${BRAND_URL}/support/docs/hyperexecute-reports/`
         }]
       })
     }}
 ></script>
 Reports provide summarized job information, including status counts and links to tests. You can generate and download detailed reports at the end of job execution that helps you analyze the outcome of your tests based on your framework. 
+
+:::tip note
+Refer to this detailed [Job Reports](/support/docs/hyperexecute-job-reports/) page to learn more about the types of reports being offered and how to configure them.
+:::
 
 ## Steps to Generate and Download Reports
 
@@ -76,37 +84,29 @@ partialReports:
   - location: reports/json
     type: json
     frameworkName: extent-native
-    email:
-        to:
-          - johndoe@example.com
+    
   - location: target/surefire-reports
     type: html
     frameworkName: testng
-    email:
-        to:
-          - johndoe@example.com
 ```
 
-:::info
-Refer to the detailed documentation on [Job Reports](/support/docs/hyperexecute-job-reports/)
-:::
+## Regex Support for Dynamic Report Paths
+You can now use **glob-style wildcards `(**)`** in the location field of `partialReports` to dynamically match nested folders and custom report paths. This is especially useful when your test reports are generated inside directories that include date stamps, environment names, or other runtime variables.
 
-<nav aria-label="breadcrumbs">
-  <ul className="breadcrumbs">
-    <li className="breadcrumbs__item">
-      <a className="breadcrumbs__link" target="_self" href="https://www.lambdatest.com">
-        Home
-      </a>
-    </li>
-    <li className="breadcrumbs__item">
-      <a className="breadcrumbs__link" target="_self" href="https://www.lambdatest.com/support/docs/">
-        Support
-      </a>
-    </li>
-    <li className="breadcrumbs__item breadcrumbs__item--active">
-      <span className="breadcrumbs__link">
-        Downloading Job Reports
-      </span>
-    </li>
-  </ul>
-</nav>
+Example:
+```yaml title="hyperexecute.yaml"
+partialReports:
+  location: reports/**/cucumber/
+  # location: target/abc/**/pqr/**/cucumber-reports
+  frameworkName: cucumber
+  type: json
+```
+
+Ensure that your Testrunner.java file should have the complete path from where partial reports will be added. Example:
+
+```java title="Testrunner.java"
+plugin = {
+    "json:target/abc/mno/pqr/xyz/cucumber-reports/CucumberTestReport.json",
+    "json:target/abc/its/pqr/abc/cucumber-reports/CucumberTestReport.json"
+}
+```

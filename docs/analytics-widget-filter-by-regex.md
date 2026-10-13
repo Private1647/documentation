@@ -8,10 +8,14 @@ keywords:
   - insights
   - test intelligence
   - test analytics
-url: https://www.lambdatest.com/support/docs/analytics-widget-filter-by-regex/
+url: https://www.testmuai.com/support/docs/analytics-widget-filter-by-regex/
 site_name: LambdaTest
 slug: analytics-widget-filter-by-regex/
+canonical: https://www.testmuai.com/support/docs/analytics-widget-filter-by-regex/
 ---
+
+
+import BrandName, { BRAND_URL } from '@site/src/component/BrandName';
 
 <script type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -21,24 +25,21 @@ slug: analytics-widget-filter-by-regex/
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://www.lambdatest.com"
+          "item": BRAND_URL
         },{
           "@type": "ListItem",
           "position": 2,
           "name": "Support",
-          "item": "https://www.lambdatest.com/support/docs/"
+          "item": `${BRAND_URL}/support/docs/`
         },{
           "@type": "ListItem",
           "position": 3,
           "name": "Test Overview",
-          "item": "https://www.lambdatest.com/support/docs/analytics-widget-filter-by-regex/"
+          "item": `${BRAND_URL}/support/docs/analytics-widget-filter-by-regex/`
         }]
       })
     }}
 ></script>
----
-import VideoEmbed from '../src/component/videoEmbed';
-
 ## About Regex Mode
 
 Our analytics platform now supports regular expressions (Regex) for advanced text searching, pattern matching, and data extraction. This feature enhances your ability to filter and analyze data with greater precision and flexibility.
@@ -124,7 +125,7 @@ This pattern will match strings like:
 
 ## Need Help?
 
-If you have any questions or need assistance with Regex filtering, feel free to reach out to our [support team](mailto:support@lambdatest.com). We're here to help you make the most of our advanced analytics features!
+If you have any questions or need assistance with Regex filtering, feel free to reach out to our [support team](mailto:support@testmu.ai). We're here to help you make the most of our advanced analytics features!
 
 
 

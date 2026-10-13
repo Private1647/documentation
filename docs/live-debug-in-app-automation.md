@@ -2,21 +2,27 @@
 id: live-debug-in-app-automation
 title: Live Debug Your App Automation Tests
 sidebar_label: Live Inspect
-description: Optimize your app automation with LambdaTest's Live Debugger. Enjoy live debugging and direct interaction with real devices from the app automation dashboard.
+description: Optimize your app automation with TestMu AI's Live Debugger. Enjoy live debugging and direct interaction with real devices from the app automation dashboard.
 keywords:
   - app automation
   - live debugging
   - xpath
   - app automation debugging
-url: https://www.lambdatest.com/support/docs/live-debug-in-app-automation/
+url: https://www.testmuai.com/support/docs/live-debug-in-app-automation/
 site_name: LambdaTest
 slug: live-debug-in-app-automation/
+canonical: https://www.testmuai.com/support/docs/live-debug-in-app-automation/
 ---
 
 import CodeBlock from '@theme/CodeBlock';
 import {YOUR_LAMBDATEST_USERNAME, YOUR_LAMBDATEST_ACCESS_KEY} from "@site/src/component/keys";
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RealDeviceTag from '../src/component/realDevice';
+import VirtualDeviceTag from '../src/component/virtualDevice';
+import BrandName, { BRAND_URL } from '@site/src/component/BrandName';
+
+
 
 <script type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -26,27 +32,27 @@ import TabItem from '@theme/TabItem';
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://www.lambdatest.com"
+          "item": BRAND_URL
         },{
           "@type": "ListItem",
           "position": 2,
           "name": "Support",
-          "item": "https://www.lambdatest.com/support/docs/"
+          "item": `${BRAND_URL}/support/docs/`
         },{
           "@type": "ListItem",
           "position": 3,
           "name": "Live Debug Your App Automation Tests",
-          "item": "https://www.lambdatest.com/support/docs/live-debug-in-app-automation/"
+          "item": `${BRAND_URL}/support/docs/live-debug-in-app-automation/`
         }]
       })
     }}
 ></script>
 
 # Live Inspect Your App Automation Tests
-
+<RealDeviceTag value="Real Device" /> <VirtualDeviceTag value="Virtual Device" />
 ---
 
-Optimize your [app automation testing](https://www.lambdatest.com/blog/mobile-app-testing-tools/) with LambdaTest's Real Devices UI Inspector. Now access unparalleled live debugging capabilities right from the app automation dashboard, enabling direct interaction with the test device—not just viewing the script's video. 
+Optimize your [app automation testing](https://www.lambdatest.com/blog/mobile-app-testing-tools/) with <BrandName />'s Real Devices UI Inspector. Now access unparalleled live debugging capabilities right from the app automation dashboard, enabling direct interaction with the test device—not just viewing the script's video. 
 
 With features like real-time navigation, detailed UI element inspection, and the ability to capture screenshots, now significantly enhance both the efficiency and effectiveness of your [automated tests](https://www.lambdatest.com/automation-testing).
 
@@ -54,11 +60,11 @@ With features like real-time navigation, detailed UI element inspection, and the
 
 ---
 
-**Step 1:** Run your app automation test on the LambdaTest platform. You can perform app automation testing across 3000+ devices, OS and browser combinations. Using debug mode to run the test is preferred as you can inspect applications at debug points.
+**Step 1:** Run your app automation test on the <BrandName /> platform. You can perform app automation testing across 3000+ devices, OS and browser combinations. Using debug mode to run the test is preferred as you can inspect applications at debug points.
 
 <img loading="lazy" src={require('../assets/images/live-debug/automation-dashboard.webp').default} alt="Live Debug App Automation" width="1365" height="632" className="doc_img"/>
 
-**Step 2:** After executing your test, head to the LambdaTest App Automation dashboard and open your recently executed app automation test. 
+**Step 2:** After executing your test, head to the <BrandName /> App Automation dashboard and open your recently executed app automation test. 
 
 <img loading="lazy" src={require('../assets/images/live-debug/select-app-automation.webp').default} alt="Live Debug App Automation" width="1365" height="632" className="doc_img"/>
 
@@ -66,7 +72,7 @@ With features like real-time navigation, detailed UI element inspection, and the
 
 <img loading="lazy" src={require('../assets/images/live-debug/live-debug-option.webp').default} alt="Live Debug App Automation" width="1365" height="632" className="doc_img"/>
 
->**Note:**  Live interaction on iOS devices is currently under beta. Please reach out to [support@lambdatest.com](mailto:support@lambdatest.com) for any query.
+>**Note:**  Live interaction on iOS devices is currently under beta. Please reach out to [support@testmu.ai](mailto:support@testmu.ai) for any query.
 
 **Step 4:** You can simply click the Live Debug option to access the extended UI Inspector and inspect the frames.
 
@@ -81,12 +87,12 @@ With features like real-time navigation, detailed UI element inspection, and the
 <nav aria-label="breadcrumbs">
   <ul className="breadcrumbs">
     <li className="breadcrumbs__item">
-      <a className="breadcrumbs__link" target="_self" href="https://www.lambdatest.com">
+      <a className="breadcrumbs__link" target="_self" href={BRAND_URL}>
         Home
       </a>
     </li>
     <li className="breadcrumbs__item">
-      <a className="breadcrumbs__link" target="_self" href="https://www.lambdatest.com/support/docs/">
+      <a className="breadcrumbs__link" target="_self" href={`${BRAND_URL}/support/docs/`}>
         Support
       </a>
     </li>

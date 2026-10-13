@@ -1,18 +1,21 @@
----
+﻿---
 id: how-to-use-in-session-testing-tools
 title: How to use in-session testing tools?
 hide_title: true
 sidebar_label: Testing Tools
-description: With LambdaTest, perform live interactive testing of websites and web applications on real Android and iOS devices to ensure seamless user experience.
+description: With TestMu AI, perform live interactive testing of websites and web applications on real Android and iOS devices to ensure seamless user experience.
 keywords:
   - real device app testing
   - real device browser testing
   - mobile app testing
   - app automation
-url: https://www.lambdatest.com/support/docs/how-to-use-in-session-testing-tools/
+url: https://www.testmuai.com/support/docs/how-to-use-in-session-testing-tools/
 site_name: LambdaTest
 slug: how-to-use-in-session-testing-tools/
+canonical: https://www.testmuai.com/support/docs/how-to-use-in-session-testing-tools/
 ---
+import BrandName, { BRAND_URL } from '@site/src/component/BrandName';
+
 
 <script type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -21,31 +24,36 @@ slug: how-to-use-in-session-testing-tools/
         "itemListElement": [{
           "@type": "ListItem",
           "position": 1,
-          "name": "LambdaTest",
-          "item": "https://www.lambdatest.com"
+          "name": "TestMu AI",
+          "item": BRAND_URL
         },{
           "@type": "ListItem",
           "position": 2,
           "name": "Support",
-          "item": "https://www.lambdatest.com/support/docs/"
+          "item": `${BRAND_URL}/support/docs/`
         },{
           "@type": "ListItem",
           "position": 3,
           "name": "How to use in-session testing tools?",
-          "item": "https://www.lambdatest.com/support/docs/how-to-use-in-session-testing-tools/"
+          "item": `${BRAND_URL}/support/docs/how-to-use-in-session-testing-tools/`
         }]
       })
     }}
 ></script>
 
 # How to Use In-Session Testing Tools ?
-With LambdaTest’s Real Device browser testing, you get access to a plethora of features that helps QA ease their real device browser testing process, without the need of leaving the instance window. From features such as mark as bug and changing IP geolocation, to in-depth Chrome DevTools and Safari Web Inspector, LambdaTest's Real Device browser testing offers it all.
+With <BrandName />’s Real Device browser testing, you get access to a plethora of features that helps QA ease their real device browser testing process, without the need of leaving the instance window. From features such as mark as bug and changing IP geolocation, to in-depth Chrome DevTools and Safari Web Inspector, <BrandName />'s Real Device browser testing offers it all.
 
 Let us get an overview of all the features in our real device instance:
 
-<img loading="lazy" src={require('../assets/images/real-device-browser-testing/real-device-browser-testing-home.webp').default} alt="add" width="1346" height="647" className="doc_img"/>
-
 ## Comprehensive Sidebar
+
+<div className="storylane-iframe">
+  <script async src="https://js.storylane.io/js/v2/storylane.js"></script>
+  <div className="sl-embed">
+    <iframe loading="lazy" className="sl-demo" src="https://app.storylane.io/demo/rodprkjklrvp?embed=inline"  name="sl-embed" allow="fullscreen" allowfullscreen></iframe>
+  </div>
+</div>
 
 ### Home
 
@@ -81,7 +89,7 @@ The **IP Geolocation** feature allows you to emulate website and mobile experien
 
 <img loading="lazy" src={require('../assets/images/real-device-browser-testing/ip-geolocation-browser-testing.webp').default} alt="add" width="1346" height="647" className="doc_img"/>
 
-Check out our detailed support documentation to know more about the [IP Geolocation](https://www.lambdatest.com/support/docs/list-of-supported-locales/) feature.
+Check out our detailed support documentation to know more about the [IP Geolocation](/support/docs/list-of-supported-locales/) feature.
 
 ### GPS Location
 
@@ -94,13 +102,13 @@ However, if your preferred location is not showing, you can specify the exact lo
 
 ### Network Throttling
 
-With LambdaTest’s **Network Throttling**, you can test mobile applications across a range of network conditions, including offline, as well as specific network profiles like 3G, 3G+, 4G LTE, 4G Advanced and even custom network profile with its extensive real mobile device cloud.
+With <BrandName />’s **Network Throttling**, you can test mobile applications across a range of network conditions, including offline, as well as specific network profiles like 3G, 3G+, 4G LTE, 4G Advanced and even custom network profile with its extensive real mobile device cloud.
 
 You can simulate these network environments using either pre-defined profiles or by creating custom network profiles to suit your needs.
 
 <img loading="lazy" src={require('../assets/images/real-device-browser-testing/network-throttling-browser-testing.webp').default} alt="add" width="1346" height="647" className="doc_img"/>
 
-Check out our detailed support documentation to know more about the [Network Throttling](https://www.lambdatest.com/support/docs/app-auto-network-throttling/) feature.
+Check out our detailed support documentation to know more about the [Network Throttling](/support/docs/app-auto-network-throttling/) feature.
 
 
 ### iOS Settings
@@ -118,9 +126,10 @@ Under Device Control, you'll find multiple options to customize your device's se
 1. **Volume**: Adjust the device's volume to your preferred level.
 2. **Rotate**: Change the screen orientation between landscape and portrait modes.
 3. **Recent Apps** : Available on `iOS 15` and above, this feature allows you to view recent apps. Note that it is not supported on devices that rely on a physical button for accessing recent apps instead of the swipe-up gesture.
+4. **Bluetooth**: Used to enable the bluetooth functionality during the session.
 
 
-<img loading="lazy" src={require('../assets/images/real-device-browser-testing/device-control-browser-testing.webp').default} alt="add" width="1346" height="647" className="doc_img"/>
+<img loading="lazy" src={require('../assets/images/real-device-browser-testing/rdbrowserdevicecontrol.png').default} alt="add" width="1346" height="647" className="doc_img"/>
 
 ### Settings
 
@@ -148,13 +157,20 @@ By clicking on the end session button, you can close your current test session.
 ## Comprehensive Top Bar
 ***
 
+<div className="storylane-iframe">
+  <script async src="https://js.storylane.io/js/v2/storylane.js"></script>
+  <div className="sl-embed">
+    <iframe loading="lazy" className="sl-demo" src="https://app.storylane.io/demo/bhi7qrlpgnwr?embed=inline"  name="sl-embed" allow="fullscreen" allowfullscreen></iframe>
+  </div>
+</div>
+
 ### Zoom In-Out
 
 With the zoom in-out slider, you can zoom in and out in your real device as per your preference.
 
 ### Chrome DevTools
 
-LambdaTest’s real device browser testing offers in-built developer tools to help QA debug their websites and web applications. 
+<BrandName />’s real device browser testing offers in-built developer tools to help QA debug their websites and web applications. 
 
 <img loading="lazy" src={require('../assets/images/real-device-browser-testing/chrome-devtools-browser-testing.webp').default} alt="add" width="1346" height="647" className="doc_img"/>
 
@@ -162,7 +178,7 @@ LambdaTest’s real device browser testing offers in-built developer tools to he
 
 ### Safari Web Inspector
 
-LambdaTest’s real device browser testing offers in-built **Safari Web Inspector**, an open-source web development tool to simplify optimizing, prototyping, and debugging web applications for iOS and OS X.
+<BrandName />’s real device browser testing offers in-built **Safari Web Inspector**, an open-source web development tool to simplify optimizing, prototyping, and debugging web applications for iOS and OS X.
 
 <img loading="lazy" src={require('../assets/images/real-device-browser-testing/safari-web-inspector.webp').default} alt="add" width="1346" height="647" className="doc_img"/>
 
@@ -177,7 +193,7 @@ Unified **Test Manager** simplifies test authoring, management, triggering, and 
 
 
 
-> **Notes:** The max duration for running manual tests on LambdaTest Real Device Cloud is 2 hours. In order to extend the duration, you can opt for our dedicated real device cloud.
+> **Notes:** The max duration for running manual tests on <BrandName /> Real Device Cloud is 2 hours. In order to extend the duration, you can opt for our dedicated real device cloud.
 
 
 

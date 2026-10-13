@@ -5,15 +5,16 @@ hide_title: false
 sidebar_label: Testim
 description:  Testim, a test case management tool, and HyperExecute, a cloud-based test execution platform streamline your testing process by efficiently managing test cases.
 keywords:
-  - LambdaTest Hyperexecute
-  - LambdaTest Hyperexecute help
-  - LambdaTest Hyperexecute documentation
+  - TestMu AI Hyperexecute
+  - TestMu AI Hyperexecute help
+  - TestMu AI Hyperexecute documentation
   - testim
   - Integrations
   - Products
-url: https://www.lambdatest.com/support/docs/hyperexecute-testim-integration/
+url: https://www.testmuai.com/support/docs/hyperexecute-testim-integration/
 site_name: LambdaTest
 slug: hyperexecute-testim-integration/
+canonical: https://www.testmuai.com/support/docs/hyperexecute-testim-integration/
 ---
 
 import CodeBlock from '@theme/CodeBlock';
@@ -21,6 +22,8 @@ import {YOUR_LAMBDATEST_USERNAME, YOUR_LAMBDATEST_ACCESS_KEY} from "@site/src/co
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import BrandName, { BRAND_URL } from '@site/src/component/BrandName';
+
 
 <script type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -30,40 +33,40 @@ import TabItem from '@theme/TabItem';
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://www.lambdatest.com"
+          "item": BRAND_URL
         },{
           "@type": "ListItem",
           "position": 2,
           "name": "Support",
-          "item": "https://www.lambdatest.com/support/docs/"
+          "item": `${BRAND_URL}/support/docs/`
         },{
           "@type": "ListItem",
           "position": 3,
           "name": "Integration with Products",
-          "item": "https://www.lambdatest.com/support/docs/hyperexecute-testim-integration/"
+          "item": `${BRAND_URL}/support/docs/hyperexecute-testim-integration/`
         }]
       })
     }}
 ></script>
 
-Testim is a AI-powered test authoring platform designed to automate software testing, particularly web and mobile applications. It focuses on creating stable and reliable automated tests. It allows creating tests without writing code or by incorporating custom JavaScript for more intricate scenarios. You can manage and scale the test automation process efficiently, which is particularly valuable for Agile development teams.
+Testim is a AI Native test authoring platform designed to automate software testing, particularly web and mobile applications. It focuses on creating stable and reliable automated tests. It allows creating tests without writing code or by incorporating custom JavaScript for more intricate scenarios. You can manage and scale the test automation process efficiently, which is particularly valuable for Agile development teams.
 
 This document details the seamless integration between HyperExecute and Testim, enabling you to run your automated tests.
 
 ## Prerequisite
 
 - You will need your Testim account.
-- LambdaTest account. You can [sign up for free](https://accounts.lambdatest.com/dashboard).
-- LambdaTest [Username and Access Key](/support/docs/hyperexecute-how-to-get-my-username-and-access-key/)
+- <BrandName /> account. You can [sign up for free](https://accounts.lambdatest.com/dashboard).
+- <BrandName /> [Username and Access Key](/support/docs/hyperexecute-how-to-get-my-username-and-access-key/)
 
 ## Step 1: Setup the Grid
 
 - Click on your profile icon >> **Grids** button.
-- Click on **Add New Grid** button >> select **LambdaTest** as your Grid Type and click on **Next** button.
+- Click on **Add New Grid** button >> select **<BrandName />** as your Grid Type and click on **Next** button.
 - Configure your Grid:
     - Enter the name of your Grid.
     - Update your Host and Port number.
-    - Enter your LambdaTest Username and Access Key >> click on **Add** button.
+    - Enter your <BrandName /> Username and Access Key >> click on **Add** button.
 
 <video class="right-side" width="100%" controls id="vid">
 <source src= {require('../assets/videos/hyperexecute/integration/products/testim/grid-setup.mp4').default} type="video/mp4" />
@@ -116,7 +119,7 @@ testDiscovery:
  mode: static
  command: echo "HYP with Testim"
 
-testRunnerCommand:  testim --token "YOUR_TESTIM_TOKEN" --project "YOUR_PROJECT_NAME" --grid "YOUR_GRID_NAME"
+testRunnerCommand: ./.hyperexecute/snooper --frameWork testim --testimProject YOUR_PROJECT_ID --testimToken YOUR_TESTIM_TOKEN --testimProjectBranch YOUR_BRANCH_NAME
 ```
 
 ## Step 5: Setup the CLI
@@ -137,7 +140,7 @@ You can download the CLI for your desired platform from the below mentioned link
 
 ### Setup Environment Variable
 
-Now, you need to export your environment variables *LT_USERNAME* and *LT_ACCESS_KEY* that are available in the [LambdaTest Profile page](https://accounts.lambdatest.com/detail/profile).
+Now, you need to export your environment variables *LT_USERNAME* and *LT_ACCESS_KEY* that are available in the [<BrandName /> Profile page](https://accounts.lambdatest.com/detail/profile).
 
 Run the below mentioned commands in your terminal to setup the CLI and the environment variables.
 

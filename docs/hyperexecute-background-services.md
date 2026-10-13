@@ -6,10 +6,14 @@ sidebar_label: Background Services
 description: This documentation will help you 
 keywords:
 - hyperexecute background services
-url: https://www.lambdatest.com/support/docs/hyperexecute-background-services/
+url: https://www.testmuai.com/support/docs/hyperexecute-background-services/
 site_name: LambdaTest
 slug: hyperexecute-background-services/
+canonical: https://www.testmuai.com/support/docs/hyperexecute-background-services/
 ---
+
+
+import BrandName, { BRAND_URL } from '@site/src/component/BrandName';
 
 <script type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -18,23 +22,23 @@ slug: hyperexecute-background-services/
         "itemListElement": [{
           "@type": "ListItem",
           "position": 1,
-          "name": "LambdaTest",
-          "item": "https://www.lambdatest.com"
+          "name": "TestMu AI",
+          "item": BRAND_URL
         },{
           "@type": "ListItem",
           "position": 2,
           "name": "Support",
-          "item": "https://www.lambdatest.com/support/docs/"
+          "item": `${BRAND_URL}/support/docs/`
         },{
           "@type": "ListItem",
           "position": 3,
           "name": "Background Services",
-          "item": "https://www.lambdatest.com/support/docs/hyperexecute-background-services/"
+          "item": `${BRAND_URL}/support/docs/hyperexecute-background-services/`
         }]
       })
     }}
 ></script>
-Background Services is a feature of HyperExecute which is generally used to run the long running **Application Servers**. You can trigger the background services by using either the `background` or `backgroundDirectives` property in the [HyperExecute YAML](https://www.lambdatest.com/support/docs/deep-dive-into-hyperexecute-yaml/#background) file.
+Background Services is a feature of HyperExecute which is generally used to run the long running **Application Servers**. You can trigger the background services by using either the `background` or `backgroundDirectives` property in the [HyperExecute YAML](/support/docs/deep-dive-into-hyperexecute-yaml/#background) file.
 
 This feature is useful for the following cases:
 
@@ -75,18 +79,20 @@ background:
 
 To check the background service logs, follow the below mentioned steps:
 
-<div className="storylane-iframe">
-  <script async src="https://js.storylane.io/js/v2/storylane.js"></script>
-  <div className="sl-embed">
-    <iframe loading="lazy" className="sl-demo" src="https://app.storylane.io/demo/jxrlvsdcnfte?embed=inline" name="sl-embed" allow="fullscreen" allowfullscreen></iframe>
-  </div>
-</div>
+
 
 **Step 1:** After executing your job, go to the [HyperExecute Dashboard](https://hyperexecute.lambdatest.com/hyperexecute/jobs) to check the status of the job.
 
 **Step 2:** Click on the **Background Service** button.
 
 **Step 3:** Click on the desired **background service** you have triggered to check its logs.
+
+<div className="storylane-iframe">
+  <script async src="https://js.storylane.io/js/v2/storylane.js"></script>
+  <div className="sl-embed">
+    <iframe loading="lazy" className="sl-demo" src="https://app.storylane.io/demo/jxrlvsdcnfte?embed=inline" name="sl-embed" allow="fullscreen" allowfullscreen></iframe>
+  </div>
+</div>
 
 ## Frequently Asked Questions
 
